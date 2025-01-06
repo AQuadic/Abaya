@@ -12,435 +12,98 @@
     <!-- Alpine -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script src="../src/js/script.js"></script>
+    <!-- Tabby -->
 </head>
 <body>
-    <!-- Start First Bar -->
-        <section class="bg-[#333333] h-10 md:flex hidden items-center">
-            <div class="container mx-auto flex items-center justify-around">
-                <div class="flex items-center gap-3">
-                    <a href="#" class="flex items-center gap-[7px]">
-                        <img src="../images/instagram.svg" alt="Instagram">
-                        <p class="text-white text-sm leading-[19.6px] font-normal">abayamall.ae</p>
+    <!-- Start Offer Bar -->
+        <div id="offer"></div>
+    <!-- End Offer Bar -->
+
+    <!-- Start Navbar -->
+        <div id="navbar"></div>
+    <!-- End Navbar -->
+    
+    <!-- Start Breadcrumbs  -->
+        <section class="bg-gray-100 py-2 rtl:pr-40">
+            <nav class="flex container mx-auto" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+                <li class="inline-flex items-center">
+                    <a href="#" class="inline-flex items-center text-base font-normal text-[#E3A745]">
+                        الرئيسية
                     </a>
-                    <div class="w-[1px] h-3 bg-[#F8F8F8]"></div>
-                    <a href="#" class="flex items-center gap-[7px]">
-                        <img src="../images/call-calling.svg" alt="Call">
-                        <p class="text-white text-sm leading-[19.6px] font-normal" dir="ltr">+971 50 216 6766</p>
-                    </a>
-                </div>
-                <div class="flex items-center gap-3">
-                    <div class="flex items-center gap-1"> 
-                        <img src="../images/lang.svg" alt="Language">    
-                        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white focus:ring-0 focus:outline-none font-normal rounded-lg text-[13px] text-center inline-flex items-center" type="button">العربية - در<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                            </svg>
-                        </button> 
-                        <!-- Dropdown menu -->
-                        <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
-                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
-                            <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100">English</a>
-                            </li>
-                            </ul>
-                        </div>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                    <p class="text-[#E3A745]">/</p>
+                    <a href="#" class="ms-1 text-base font-normal text-[#666666] md:ms-2">الحقيبة</a>
                     </div>
-                    <div class="w-[1px] h-3 bg-[#F8F8F8]"></div>
-                    <p class="text-white text-[13px] leading-[19.11px] font-normal">المفضلة</p>
-                    <div class="w-[1px] h-3 bg-[#F8F8F8]"></div>
-                    <p class="text-white text-[13px] leading-[19.11px] font-normal">سياسة الإستبدال أو الاسترجاع</p>
-                    <div class="w-[1px] h-3 bg-[#F8F8F8]"></div>
-                    <p class="text-white text-[13px] leading-[19.11px] font-normal">تواصل معنا</p>
+                </li>
+                </ol>
+            </nav>
+        </section>
+    <!-- End Breadcrumbs  -->
+
+    <!-- Start Title -->
+        <section class="container mx-auto flex justify-between sm:px-24 mt-10">
+            <h2 class="font-normal text-2xl text-black">حقيبتي (1)</h2>
+            <div class="flex items-center gap-6">
+                <p class="text-[#A67422] font-bold text-sm">تحتاج للمساعدة؟</p>
+                <div class="flex items-center gap-2">
+                    <svg width="20" height="20" viewBox="0 0 19 23" class="svg"><path d="M5.469 1.037l-3.27.46c0 .043 0 .043-.04.043-.29.042-.538.293-.621.587C1.166 3.468 1 4.894 1 6.36 1 14.537 7.124 21.245 14.86 22h.042c.372 0 .745-.168.952-.461l1.738-2.348c.662-.88.496-2.138-.331-2.81l-.91-.754h-.042v-.042c-.041 0-.041-.042-.083-.084-.124-.042-.248-.167-.372-.293-.29-.21-.662-.503-.993-.797a2.568 2.568 0 00-1.904-.545c-.537.042-.91.378-1.324.671-.372.252-.744.42-.827.461-2.193-1.341-3.848-3.48-4.634-5.953.124-.126.33-.252.662-.462.414-.251.869-.419 1.158-.922.373-.587.497-1.3.373-1.97l-.373-1.93-.206-1.131a1.98 1.98 0 00-2.317-1.593z" stroke="#000" class="svg-stroke"></path></svg>
+                    <a href="#">اتصل بنا</a>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg width="22" height="20" viewBox="0 0 27 24" class="svg"><g stroke="#000" class="svg-stroke"><path d="M.5 22.7l1.3-6a9.7 9.7 0 01-1.3-4.9C.5 5.6 6.3.5 13.5.5c7.1 0 13 5 13 11.3s-5.9 11.7-13 11.7c-2.5 0-4.8-.7-6.8-2L.5 22.7z"></path><path d="M15.5 15.2c.4 0 .6-.6 1.3-.7.8-.1 3.3 1.8 2.5 2.7l-1 1.3c-4.9.4-10-5.8-7.8-11.2l2-.3c1.3-.2 1.4 3 1.1 3.4-.3.4-1 .6-1.2 1l3.1 3.8z"></path></g></svg>
+                    <a href="#">واتساب</a>
                 </div>
             </div>
         </section>
-    <!-- End First Bar -->
-
-    <!-- Start Navbar -->
-        <nav class="bg-white border-gray-200 dark:bg-gray-900">
-            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <!-- LOGO -->
-            <a href="./index.html" class="lg:flex hidden items-center">
-                <img src="../images/nav-logo.svg" class="w-[202.88px] h-14" alt="Navbar Logo" />
-            </a>
-            <a href="./index.html" class="lg:hidden flex items-center gap-4 order-2">
-                <img src="../images/mobile-logo.svg" class="w-[202.88px] h-14" alt="Navbar Logo" />
-                <img src="../images/nav-login.svg" alt="Icon">
-                <div class="flex">
-                    <div class="relative flex gap-2">
-                        <button class="w-10 h-10 bg-[#f8f8f8] relative rounded-full flex justify-center items-center gap-2.5">
-                        <div class="p-1.5 flex justify-center items-center">
-                            <img src="../images/cart.svg" alt="Cart">
-                        </div>
-                        <div class="absolute top-0 left-7 w-[18px] h-[18px] p-2.5 bg-[#f55157] rounded-full border border-white flex justify-center items-center">
-                            <span class="w-1.5 h-[18px] text-white text-[10px] font-normal">2</span>
-                        </div>
-                        </button>
-                    </div>
-                </div>
-            </a>
-            <!-- Search -->
-            <div class="flex md:order-1">
-            <div class="relative hidden lg:block xl:w-[600px]">
-                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                </svg>
-                <span class="sr-only">Search icon</span>
-                </div>
-                <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-[#EEEEEE] rounded-sm focus:ring-0 outline-none focus:border-[#E3A745]" placeholder="ابحث عما تريد">
-            </div>
-            <button class="inline-flex items-center order-1 p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden" type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
-                <img src="../images/Menu.svg" alt="">
-            </button>
-            <!-- Sidebar -->
-            <div id="drawer-navigation" class="fixed top-0 left-0 z-40 w-80 h-screen overflow-y-auto transition-transform -translate-x-full bg-white" tabindex="-1" aria-labelledby="drawer-navigation-label">
-                <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 end-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" >
-                    <img src="../images/close-outline.svg" alt="Close">
-                    <span class="sr-only">Close menu</span>
-                </button>
-            <div class="overflow-y-auto">
-                <ul class="font-medium">
-                    <li class="py-2 border-b-8">
-                        <a href="#" class="flex items-center p-2  group">
-                            <img src="../images/sidebar-user.svg" class="w-[42px] h-[42px]" alt="User">
-                            <div>
-                                <p class="ms-3 text-[#282828] font-bold text-sm leading-[20px]">سجّل الدخول / انشئ حساب</p>
-                                <p class="ms-3 text-[#282828] font-normal text-sm leading-[20px]">لإتمام الشراء بشكل أسرع</p>
-                            </div>
-                        </a>
-                    </li>
-                    <div x-data="{ activeAccordion: null }">
-                        <!-- Accordion Item 1 -->
-                        <div class="overflow-hidden border-b-[1px] border-[#2828281A]">
-                            <button 
-                                @click="activeAccordion === 1 ? activeAccordion = null : activeAccordion = 1" 
-                                class="w-full flex justify-between items-center px-4 py-3 text-left text-[#282828] font-bold text-sm">
-                                وصل حديثاً
-                                <svg x-bind:class="{ 'rotate-180': activeAccordion === 1 }" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div x-show="activeAccordion === 1" x-collapse class="px-4 py-3 bg-white">
-                                <ul class="space-y-2 text-sm text-gray-600">
-                                    <li><a href="#" class="block hover:text-gray-800">وصل حديثاً</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Accordion Item 2 -->
-                        <div class="overflow-hidden border-b-[1px] border-[#2828281A]">
-                            <button 
-                                @click="activeAccordion === 2 ? activeAccordion = null : activeAccordion = 2" 
-                                class="w-full flex justify-between items-center px-4 py-3 text-left text-[#282828] font-bold text-sm">
-                                المنتجات
-                                <svg x-bind:class="{ 'rotate-180': activeAccordion === 2 }" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div x-show="activeAccordion === 2" x-collapse class="px-4 py-3 bg-white">
-                                <ul class="space-y-2 text-sm text-gray-600">
-                                    <li><a href="#" class="block hover:text-gray-800">المنتجات</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Accordion Item 3 -->
-                        <div class="overflow-hidden border-b-[1px] border-[#2828281A]">
-                            <button 
-                                @click="activeAccordion === 3 ? activeAccordion = null : activeAccordion = 3" 
-                                class="w-full flex justify-between items-center px-4 py-3 text-left text-[#282828] font-bold text-sm">
-                                عبايات
-                                <svg x-bind:class="{ 'rotate-180': activeAccordion === 3 }" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div x-show="activeAccordion === 3" x-collapse class="px-4 py-3 bg-white">
-                                <ul class="space-y-2 text-sm text-gray-600">
-                                    <li><a href="#" class="block hover:text-gray-800">عبايات</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Accordion Item 4 -->
-                        <div class="overflow-hidden border-b-[1px] border-[#2828281A]">
-                            <button 
-                                @click="activeAccordion === 4 ? activeAccordion = null : activeAccordion = 4" 
-                                class="w-full flex justify-between items-center px-4 py-3 text-left text-[#282828] font-bold text-sm">
-                                مخور
-                                <svg x-bind:class="{ 'rotate-180': activeAccordion === 4 }" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div x-show="activeAccordion === 4" x-collapse class="px-4 py-3 bg-white">
-                                <ul class="space-y-2 text-sm text-gray-600">
-                                    <li><a href="#" class="block hover:text-gray-800">مخور</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Accordion Item 5 -->
-                        <div class="overflow-hidden border-b-[1px] border-[#2828281A]">
-                            <button 
-                                @click="activeAccordion === 5 ? activeAccordion = null : activeAccordion = 5" 
-                                class="w-full flex justify-between items-center px-4 py-3 text-left text-[#282828] font-bold text-sm">
-                                الحجاب
-                                <svg x-bind:class="{ 'rotate-180': activeAccordion === 5 }" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div x-show="activeAccordion === 5" x-collapse class="px-4 py-3 bg-white">
-                                <ul class="space-y-2 text-sm text-gray-600">
-                                    <li><a href="#" class="block hover:text-gray-800">الحجاب</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Accordion Item 6 -->
-                        <div class="overflow-hidden border-b-[1px] border-[#2828281A]">
-                            <button 
-                                @click="activeAccordion === 6 ? activeAccordion = null : activeAccordion = 6" 
-                                class="w-full flex justify-between items-center px-4 py-3 text-left text-[#282828] font-bold text-sm">
-                                الأطفال
-                                <svg x-bind:class="{ 'rotate-180': activeAccordion === 6 }" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div x-show="activeAccordion === 6" x-collapse class="px-4 py-3 bg-white">
-                                <ul class="space-y-2 text-sm text-gray-600">
-                                    <li><a href="#" class="block hover:text-gray-800">الأطفال</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Accordion Item 7 -->
-                        <div class="overflow-hidden border-b-[1px] border-[#2828281A]">
-                            <button 
-                                @click="activeAccordion === 7 ? activeAccordion = null : activeAccordion = 7" 
-                                class="w-full flex justify-between items-center px-4 py-3 text-left text-[#282828] font-bold text-sm">
-                                المتاجر
-                                <svg x-bind:class="{ 'rotate-180': activeAccordion === 7 }" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div x-show="activeAccordion === 7" x-collapse class="px-4 py-3 bg-white">
-                                <ul class="space-y-2 text-sm text-gray-600">
-                                    <li><a href="#" class="block hover:text-gray-800">المتاجر</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <hr class="border-b-8 ">
-                        <!-- Accordion Item 8 -->
-                        <div class="overflow-hidden border-b-[1px] border-[#2828281A]">
-                            <button 
-                                @click="activeAccordion === 8? activeAccordion = null : activeAccordion = 8" 
-                                class="w-full flex justify-between items-center px-4 py-3 text-left">
-                                <div class="flex items-center gap-[20px]">
-                                    <img src="../images/la_shipping-fast.svg" class="w-[38px] h-[38px]" alt="Shipping">
-                                    <div class="flex flex-col items-start"> 
-                                        <p class="text-[#282828] font-bold text-sm">طلبياتي</p>
-                                        <p class="text-[#282828] font-normal text-sm">تتبع الطلبات الخاصة بك</p>
-                                    </div>
-                                </div>
-                                <svg x-bind:class="{ 'rotate-180': activeAccordion === 8}" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div x-show="activeAccordion === 8" x-collapse class="px-4 py-3 bg-white">
-                                <ul class="space-y-2 text-sm text-gray-600">
-                                    <li><a href="#" class="block hover:text-gray-800">طلبياتي</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <hr class="border-b-8 ">
-                        <!-- Accordion Item 9 -->
-                        <div class="overflow-hidden border-b-[1px] border-[#2828281A]">
-                            <button 
-                                @click="activeAccordion === 9? activeAccordion = null : activeAccordion = 9" 
-                                class="w-full flex justify-between items-center px-4 py-3 text-left">
-                                <div class="flex items-center gap-[20px]">
-                                    <img src="../images/emiratesFlag.svg" class="w-9 h-9" alt="Flag">
-                                    <div class="flex flex-col items-start"> 
-                                        <p class="text-[#282828] font-bold text-sm">الشحن إلى</p>
-                                        <p class="text-[#282828] font-normal text-sm">الإمارات العربية المتحدة</p>
-                                    </div>
-                                </div>
-                                <svg x-bind:class="{ 'rotate-180': activeAccordion === 9}" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                                <img src="../images/emiratesFlag.svg" class="w-4 h-4" alt="">
-                            </button>
-                            <div x-show="activeAccordion === 9" x-collapse class="px-4 py-3 bg-white">
-                                <ul class="space-y-2 text-sm text-gray-600">
-                                    <li><a href="#" class="block hover:text-gray-800">طلبياتي</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <hr class="border-b-8 ">
-                        <!-- Accordion Item 10 -->
-                        <div class="overflow-hidden border-b-[1px] border-[#2828281A]">
-                            <button 
-                                @click="activeAccordion === 10? activeAccordion = null : activeAccordion = 10" 
-                                class="w-full flex justify-between items-center px-4 py-3 text-left">
-                                <div class="flex items-center gap-[20px]">
-                                    <img src="../images/clarity_world-line.svg" class="w-9 h-9" alt="Language">
-                                    <div class="flex flex-col items-start"> 
-                                        <p class="text-[#282828] font-bold text-sm">تغيير اللغة</p>
-                                        <p class="text-[#282828] font-normal text-sm">English</p>
-                                    </div>
-                                </div>
-                                <svg x-bind:class="{ 'rotate-180': activeAccordion === 10}" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div x-show="activeAccordion === 10" x-collapse class="px-4 py-3 bg-white">
-                                <ul class="space-y-2 text-sm text-gray-600">
-                                    <li><a href="#" class="block hover:text-gray-800">English</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <hr class="border-b-8">
-                        <div class="flex flex-col items-center justify-center py-3">
-                            <h2 class="text-[#282828] text-2xl font-medium leading-[25px]">تحتاج لمساعدة ؟</h2>
-                            <p class="text-[#282828] text-[12px] font-medium leading-[25px] text-center mt-2">فريق خدمة العملاء في انتظارك للمساعدة من 9 صباحاً ولغاية 9 مساءاً</p>
-                            <div class="flex gap-[11px] mt-[19px]">
-                                <div class="w-[90px] h-[90px] flex flex-col items-center justify-center gap-3 rounded-[7px] border border-[#282828]">
-                                    <img src="../images/sidebarPhone.svg" class="w-7 h-7" alt="Phone">
-                                    <p class="text-[#282828] font-medium text-[12px]">اتصل بنا</p>
-                                </div>
-                                <div class="w-[90px] h-[90px] flex flex-col items-center justify-center gap-3 rounded-[7px] border border-[#282828]">
-                                    <img src="../images/sidebarwhats.svg" class="w-7 h-7" alt="Phone">
-                                    <p class="text-[#282828] font-medium text-[12px]">واتساب</p>
-                                </div>
-                                <div class="w-[90px] h-[90px] flex flex-col items-center justify-center gap-3 rounded-[7px] border border-[#282828]">
-                                    <img src="../images/sidebarEmail.svg" class="w-7 h-7" alt="Phone">
-                                    <p class="text-[#282828] font-medium text-[12px]">البريد الإلكتروني</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Accordion Item 11 -->
-                        <div class="overflow-hidden border-b-[1px] border-[#2828281A]">
-                            <button 
-                                @click="activeAccordion === 11 ? activeAccordion = null : activeAccordion = 11" 
-                                class="w-full flex justify-between items-center px-4 py-3 text-left text-[#282828] font-bold text-sm">
-                                الأسئلة المتكررة
-                                <svg x-bind:class="{ 'rotate-180': activeAccordion === 11 }" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div x-show="activeAccordion === 11" x-collapse class="px-4 py-3 bg-white">
-                                <ul class="space-y-2 text-sm text-gray-600">
-                                    <li><a href="#" class="block hover:text-gray-800">الأسئلة المتكررة</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Accordion Item 12 -->
-                        <div class="overflow-hidden border-b-[1px] border-[#2828281A]">
-                            <button 
-                                @click="activeAccordion === 12 ? activeAccordion = null : activeAccordion = 12" 
-                                class="w-full flex justify-between items-center px-4 py-3 text-left text-[#282828] font-bold text-sm">
-                                سياسة الشحن
-                                <svg x-bind:class="{ 'rotate-180': activeAccordion === 12 }" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div x-show="activeAccordion === 12" x-collapse class="px-4 py-3 bg-white">
-                                <ul class="space-y-2 text-sm text-gray-600">
-                                    <li><a href="#" class="block hover:text-gray-800">سياسة الشحن</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Accordion Item 13 -->
-                        <div class="overflow-hidden border-b-[1px] border-[#2828281A]">
-                            <button 
-                                @click="activeAccordion === 13 ? activeAccordion = null : activeAccordion = 13" 
-                                class="w-full flex justify-between items-center px-4 py-3 text-left text-[#282828] font-bold text-sm">
-                                الإرجاع والإستبدال
-                                <svg x-bind:class="{ 'rotate-180': activeAccordion === 13 }" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div x-show="activeAccordion === 13" x-collapse class="px-4 py-3 bg-white">
-                                <ul class="space-y-2 text-sm text-gray-600">
-                                    <li><a href="#" class="block hover:text-gray-800">الإرجاع والإستبدال</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </ul>
-            </div>
-            </div>
-            </div>
-            <!-- Last Items -->
-            <div class="lg:flex items-center justify-between gap-4 hidden md:w-auto md:order-2">
-                <!-- Login -->
-                <div class="flex gap-2">
-                    <img src="../images/nav-login.svg" alt="Login">
-                    <div class="relative">
-                        <h2 class="text-[#A5A5A5] text-sm font-normal">مرحبا بك</h2>
-                        <button id="login-button" class="flex items-center gap-1">
-                            <h4 href="/login" class="text-[#333333] text-base font-normal leading-[25px]">تسجيل دخول</h4>
-                        </button>
-                    </div>
-                </div>
-                <!-- Cart -->
-                <div class="flex">
-                    <div class="relative flex gap-2">
-                        <button class="w-10 h-10 bg-[#f8f8f8] relative rounded-full flex justify-center items-center gap-2.5">
-                        <div class="p-1.5 flex justify-center items-center">
-                            <img src="../images/cart.svg" alt="Cart">
-                        </div>
-                        <div class="absolute top-0 left-7 w-[18px] h-[18px] p-2.5 bg-[#f55157] rounded-full border border-white flex justify-center items-center">
-                            <span class="w-1.5 h-[18px] text-white text-[10px] font-normal">2</span>
-                        </div>
-                        </button>
-                        <div>
-                            <h2 class="text-[#A5A5A5] text-sm font-normal">سلة المشتريات</h2>
-                            <span href="/login" class="text-[#333333] text-base font-normal leading-[25px]">12,00 در</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Fav -->
-                <div id="cart-button" class="flex">
-                    <div class="relative flex gap-2">
-                        <div class="w-10 h-10 bg-[#f8f8f8] relative rounded-full flex justify-center items-center gap-2.5">
-                            <img src="../images/Heart.svg" alt="Heart">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </nav>
-    <!-- End Navbar -->
+    <!-- End Title -->
 
     <!-- Start Content -->
-        <section class="container mx-auto flex lg:flex-row flex-col justify-center gap-6 mt-[40px] mb-[72px]">
+        <section class="container mx-auto flex lg:flex-row flex-col justify-center items-center gap-6 mt-[40px] mb-[72px]">
             <div class="lg:w-[872px] p-2">
-                <div x-data="{ counters: { counter1: 1, counter2: 1 } }" class="bg-white border border-[#E4E7E9] rounded-[4px] overflow-hidden">
-                    <h1 class="pt-6 ltr:pl-6 rtl:pr-6 text-[#191C1F] font-medium text-lg">عربة التسوق</h1>
-                    <div class="overflow-x-auto pt-[20px]">
+                <div x-data="{ counters: { counter1: 1, counter2: 1 } }" class="bg-white  rounded-[4px] overflow-hidden">
+                    <div class="overflow-x-auto">
                         <table class="w-full table-auto">
                             <thead>
-                                <tr class="bg-[#E4E7E9]">
-                                    <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium uppercase">المنتجات</th>
-                                    <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium uppercase">السعر</th>
-                                    <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium uppercase">الكمية</th>
-                                    <th class="ltr:text-left rtl:text-right p-3 text-[#475156] text-sm font-medium uppercase">اجمالي السعر</th>
+                                <tr class="border-b-2 border-black">
+                                    <th class="ltr:text-left rtl:text-right p-3 text-black text-lg font-medium uppercase">المنتجات</th>
+                                    <th class="ltr:text-left rtl:text-right p-3 text-black text-lg font-medium uppercase">الكمية</th>
+                                    <th class="ltr:text-left rtl:text-right p-3 text-black text-lg font-medium uppercase">السعر</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="border-b">
-                                    <td class="p-3 flex items-center gap-2">
-                                        <img src="../images/closeIcon.svg" class="cursor-pointer" alt="Close Icon">
-                                        <img src="../images/cartImage.webp" class="w-[72px] h-[72px] object-cover" alt="Wishlist">
-                                        <p class="w-[260px] text-[#475156]">4K UHD LED Smart TV with Chromecast Built-in</p>
-                                    </td>
-                                    <td class="p-3 text-black">
-                                        <span class="text-[#929FA5] line-through">$99</span>
-                                        <span class="text-[#475156]">$70</span>
+                                    <td class="p-3 flex sm:flex-row flex-col gap-2">
+                                        <img src="../images/cartImage.webp" class="w-[100px] h-[150px] object-cover" alt="Wishlist">
+                                        <div class="flex flex-col justify-between gap-1">
+                                            <div>
+                                                <h3 class="text-xl font-medium">عبايات عبايات</h3>
+                                                <p class="text-base text-black">Wrap-up Abaya Set in Crepe</p>
+                                                <p class="text-sm font-normal text-gray-400"> اللون : <span class="text-gray-600">اسود</span></p>
+                                                <p class="text-sm font-normal text-gray-400"> المقاس : <span class="text-gray-600">30</span></p>    
+                                            </div>
+                                            <div class="flex sm:flex-row flex-col sm:items-center gap-5">
+                                                <a href="#" class="flex items-center gap-1 cursor-pointer underline">
+                                                    <img src="../images/Heart.svg" class="w-5 h-5" alt="Icon">
+                                                    <p>نقل الي قائمة الأمنيات</p>
+                                                </a>
+                                                <a href="#" class="flex items-center gap-1 cursor-pointer">
+                                                    <img src="../images/delete.svg" class="w-5 h-5" alt="Icon">
+                                                    <p>حذف</p>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </td>
                                     <td class="p-3">
-                                        <div class="flex items-center border border-[#E4E7E9] rounded-[3px] w-[148px] p-2 justify-between">
+                                        <div class="flex items-center border-b border-[#E4E7E9] rounded-[3px] w-[148px] p-2 justify-between">
                                             <button @click="counters.counter1 > 1 && counters.counter1--" class="text-lg focus:outline-none">
-                                                <img src="../images/Minus.svg" alt="Minus">
+                                                <p class="text-xl font-semibold text-gray-500">–</p>
                                             </button>
                                             <span x-text="String(counters.counter1).padStart(2, '0')" class="text-[#475156] font-medium"></span>
                                             <button @click="counters.counter1++" class="text-lg focus:outline-none">
-                                                <img src="../images/Plus.svg" alt="Plus">
+                                                <p class="text-2xl font-semibold text-[#E3A745]">+</p>
                                             </button>
                                         </div>
                                     </td>
@@ -449,22 +112,35 @@
                                     </td>
                                 </tr>
                                 <tr class="border-b">
-                                    <td class="p-3 flex items-center gap-2">
-                                        <img src="../images/closeIcon.svg" class="cursor-pointer" alt="Close Icon">
-                                        <img src="../images/cartImage.webp" class="w-[72px] h-[72px] object-cover" alt="Wishlist">
-                                        <p class="w-[260px] text-[#475156]">Wired Over-Ear Gaming Headphones with USB</p>
-                                    </td>
-                                    <td class="p-3 text-black">
-                                        <span class="text-[#475156]">$70</span>
+                                    <td class="p-3 flex sm:flex-row flex-col gap-2">
+                                        <img src="../images/cartImage.webp" class="w-[100px] h-[150px] object-cover" alt="Wishlist">
+                                        <div class="flex flex-col justify-between gap-1">
+                                            <div>
+                                                <h3 class="text-xl font-medium">عبايات عبايات</h3>
+                                                <p class="text-base text-black">Wrap-up Abaya Set in Crepe</p>
+                                                <p class="text-sm font-normal text-gray-400"> اللون : <span class="text-gray-600">اسود</span></p>
+                                                <p class="text-sm font-normal text-gray-400"> المقاس : <span class="text-gray-600">30</span></p>    
+                                            </div>
+                                            <div class="flex sm:flex-row flex-col sm:items-center gap-5">
+                                                <a href="#" class="flex items-center gap-1 cursor-pointer underline">
+                                                    <img src="../images/Heart.svg" class="w-5 h-5" alt="Icon">
+                                                    <p>نقل الي قائمة الأمنيات</p>
+                                                </a>
+                                                <a href="#" class="flex items-center gap-1 cursor-pointer">
+                                                    <img src="../images/delete.svg" class="w-5 h-5" alt="Icon">
+                                                    <p>حذف</p>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </td>
                                     <td class="p-3">
-                                        <div class="flex items-center border border-[#E4E7E9] rounded-[3px] w-[148px] p-2 justify-between">
+                                        <div class="flex items-center border-b border-[#E4E7E9] rounded-[3px] w-[148px] p-2 justify-between">
                                             <button @click="counters.counter2 > 1 && counters.counter2--" class="text-lg focus:outline-none">
-                                                <img src="../images/Minus.svg" alt="Minus">
+                                                <p class="text-xl font-semibold text-gray-500">–</p>
                                             </button>
                                             <span x-text="String(counters.counter2).padStart(2, '0')" class="text-[#475156] font-medium"></span>
                                             <button @click="counters.counter2++" class="text-lg focus:outline-none">
-                                                <img src="../images/Plus.svg" alt="Plus">
+                                                <p class="text-2xl font-semibold text-[#E3A745]">+</p>
                                             </button>
                                         </div>
                                     </td>
@@ -475,55 +151,245 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="flex justify-center p-6">
-                            <a href="#" class="flex items-center justify-center gap-2 md:w-[203px] px-1 border-2 border-[#E3A745] h-[48px] text-[#E3A745] font-bold uppercase">
-                                <span>اكمل التسوق</span>
-                                <img src="../images/bArrowLeft.svg" class="transform rtl:scale-x-100 ltr:scale-x-[-1]" alt="Arrow">
-                            </a>
-                        </div>
                     </div>
                 </div>
                 
             </div>
 
-            <div class="md:block flex flex-col justify-center items-center">
-                <!-- Apply Coupon -->
-                <div class="flex items-center gap-4 rounded-[4px] px-[10px] md:w-[424px] w-[365px] border border-[#E4E7E9] h-[97px]">
-                    <input type="text" placeholder="Coupon " class="w-[228px] border border-[#E4E7E9] focus:outline-none focus:ring-0 focus:border-[#FA8232]">
-                    <a href="#" class="text-[#E3A745] bg-white border-2 border-[#E3A745] md:font-bold uppercase w-[159px] h-[48px] flex items-center justify-center rounded-[2px]">Apply Coupon</a>
-                </div>
-                <!-- Card Totals -->
-                <div class="md:w-[424px] w-[365px] h-[312px] border border-[#E4E7E9] mt-[14px] rounded-[4px] p-6">
-                    <h2 class="text-[#191C1F] text-lg font-semibold mb-4">اجمالي العربة</h2>
-                    
-                    <div class="flex justify-between text-gray-700 mb-2">
-                        <span class="text-[#5F6C72]">المنتجات</span>
-                        <span class="text-[#191C1F] font-medium">$320</span>
+            <div class="p-5 md:p-0 md:w-[482px]">
+                <div x-data="{ openIndex: null }" class="border">
+                    <!-- Accordion 1 -->
+                    <h2 id="accordion-collapse-heading-1">
+                        <button type="button" class="accordion-button bg-[#fcfcfc] flex items-center justify-between md:w-[480px] w-full p-5 md:font-bold font-normal md:text-[18px] text-xl text-[#191C1F] rounded-[4px] mb-0 gap-3"   x-on:click="openIndex === 1 ? openIndex = null : openIndex = 1"  :aria-expanded="openIndex === 1 ? 'true' : 'false'">
+                            <div class="flex gap-2">
+                                <img src="../images/present.svg" class="w-6 h-6" alt="Icon">
+                                <span id="trueLeader">أضف رسالة مع الهدية</span>
+                            </div>
+                            <img :src="openIndex === 1 ? '../images/Minus.svg' : '../images/Plus.svg'" alt="Icon">
+                        </button>
+                    </h2>
+                    <hr>
+                    <div id="accordion-collapse-body-1" class="accordion-content items-center justify-between md:w-[480px] w-full p-5 bg-white mb-6" x-show="openIndex === 1" x-transition class="hidden mb-6 mt-[-22px] text-[#475156] font-normal text-sm">
+                        <ul class="list-disc ml-5 px-2">
+                            <li class="mb-2">المنتج/المنتجات سيتم تغليفها كهدية مع 1 رسالة.</li>
+                            <li class="mb-2">سيتم إزالة الفاتورة من الطلبية وإرسالها إلى بريدكم الإلكتروني.</li>
+                        </ul>
+                        <p class="text-lg font-medium text-[#4a4a4a]">رسالتك (300)</p>
+                        <textarea name="msg" id="msg" class="w-full h-20 mt-4 focus:outline-none focus:ring-0 focus:border-black p-2"></textarea>
                     </div>
-                    
-                    <div class="flex justify-between text-gray-700 mb-2">
-                        <span class="text-[#5F6C72]">الخصم</span>
-                        <span class="text-[#191C1F] font-medium">$24</span>
-                    </div>
-                    
-                    <div class="flex justify-between text-gray-700 mb-2">
-                        <span class="text-[#5F6C72]">الضرائب</span>
-                        <span class="text-[#191C1F] font-medium">$61.99</span>
-                    </div>
-                    
-                    <hr class="border-t border-gray-300 mb-4">
-                    
-                    <div class="flex justify-between items-center text-gray-900 font-semibold text-xl mb-4">
-                        <span class="text-[#191C1F] text-base">الاجمالي</span>
-                        <span class="text-[#191C1F] font-semibold">$357.99 USD</span>
-                    </div>
-                    
-                    <button class="md:w-[376px] w-full h-14 bg-[#A67422] text-white font-bold text-base py-3 rounded-[3px] flex items-center justify-center gap-2">
-                        اشتري الان
-                        <img src="../images/ArrowRight.svg" class="transform ltr:scale-x-100 rtl:scale-x-[-1]" alt="Arrow">
-                    </button>
-                </div>
                 
+                    <!-- Accordion 2 -->
+                    <h2 id="accordion-collapse-heading-2">
+                        <button type="button" class="accordion-button bg-[#fcfcfc] flex items-center justify-between md:w-[480px] w-full p-5 md:font-bold font-normal md:text-[18px] text-xl text-[#191C1F] rounded-[4px] mb-0 gap-3"   x-on:click="openIndex === 2 ? openIndex = null : openIndex = 2"  :aria-expanded="openIndex === 2 ? 'true' : 'false'">
+                            <div class="flex gap-2">
+                                <img src="../images/tag-discount.svg" class="w-6 h-6" alt="Icon">
+                                <span id="trueLeader">استخدام رمز الخصم</span>
+                            </div>
+                            <img :src="openIndex === 2 ? '../images/Minus.svg' : '../images/Plus.svg'" alt="Icon">
+                        </button>
+                    </h2>
+                    <hr>
+                    <div id="accordion-collapse-body-2" class="accordion-content items-center justify-between md:w-[480px] w-full p-5 bg-white mb-6" x-show="openIndex === 2" x-transition class="hidden mb-6 mt-[-22px] text-[#475156] font-normal text-sm">
+                        <form class="relative">
+                            <input type="text" class="w-full h-11 focus:ring-0 focus:outline-none focus:border-black" placeholder="" value="">
+                            <button type="submit" class="absolute left-2 top-2 flex text-base font-medium text-gray-500">استخدام</button>
+                        </form>
+                    </div>
+                
+                    <!-- Accordion 3 -->
+                    <h2 id="accordion-collapse-heading-3">
+                        <button type="button" class="accordion-button bg-[#fcfcfc] flex items-center justify-between md:w-[480px] w-full p-5 md:font-bold font-normal md:text-[18px] text-xl text-[#191C1F] rounded-[4px] mb-0 gap-3" x-on:click="openIndex === 3 ? openIndex = null : openIndex = 3" :aria-expanded="openIndex === 3 ? 'true' : 'false'">
+                            <div class="flex gap-2">
+                                <img src="../images/university.svg" class="w-6 h-6" alt="Icon">
+                                <span id="trueLeader">تتوفر أقساط بدون فوائد </span>
+                            </div>
+                            <img :src="openIndex === 3 ? '../images/Minus.svg' : '../images/Plus.svg'" alt="Icon">
+                        </button>
+                    </h2>
+                    <div id="accordion-collapse-body-3" class="accordion-content items-center justify-between md:w-[480px] w-full p-5 bg-white mb-6" x-show="openIndex === 3" x-transition class="hidden mb-6 mt-[-22px] text-[#475156] font-normal text-sm">
+                        <div class="min-h-[74px] flex items-center bg-[#fafafa] pl-[10px] mb-2 rounded-[5px]">
+                                <div class="flex flex-none w-[71px] bg-[#f2f6f9] border-l border-white rounded-lg self-stretch items-center">
+                                    <img src="https://ar.ounass.ae/static/images/bnpl/tabby-with-bg.png" alt="tabby" width="71" height="60">
+                                </div>
+                                <div class="flex-grow text-xs leading-[18px] p-2.5">
+                                    <div>4 بلا فائدة بدفعات شهرية من 
+                                        <b>625.00 د.إ.</b>
+                                    </div>
+                                    <div>يسري على الطلبات <b> 10 د.إ. - 14,000 د.إ. </b></div>
+                                </div>
+                                <div x-data="{ isOpen: false }">
+                                    <button type="button" @click="isOpen = true" class="btn-reset hover:bg-gray-200 rounded-full transition-colors">
+                                        <button type="button" data-tabby-info="installments" data-tabby-price="700" data-tabby-currency="AED">C</button>
+                                        <svg width="16" height="16" viewBox="0 0 12 12" class="svg">
+                                            <g fill="none" stroke-linecap="round" stroke-width=".8" stroke="#000">
+                                                <path d="M11 6A5 5 0 1 1 1 6a5 5 0 0 1 10 0z" clip-rule="evenodd"></path>
+                                                <path d="M6 5v3M5 8h2M5 5h1"></path>
+                                                <path fill="#000" fill-rule="evenodd" d="M6 4h0z" clip-rule="evenodd"></path>
+                                            </g>
+                                        </svg>
+                                    </button>
+                                    <div x-show="isOpen" @click="isOpen = false" class="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
+                                    <!-- Pop-up Modal -->
+                                    <div  x-show="isOpen" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-lg z-50 overflow-auto w-11/12 max-w-md lg:h-auto h-[500px]">
+                                        <script src="https://checkout.tabby.ai/tabby-promo.js"></script>
+                                        <script>
+                                            new TabbyPromo({});
+                                        </script>
+                                    </div>
+                                </div>                                
+                            </button>
+                        </div>
+                        
+                        <div class="min-h-[74px] flex items-center bg-[#fafafa] pl-[10px] mb-2 rounded-[5px]">
+                            <div class="flex flex-none w-[71px] bg-[#f2f6f9] border-l border-white rounded-lg self-stretch items-center">
+                                <img src="https://ar.ounass.ae/static/images/bnpl/tamara-with-bg.png" alt="tamara" width="71" height="60"></div>
+                                <div class="flex-grow text-xs leading-[18px] p-2.5">
+                                    <div>4 بلا فائدة بدفعات شهرية من <b>625.00 د.إ.</b></div>
+                                    <div>يسرى على الطلبات حتى <b> 10,000 د.إ. </b></div>
+                                </div>
+                                <div x-data="{ isOpen: false }">
+                                    <button type="button" @click="isOpen = true" class="btn-reset hover:bg-gray-200 rounded-full transition-colors">
+                                        <svg width="16" height="16" viewBox="0 0 12 12" class="svg">
+                                            <g fill="none" stroke-linecap="round" stroke-width=".8" stroke="#000">
+                                                <path d="M11 6A5 5 0 1 1 1 6a5 5 0 0 1 10 0z" clip-rule="evenodd"></path>
+                                                <path d="M6 5v3M5 8h2M5 5h1"></path>
+                                                <path fill="#000" fill-rule="evenodd" d="M6 4h0z" clip-rule="evenodd"></path>
+                                            </g>
+                                        </svg>
+                                    </button>
+                                    <div x-show="isOpen" @click="isOpen = false" class="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
+                                    <!-- Pop-up Modal -->
+                                    <div  x-show="isOpen" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white bg-cover bg-no-repeat  p-6 rounded-lg shadow-lg z-50 md:w-[700px] w-[300px] overflow-auto xl:h-auto h-[500px]" style="background-image: url(../images/background-gradient.png);">
+                                        <button @click="isOpen = false" class="text-black transition-colors absolute top-[15px] left-4 text-3xl">
+                                            x
+                                        </button>
+                                        <div class="flex justify-center">
+                                            <svg id="tamara-logo--ar" data-name="Tamara logo" width="101" height="25" viewBox="0 0 101 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7.10199 8.16016C6.85115 8.16016 6.48699 8.41704 6.35703 8.65881C5.95963 9.41585 5.67101 10.2258 5.28871 10.9904C5.08321 11.3999 5.17689 11.6432 5.47004 11.968C6.25277 12.8429 7.06421 13.7103 7.71397 14.688C8.49066 15.8515 8.38639 17.0921 7.39513 18.0667C6.64072 18.8196 5.76844 19.4444 4.81273 19.9162C3.4437 20.566 1.96286 20.974 0.542464 21.5255C0.346025 21.6011 0.0392795 21.8564 0.0135914 22.0242C-0.068006 22.55 0.223629 22.7057 0.420067 22.7903C2.05504 23.5005 3.71721 24.1548 5.43982 24.8574C5.99438 24.0203 6.55801 23.2421 7.04759 22.4201C9.69346 17.9821 10.2752 13.4096 7.84543 8.68148C7.7185 8.43366 7.36038 8.16469 7.10199 8.16016Z" fill="black"></path>
+                                                <path d="M65.7131 2.40753L65.6557 2.35011C65.4685 2.16261 65.2461 2.01385 65.0014 1.91236C64.7566 1.81087 64.4942 1.75862 64.2292 1.75862C63.9643 1.75862 63.7019 1.81087 63.4571 1.91236C63.2124 2.01385 62.99 2.16261 62.8028 2.35011C62.6155 2.53731 62.467 2.75956 62.3656 3.00419C62.2642 3.24881 62.2121 3.51101 62.2121 3.7758C62.2121 4.04059 62.2642 4.30279 62.3656 4.54742C62.467 4.79204 62.6155 5.0143 62.8028 5.20149L62.8617 5.26042C64.0011 6.39976 65.2794 5.6941 65.7131 5.26042C65.9006 5.0732 66.0494 4.85085 66.1509 4.60609C66.2524 4.36132 66.3046 4.09895 66.3046 3.83398C66.3046 3.56901 66.2524 3.30663 66.1509 3.06187C66.0494 2.81711 65.9006 2.59476 65.7131 2.40753Z" fill="black"></path>
+                                                <path d="M57.3267 2.48762C57.1267 2.68648 56.9684 2.92332 56.8613 3.18422L59.9212 5.83614C60.0768 5.7457 60.22 5.63548 60.3473 5.50824L60.4093 5.44629C61.6181 4.23744 60.8701 2.88654 60.4093 2.42416C60.2108 2.22569 59.9753 2.06824 59.716 1.96083C59.4567 1.85341 59.1788 1.79812 58.8982 1.79812C58.6176 1.79812 58.3397 1.85341 58.0804 1.96083C57.8211 2.06824 57.5855 2.22569 57.3871 2.42416L57.3267 2.48762Z" fill="black"></path>
+                                                <path d="M76.1213 7.73404C75.5605 8.31887 75.1214 9.00916 74.8293 9.76491L83.7809 17.1918C84.2228 16.9214 84.6289 16.5965 84.9897 16.2247L85.1635 16.0419C88.5483 12.4984 86.324 8.66033 84.9716 7.36535C84.3896 6.80791 83.7035 6.37058 82.9525 6.07831C82.2014 5.78604 81.4002 5.64457 80.5945 5.66197C79.7888 5.67937 78.9944 5.8553 78.2567 6.17971C77.519 6.50413 76.8524 6.97068 76.2951 7.55272L76.1213 7.73404Z" fill="black"></path>
+                                                <path d="M94.5986 18.0455C98.0235 18.0455 100.8 15.2691 100.8 11.8441C100.8 8.41918 98.0235 5.64272 94.5986 5.64272C91.1736 5.64272 88.3972 8.41918 88.3972 11.8441C88.3972 15.2691 91.1736 18.0455 94.5986 18.0455Z" fill="black"></path>
+                                                <path d="M11.8845 1.12163C11.8845 1.12163 11.129 2.6886 10.789 3.48947C10.6424 3.82249 10.5703 4.18345 10.5774 4.54721C10.7028 7.33663 10.8147 10.1291 11.0202 12.9125C11.2287 15.7487 12.6249 17.8189 15.2511 19.0141C17.0871 19.8497 19.0288 20.2305 21.0234 20.3454C23.5363 20.4889 26.0553 20.563 28.5712 20.5841C32.7538 20.6204 36.9047 20.3227 40.9997 19.5022C42.2614 19.3375 46.2083 18.316 46.8928 17.9443C47.6634 17.5257 47.6121 17.6255 48.3888 17.8219C50.2715 18.2994 55.2429 18.1815 56.6739 17.7599C57.6319 17.4759 58.5068 17.2492 58.7214 16.5919C59.6009 17.9775 60.0919 18.6817 61.6075 18.5457C63.1231 18.4097 63.2501 18.3357 64.7355 18.0047C65.9745 17.7297 66.8887 16.9304 67.2604 15.7215C67.4916 14.9735 67.4614 14.6154 67.5264 14.0594C67.7561 12.0814 67.4493 10.2061 66.3085 8.54246C66.1241 8.27501 66.0063 8.00906 65.3595 8.05137C65.157 8.06346 64.8548 8.36567 64.7309 8.60895C64.3547 9.34635 64.0706 10.1291 63.6973 10.8755C63.4873 11.2926 63.5825 11.5888 63.9104 11.891C64.607 12.5286 65.2492 13.1633 66.1196 14.0427C64.4574 14.218 63.8862 14.3963 62.4553 14.5081C61.0243 14.62 58.4011 14.5988 57.6652 13.2993C57.1257 12.3519 56.7782 11.6976 55.9033 11.0508C54.4451 9.97193 52.0878 9.97948 50.1189 10.9949C49.2289 11.4482 48.2921 12.3549 48.1394 13.4126C48.0714 13.8886 47.9082 14.2815 47.3718 14.419C39.2121 16.5148 29.6516 17.494 21.6188 16.5949C19.5728 16.3652 17.5389 16.0283 15.6078 15.2727C13.8806 14.6003 13.1009 13.4066 13.1326 11.5404C13.1901 8.10274 13.1538 4.66507 13.1326 1.22741C13.1411 1.13801 13.1314 1.04782 13.1041 0.962275C13.0767 0.876734 13.0324 0.797616 12.9736 0.729694C12.9149 0.661772 12.843 0.606454 12.7623 0.567077C12.6816 0.527701 12.5937 0.505082 12.504 0.500585C12.2396 0.477919 11.8845 1.12163 11.8845 1.12163ZM56.0075 15.3982L49.3317 15.3181C49.3317 15.3181 49.8258 12.6813 52.5412 12.5785C56.4488 12.438 56.0045 15.3982 56.0045 15.3982H56.0075Z" fill="black"></path>
+                                                <path d="M2.74863 1.44046C2.75712 1.35077 2.74726 1.2603 2.71963 1.17455C2.69201 1.0888 2.64721 1.00958 2.58797 0.941712C2.52873 0.873844 2.45628 0.818755 2.37505 0.779803C2.29382 0.740851 2.20551 0.718852 2.1155 0.715149C1.84502 0.692483 1.49596 1.33469 1.49596 1.33469C1.49596 1.33469 0.740431 2.90317 0.400442 3.70252C0.253958 4.03556 0.181769 4.39651 0.188893 4.76027C0.250846 6.1308 0.309778 7.50133 0.377776 8.87187C0.468439 10.8191 0.560614 12.7674 0.6543 14.7167C0.711721 15.9134 0.778207 17.1102 0.840161 18.3326H1.94928C2.22278 16.9727 2.69272 15.6293 2.72446 14.2785C2.76223 12.4606 2.76072 3.90198 2.74863 1.44046Z" fill="black"></path>
+                                            </svg> 
+                                        </div>
+                                        <h2 class="text-[#0a1e31] font-primary text-[26px] font-bold leading-[36px] mt-5 text-center">خطط دفع تناسب احتياجك</h2>
+                                        <div class="mt-5 flex flex-col gap-5">
+                                            <div class="bg-white flex flex-col justify-center items-center rounded-lg p-5">
+                                                <div class="bg-[#ff9b83] flex justify-center items-center rounded-full h-8 w-8 relative">
+                                                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.58464,3.20801C3.78464,3.20801 3.12631,3.86633 3.1263,4.67466L3.1263,5.208L2.5013,5.208C1.7013,5.208 1.04297,5.86634 1.04297,6.67467L1.04297,14.1663C1.04297,14.9747 1.7013,15.633 2.5013,15.633L15.8346,15.633C16.6346,15.633 17.293,14.9747 17.293,14.1663L17.293,13.633L17.918,13.633C18.718,13.633 19.3763,12.9747 19.3763,12.1663L19.3762,5.19134C19.3762,4.0997 18.4928,3.20806 17.4095,3.20801L4.58464,3.20801zM17.4096,4.45801C17.8096,4.45806 18.1262,4.78304 18.1262,5.19134L18.1263,12.1663C18.1263,12.2913 18.0346,12.383 17.918,12.383L17.293,12.383L17.293,6.67467C17.293,5.86634 16.643,5.208 15.8346,5.208L4.3763,5.208L4.3763,4.67466C4.37631,4.54967 4.46797,4.45801 4.58464,4.45801L17.4096,4.45801zM3.7513,11.258C3.33464,11.258 2.99297,10.9163 2.99297,10.4997C2.99297,10.083 3.33464,9.74134 3.7513,9.74134C4.16797,9.74134 4.50963,10.083 4.50963,10.4997C4.50963,10.9163 4.16797,11.258 3.7513,11.258zM13.7513,11.258C13.3346,11.258 12.993,10.9163 12.993,10.4997C12.993,10.083 13.3346,9.74134 13.7513,9.74134C14.168,9.74134 14.5096,10.083 14.5096,10.4997C14.5096,10.9163 14.168,11.258 13.7513,11.258z" fill="black"></path>
+                                                </svg>
+                                                <span class="flex items-center justify-center absolute inset-0 w-full h-full text-[#ff9b83] text-[6px] font-bold">2</span>
+                                                </div>
+                                                <h3 class="text-black text-base font-semibold leading-6 mt-2 mb-1 px-2">قسّمها على دفعتين</h3>
+                                                <p class="text-[#333] text-[12px] text-center">ادفع جزء من المبلغ الآن والباقي خلال شهر حسب خطة الدفع، متوافقة مع الشريعة الإسلامية و بدن رسوم تأخير!*</p>
+                                            </div>
+                                            <div class="bg-white flex flex-col justify-center items-center rounded-lg p-5">
+                                                <div class="bg-[#ff9b83] flex justify-center items-center rounded-full h-8 w-8 relative">
+                                                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.58464,3.20801C3.78464,3.20801 3.12631,3.86633 3.1263,4.67466L3.1263,5.208L2.5013,5.208C1.7013,5.208 1.04297,5.86634 1.04297,6.67467L1.04297,14.1663C1.04297,14.9747 1.7013,15.633 2.5013,15.633L15.8346,15.633C16.6346,15.633 17.293,14.9747 17.293,14.1663L17.293,13.633L17.918,13.633C18.718,13.633 19.3763,12.9747 19.3763,12.1663L19.3762,5.19134C19.3762,4.0997 18.4928,3.20806 17.4095,3.20801L4.58464,3.20801zM17.4096,4.45801C17.8096,4.45806 18.1262,4.78304 18.1262,5.19134L18.1263,12.1663C18.1263,12.2913 18.0346,12.383 17.918,12.383L17.293,12.383L17.293,6.67467C17.293,5.86634 16.643,5.208 15.8346,5.208L4.3763,5.208L4.3763,4.67466C4.37631,4.54967 4.46797,4.45801 4.58464,4.45801L17.4096,4.45801zM3.7513,11.258C3.33464,11.258 2.99297,10.9163 2.99297,10.4997C2.99297,10.083 3.33464,9.74134 3.7513,9.74134C4.16797,9.74134 4.50963,10.083 4.50963,10.4997C4.50963,10.9163 4.16797,11.258 3.7513,11.258zM13.7513,11.258C13.3346,11.258 12.993,10.9163 12.993,10.4997C12.993,10.083 13.3346,9.74134 13.7513,9.74134C14.168,9.74134 14.5096,10.083 14.5096,10.4997C14.5096,10.9163 14.168,11.258 13.7513,11.258z" fill="black"></path>
+                                                </svg>
+                                                <span class="flex items-center justify-center absolute inset-0 w-full h-full text-[#ff9b83] text-[6px] font-bold">2</span>
+                                                </div>
+                                                <h3 class="text-black text-base font-semibold leading-6 mt-2 mb-1 px-2">قسّمها على دفعتين</h3>
+                                                <p class="text-[#333] text-[12px] text-center">ادفع جزء من المبلغ الآن والباقي خلال شهر حسب خطة الدفع، متوافقة مع الشريعة الإسلامية و بدن رسوم تأخير!*</p>
+                                            </div>
+                                            <div class="bg-white flex flex-col justify-center items-center rounded-lg p-5">
+                                                <div class="bg-[#ff9b83] flex justify-center items-center rounded-full h-8 w-8 relative">
+                                                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.58464,3.20801C3.78464,3.20801 3.12631,3.86633 3.1263,4.67466L3.1263,5.208L2.5013,5.208C1.7013,5.208 1.04297,5.86634 1.04297,6.67467L1.04297,14.1663C1.04297,14.9747 1.7013,15.633 2.5013,15.633L15.8346,15.633C16.6346,15.633 17.293,14.9747 17.293,14.1663L17.293,13.633L17.918,13.633C18.718,13.633 19.3763,12.9747 19.3763,12.1663L19.3762,5.19134C19.3762,4.0997 18.4928,3.20806 17.4095,3.20801L4.58464,3.20801zM17.4096,4.45801C17.8096,4.45806 18.1262,4.78304 18.1262,5.19134L18.1263,12.1663C18.1263,12.2913 18.0346,12.383 17.918,12.383L17.293,12.383L17.293,6.67467C17.293,5.86634 16.643,5.208 15.8346,5.208L4.3763,5.208L4.3763,4.67466C4.37631,4.54967 4.46797,4.45801 4.58464,4.45801L17.4096,4.45801zM3.7513,11.258C3.33464,11.258 2.99297,10.9163 2.99297,10.4997C2.99297,10.083 3.33464,9.74134 3.7513,9.74134C4.16797,9.74134 4.50963,10.083 4.50963,10.4997C4.50963,10.9163 4.16797,11.258 3.7513,11.258zM13.7513,11.258C13.3346,11.258 12.993,10.9163 12.993,10.4997C12.993,10.083 13.3346,9.74134 13.7513,9.74134C14.168,9.74134 14.5096,10.083 14.5096,10.4997C14.5096,10.9163 14.168,11.258 13.7513,11.258z" fill="black"></path>
+                                                </svg>
+                                                <span class="flex items-center justify-center absolute inset-0 w-full h-full text-[#ff9b83] text-[6px] font-bold">2</span>
+                                                </div>
+                                                <h3 class="text-black text-base font-semibold leading-6 mt-2 mb-1 px-2">قسّمها على دفعتين</h3>
+                                                <p class="text-[#333] text-[12px] text-center">ادفع جزء من المبلغ الآن والباقي خلال شهر حسب خطة الدفع، متوافقة مع الشريعة الإسلامية و بدن رسوم تأخير!*</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <h4 class="text-base font-bold text-black text-center mt-5">ليش أدفع تمارا؟</h4>
+                                        <div class="max-w-[65%] flex items-center justify-around mx-auto mt-5">
+                                            <div class="text-sm text-center flex flex-col items-center"> 
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M13.0537 3.8501H5.5C4.54001 3.8501 3.75001 4.64011 3.75 5.6101V6.25009H3C2.04 6.25009 1.25 7.04009 1.25 8.01009V17.0001C1.25 17.9701 2.04 18.7601 3 18.7601H6.28654L6.96734 17.2601H3C2.86 17.2601 2.75 17.1501 2.75 17.0001V8.01009C2.75 7.86009 2.86 7.75009 3 7.75009H11.2836L11.9644 6.25009H5.25V5.61008C5.25001 5.46009 5.36001 5.3501 5.5 5.3501H12.3729L13.0537 3.8501ZM16.5768 6.25009H19C19.96 6.25009 20.75 7.04009 20.75 8.01009V14.8601L21.5 14.8601C21.64 14.8601 21.75 14.7501 21.75 14.6001L21.7499 6.2301C21.7499 5.74013 21.3699 5.35016 20.89 5.3501H16.9852L17.666 3.8501H20.8899C22.1898 3.85016 23.2499 4.92013 23.2499 6.2301L23.25 14.6001C23.25 15.5701 22.46 16.3601 21.5 16.3601L20.75 16.3601V17.0001C20.75 17.9701 19.96 18.7601 19 18.7601H10.8989L11.5797 17.2601H19C19.14 17.2601 19.25 17.1501 19.25 17.0001V8.01009C19.25 7.86009 19.14 7.75009 19 7.75009H15.896L16.5768 6.25009ZM17.4101 12.6001C17.4101 13.1027 17.0027 13.5101 16.5001 13.5101C15.9975 13.5101 15.5901 13.1027 15.5901 12.6001C15.5901 12.0975 15.9975 11.6901 16.5001 11.6901C17.0027 11.6901 17.4101 12.0975 17.4101 12.6001ZM5.41009 12.6001C5.41009 13.1027 5.00267 13.5101 4.50009 13.5101C3.99751 13.5101 3.59009 13.1027 3.59009 12.6001C3.59009 12.0975 3.99751 11.6901 4.50009 11.6901C5.00267 11.6901 5.41009 12.0975 5.41009 12.6001Z" fill="black"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M16.53 1.27195C17.0832 1.52303 17.3281 2.17503 17.077 2.72823L8.80139 20.9619C8.55031 21.5151 7.89831 21.76 7.34511 21.5089C6.79191 21.2578 6.54699 20.6058 6.79807 20.0526L15.0737 1.81899C15.3248 1.26579 15.9768 1.02087 16.53 1.27195Z" fill="black"></path></svg> 
+                                                <p class="text-[#2c3e50]">بدون رسوم<br> تأخير</p>
+                                            </div> 
+                                            <div class="text-sm text-center flex flex-col items-center"> 
+                                                <svg width="27" height="20" viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9.72 16H7.66667H2.54667C2.24 16 2 15.7467 2 15.4533V11.6667V8.72H24V10.3333C24 10.88 24.4533 11.3333 25 11.3333C25.5467 11.3333 26 10.88 26 10.3333V5V4.44V2.54667C26 1.14667 24.8533 0 23.44 0H18.3333H7.66667H2.54667C1.14667 0 0 1.14667 0 2.54667V3.34667V5V10.32C0 10.3333 0 10.3333 0 10.3333V15.4533C0 16.8667 1.14667 18 2.54667 18H7.66667H9.72C10.2667 18 10.72 17.5467 10.72 17C10.72 16.4533 10.2667 16 9.72 16ZM2 2.54667C2 2.24 2.24 2 2.54667 2H7.66667H18.3333H23.44C23.7467 2 24 2.24 24 2.54667V4.44V4.61333H2V3.34667V2.54667ZM16.16 11.2533C13.9467 11.2533 12.52 12.96 12.52 15.6133C12.52 18.2667 13.9467 19.9733 16.16 19.9733C18.3733 19.9733 19.8 18.2667 19.8 15.6133C19.8 12.96 18.36 11.2533 16.16 11.2533ZM16.16 18.0533C15 18.0533 14.7467 16.72 14.7467 15.6133C14.7467 14.5067 14.9867 13.1733 16.16 13.1733C17.3333 13.1733 17.5733 14.4933 17.5733 15.6133C17.5733 16.7333 17.3333 18.0533 16.16 18.0533ZM22.9467 16.16C22.9467 15.2667 22.4 14.68 21.6 14.68C20.8 14.68 20.2533 15.2933 20.2533 16.16C20.2533 17.0533 20.8 17.64 21.6 17.64C22.4 17.64 22.9467 17.04 22.9467 16.16ZM21.2667 16.16C21.2667 15.9867 21.2933 15.5733 21.6 15.5733C21.88 15.5733 21.9333 15.8933 21.9333 16.16C21.9333 16.4267 21.88 16.7467 21.6 16.7467C21.2933 16.7467 21.2667 16.3333 21.2667 16.16ZM24.84 16.92C24.0533 16.92 23.4933 17.5333 23.4933 18.4C23.4933 19.2667 24.0533 19.88 24.84 19.88C25.64 19.88 26.1867 19.2667 26.1867 18.4C26.1867 17.52 25.64 16.92 24.84 16.92ZM24.84 19C24.5467 19 24.5067 18.6267 24.5067 18.4133C24.5067 18.2 24.5467 17.8267 24.84 17.8267C25.1333 17.8267 25.1733 18.2 25.1733 18.4133C25.1733 18.6267 25.12 19 24.84 19ZM25.56 14.7333L22.08 19.84H20.8667L24.3467 14.7333H25.56Z" fill="black"></path> </svg> 
+                                                <p class="text-[#2c3e50]">متوافقة مع<br> الشريعة الإسلامية</p> 
+                                            </div> 
+                                            <div class="text-sm text-center flex flex-col items-center"> <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M12.7866 20.8667H12.8399C16.1732 20.8667 18.8532 18.6667 19.5066 15.4C19.6132 14.8533 19.2666 14.3333 18.7199 14.2267C18.1999 14.12 17.6532 14.4667 17.5466 15.0133C17.1999 16.7733 15.7732 18.84 12.9066 18.8667H12.8532C9.94658 18.8667 8.49324 16.7867 8.14658 15.0133C8.03991 14.4667 7.50658 14.12 6.97324 14.2267C6.42658 14.3333 6.07991 14.8533 6.18658 15.4C6.83991 18.6533 9.47991 20.84 12.7866 20.8667Z" fill="black"></path> <path d="M20.0535 11.1867C19.8535 11.1867 19.6402 11.12 19.4668 11C17.9978 9.93047 16.4915 10.8908 16.3319 10.9926L16.3202 11C15.8668 11.3067 15.2402 11.2133 14.9335 10.76C14.6135 10.32 14.7068 9.69332 15.1602 9.37332C16.1068 8.67999 18.4802 7.78666 20.6535 9.37332C21.0935 9.69332 21.2002 10.32 20.8802 10.7733C20.6668 11.04 20.3602 11.1867 20.0535 11.1867Z" fill="black"></path> <path d="M10.0934 11C10.2668 11.12 10.4801 11.1867 10.6801 11.1867C10.9868 11.1867 11.2934 11.04 11.5068 10.7733C11.8268 10.32 11.7201 9.69332 11.2801 9.37332C9.10678 7.78666 6.73345 8.67999 5.78678 9.37332C5.33345 9.69332 5.24012 10.32 5.56012 10.76C5.86678 11.2133 6.49345 11.3067 6.94678 11C6.94678 11 6.95294 10.9961 6.95848 10.9926C7.11812 10.8908 8.62446 9.93047 10.0934 11Z" fill="black"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M0 13C0 20.1733 5.82667 26 13 26C20.1733 26 26 20.1733 26 13C26 5.82667 20.1733 0 13 0C5.82667 0 0 5.82667 0 13ZM2 13C2 6.93333 6.93333 2 13 2C19.0667 2 24 6.93333 24 13C24 19.0667 19.0667 24 13 24C6.93333 24 2 19.0667 2 13Z" fill="black"></path> </svg> 
+                                                <p class="text-[#2c3e50]">مرنة</p> 
+                                            </div> 
+                                        </div>
+                                        <div class="text-[#666] text-xs text-center leading-[19px] mt-6">(1) قد يختلف توافر وتفاصيل خطط الدفع المقدمة حسب قيمة طلبك وسجلك لدى تمارا (2) تطبّق 
+                                            <a class="underline text-blue-400" href="https://www.tamara.co/terms-and-conditions.html" target="_blank">الشروط والأحكام</a>
+                                            (3) تمارا موافقة لتعاليم  
+                                            <a class="underline text-blue-400" href="https://www.tamara.co/ar-SA/shariah-compliance" target="_blank">الشريعة الإسلامية</a> 
+                                            (4) متاح للعملاء في الإمارات (5) خطط الدفع النهائية المقدمة لك قد تختلف حسب سجلك الائتماني
+                                        </div>
+                                    </div>
+                                </div>  
+                                </button>
+                        </div>
+                        
+                            <div class="min-h-[74px] flex items-center bg-[#fafafa] pl-[10px] mb-2 rounded-[5px]">
+                                <div class="flex flex-none w-[71px] bg-[#f2f6f9] border-l border-white rounded-lg self-stretch items-center">
+                                    <img src="https://ar.ounass.ae/static/images/bnpl/bank-with-bg.png" alt="bank" width="71" height="60"></div>
+                                    <div class="flex-grow text-xs leading-[18px] p-2.5">
+                                        <div>أقساط بنكية
+                                            <br/>أقساط بنكية بدون فائدة
+                                        </div>
+                                        <div></div>
+                                    </div>
+                                    <a href="#" target="_blank" rel="noreferrer"><svg width="16" height="16" viewBox="0 0 12 12" class="svg"><g fill="none" stroke-linecap="round" stroke-width=".8" stroke="#000"><path d="M11 6A5 5 0 1 1 1 6a5 5 0 0 1 10 0z" clip-rule="evenodd"></path><path d="M6 5v3M5 8h2M5 5h1"></path><path fill="#000" fill-rule="evenodd" d="M6 4h0z" clip-rule="evenodd"></path></g></svg>
+                                    </a>
+                            </div>
+                    </div>
+                    <hr>
+
+                    <div class="p-3">
+                        <div class="flex justify-between mb-2">
+                            <h3 class="font-bold text-[#4a4a4a]">الإجمالي الفرعي</h3>
+                            <p class="text-[#b87253]">2,500 د.إ.</p>
+                        </div>
+                        <div class="font-bold text-base flex items-center">
+                            <span class="font-bold flex-none ml-2 text-base text-[#2d2d2d]">المجموع الإجمالي</span>
+                            <span class="text-xs font-normal text-[#7b7b7b]">شامل ضريبة القيمة المضافة</span>
+                            <span class="whitespace-nowrap text-[#2d2d2d] flex-1 text-left">2,500د.إ.</span>
+                        </div>
+                        <a href="./checkout.html" class="flex flex-row justify-center items-center content-center flex-nowrap appearance-none border-none text-sm m-0 p-0 no-underline bg-none transition-all duration-300 w-full h-[50px] font-bold text-white bg-[#b87253] relative uppercase mt-5">
+                            الدفع الآمن
+                        </a>
+                    </div>
+
+                </div>      
+                <div class="flex items-start gap-3 text-xs leading-none mt-5">
+                    <img src="../images/like.webp" class="w-[25px] h-[30.3px]" alt="Like Icon">
+                    <div class="flex flex-col items-start w-full">
+                        <div class="mb-[5px] text-[#b87253] normal-case font-bold text-[12px]">
+                            لا تتردد في الشراء!</div>
+                        <div class="text-[#2d2d2d] font-normal text-[12px]">نوفر خدمة إرجاع مجانية لفترة تصل إلى 30 يوم من الشراء.
+                            <a class="text-[#7a7a7a] underline pr-[5px]" href="/content/online-returns" target="_blank" rel="noopener noreferrer">اعرف المزيد</a>
+                        </div>
+                    </div>
+                </div> 
+                <div class="flex gap-2 mt-2">
+                    <img src="../images/amex.svg" class="w-10 h-10" alt="Icon">
+                    <img src="../images/visa (1).svg" class="w-10 h-10" alt="Icon">
+                    <img src="../images/mastercard (1).svg" class="w-10 h-10" alt="Icon">
+                    <img src="../images/apple-pay.svg" class="w-10 h-10" alt="Icon">
+                    <img src="../images/tamara.svg" class="w-10 h-10" alt="Icon">
+                    <img src="../images/paypalRadio.svg" class="w-10 h-10" alt="Icon">
+                    <img src="../images/cash.svg" class="w-10 h-10" alt="Icon">
+                </div>      
+            </div>
+
+            <!-- Empty State -->
+            <div class="hidden flex flex-col items-center justify-center">
+                <img src="../images/empty.svg" alt="Empty Icon">
+                <h2 class="text-[#666666] font-medium text-2xl">لا توجد منتجات حتى الآن</h2>
+                <p class="text-[#A5A5A5] font-normal text-base">اضف منتجات الي العربة</p>
             </div>
         </section>
     <!-- End Content -->

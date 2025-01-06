@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Abaya Mall">
+    <title>Check Out</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- flowbite -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <!-- Alpine -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="../src/js/script.js"></script>
+    <!-- Load Google Maps JavaScript API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</head>
+<body>
+    <!-- Start Offer Bar -->
+        <div id="offer"></div>
+    <!-- End Offer Bar -->
+
+    <!-- Start Navbar -->
+        <div id="navbar"></div>
+    <!-- End Navbar -->
+
+    <!-- Start Tracking -->
+        <section class="bg-[#2d2d2d] md:flex hidden">
+            <div class="container mx-auto h-[60px] flex items-center justify-center">
+                <div class="flex items-center gap-5">
+                    <div class="flex flex-row justify-between items-center flex-nowrap relative">
+                        <a class="text-white flex-1 gap-2 text-center font-bold text-sm flex items-center" href="./checkout.html">
+                            <img src="../images/truck.png" class="w-6 h-6 transform scale-x-[-1]" alt="Truck">
+                            <span>عنوان التوصيل</span>
+                        </a>
+                    </div>
+                    <hr class="bg-[#bbb] w-20">
+                    <div class="flex flex-row justify-between items-center flex-nowrap relative">
+                        <a class="text-[#9b9b9b] flex-1 gap-2 text-center font-bold text-sm flex items-center" href="./payment.html">
+                            <img src="../images/credit-card.png" class="w-6 h-6 transform scale-x-[-1]" alt="Credit Card">
+                            <span>معلومات الدفع</span>
+                        </a>
+                    </div>
+                    <hr class="bg-[#bbb] w-20">
+                    <div class="flex flex-row justify-between items-center flex-nowrap relative">
+                        <a class="text-[#9b9b9b] flex-1 gap-2 text-center font-bold text-sm flex items-center" href="./confirmation.html">
+                            <img src="../images/icon-like.png" class="w-6 h-6 transform scale-x-[-1]" alt="Like">
+                            <span>شكراً لك</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- End Tracking -->
+
+    <!-- Start Content -->
+        <section class="container mx-auto flex xl:flex-row flex-col items-center lg:items-start gap-5 my-10">
+            <div class="lg:w-[804px]">
+                <h1 class="text-[30px] text-black">اختر عنوان التوصيل</h1>
+                <div x-data="{ showForm: false }">
+                    <!-- Group iframe and buttons together -->
+                    <div x-show="!showForm">
+                        <!-- Google Maps Iframe -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462419.1278772333!2d54.94755697038406!3d25.065695314127925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43376f5d4567%3A0xe4c6cf77ff5c7a57!2sBurj%20Khalifa!5e0!3m2!1sen!2sus!4v1670456671234!5m2!1sen!2sus" class="lg:w-[800px] md:w-[700px] w-full px-5 md:px-0 h-[300px] mt-5" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+                        <!-- Buttons -->
+                        <div class="flex justify-center lg:justify-start gap-5 mt-5">
+                            <a href="#" @click.prevent="showForm = true" class="flex items-center justify-center lg:w-[390px] md:w-[300px] w-[150px] h-12 text-base font-medium border border-black">
+                                إدخال الموقع يدوياً
+                            </a>
+                            <a href="#" @click.prevent="showForm = true" class="flex items-center justify-center lg:w-[390px] md:w-[300px] w-[150px] h-12 text-base font-medium text-white bg-[#ccc]">
+                                تأكيد الموقع
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- Form (hidden by default) -->
+                    <form x-show="showForm" class="mt-5 px-5 lg:px-0">
+                        <div class="lg:w-[800px] w-full h-10 bg-[#f4f4f4] flex items-center justify-between px-3">
+                            <p>الموقع</p>
+                            <p>الخانات المطلوبة *</p>
+                        </div>
+                        <!-- Form Fields -->
+                        <div class="my-4">
+                            <label for="address" class="block text-sm font-medium text-black mb-2">مدينة*</label>
+                            <select name="city" id="city" class="lg:w-[800px] md:w-[600px] w-full h-12 focus:ring-0 outline-none focus:border-black">
+                                <option value="dubai">دبي</option>
+                                <option value="dubai">أبو ظبي</option>
+                            </select>     
+                        </div>
+                        <div class="mb-4">
+                            <label for="place" class="block text-sm font-medium text-black mb-2">المنطقة*</label>
+                            <input type="text" placeholder="مثال: الخليج التجاري" id="place" name="place" class="lg:w-[800px] md:w-[600px] w-full h-12 focus:ring-0 outline-none focus:border-black">
+                        </div>
+                        <div class="mb-4">
+                            <label for="address" class="block text-sm font-medium text-black mb-2">عنوان التوصيل*</label>
+                            <input type="text" id="address" placeholder="اسم المبني / الشارع" name="address" class="lg:w-[800px] md:w-[600px] w-full h-12 focus:ring-0 outline-none focus:border-black">
+                        </div>
+                        <div class="mb-4">
+                            <label for="apartment" class="block text-sm font-medium text-black mb-2">شقة# / غرفة فندق# / فيلا# *</label>
+                            <input type="text" id="apartment" placeholder="مثال: شقة رقم 2101" name="apartment" class="lg:w-[800px] md:w-[600px] w-full h-12 focus:ring-0 outline-none focus:border-black">
+                        </div>
+                        <div class="lg:w-[800px] w-full h-10 bg-[#f4f4f4] flex items-center justify-between px-3">
+                            <p>كيف يمكننا الوصول إليك؟</p>
+                            <p>الخانات المطلوبة *</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <div class="mb-4">
+                                <label for="fName" class="block text-sm font-medium text-black mb-2">الاسم الأول*</label>
+                                <input type="text" id="fName" placeholder="جون" name="fName" class="w-[398px] h-12 focus:ring-0 outline-none focus:border-black">
+                            </div>
+                            <div class="mb-4">
+                                <label for="lName" class="block text-sm font-medium text-black mb-2">الاسم الأخير*</label>
+                                <input type="text" id="lName" placeholder="جون" name="lName" class="w-[398px] h-12 focus:ring-0 outline-none focus:border-black">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium text-black mb-2">عنوان البريد الإلكتروني*</label>
+                                <input type="text" id="email" name="email" class="lg:w-[800px] md:w-[600px] w-[400px] h-12 focus:ring-0 outline-none focus:border-black">
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium text-black mb-2">رقم الهاتف*</label>
+                                <select name="phone" class="md:w-[200px] w-[400px] h-12 focus:ring-0 outline-none focus:border-black" id="phone">
+                                    <option value="+639">+639</option>
+                                    <option value="+20">+20</option>
+                                    <option value="+880">+880</option>
+                                    <option value="+639">+639</option>
+                                    <option value="+639">+639</option>
+                                    <option value="+639">+639</option>
+                                    <option value="+639">+639</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label for="phone" class="block text-sm font-medium text-black mb-2">رقم الهاتف*</label>
+                                <input type="text" placeholder="50121212121" id="phone" name="phone" class="lg:w-[590px] md:w-[300px] w-[400px] h-12 focus:ring-0 outline-none focus:border-black">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="">
+                    <div class="flex justify-between">
+                        <h2 class="text-2xl text-black mt-5">تحديد موعد التوصيل</h2>
+                        <a href="#" class="font-bold border-none bg-transparent flex justify-center flex-col text-xs text-[#b87253] uppercase underline cursor-pointer pl-0">بيانات الشحن</a>
+                    </div>
+                    <div>
+                        <div class="bg-[#fafafa] border border-[#2d2d2d] mt-5 h-[85px] px-5 flex items-center justify-start">
+                            <div class="text-[#2d2d2d] flex-1 text-base font-bold ">
+                                <div class="flex gap-2">
+                                    <svg width="20" height="20" viewBox="0 0 30 30" class="svg"><mask fill="#ffffff" id="b"><circle id="a" cx="15" cy="15" r="15"></circle></mask><use fill="#ffffff" xlink:href="#a"></use><path fill="#6da544" mask="url(#b)" d="M0-1h30v11H0z"></path><path fill="#000000" mask="url(#b)" d="M0 20h30v11H0z"></path><path fill="#a2001d" mask="url(#b)" d="M-1 2.7L10 10v10l-11 7.3z"></path><path fill="#a2001d" mask="url(#b)" d="M0 0h10v30H0z"></path></svg>
+                                    <span >الشحن من الإمارات العربية المتحدة (1 منتج)</span>
+                                </div>
+                            </div>
+                            <img alt="Image" class="w-[33px] h-[50px]" src="//ounass-ae.atgcdn.ae/small_light(p=thmb,ch=158,cc=fafafa,of=jpg,q=70)/pub/media/catalog/product/2/1/218046355_green_in.jpg?ts=1735727864.7929">
+                        </div>
+                        <div x-data="{ selected: 'two_hours' }">
+                            <!-- First Radio Button -->
+                            <div class="border border-t-0 py-4 px-5 min-h-[50px]"
+                                :class="{ 'border-black border-t': selected === 'two_hours', 'border-gray-300': selected !== 'two_hours' }">
+                                <label for="two_hours" class="flex items-baseline justify-start w-full h-auto cursor-pointer">
+                                    <input id="two_hours" type="radio" name="shippingMethodRadio_105"  class="ml-[15px] w-[15px] h-[15px] p-[3px] shrink-0"  value="two_hours" x-model="selected">
+                                    <div class="flex-1">
+                                        <span class="font-bold"> توصيل خلال ساعتين </span>
+                                    <p x-show="selected === 'two_hours'" class="mt-2">يُرجى الطلب قبل الساعة 5 مساءً</p>
+                                </div>
+                                <span>مجاناً</span>
+                            </label>
+                            </div>
+                            <!-- Second Radio Button -->
+                            <div class="border border-t-0 py-4 px-5 min-h-[50px]"
+                                    :class="{ 'border-black border-t-[1px]': selected === 'today', 'border-gray-300': selected !== 'today' }">
+                                    <label for="today" class="flex items-baseline justify-start w-full h-auto cursor-pointer">
+                                        <input id="today" type="radio" name="shippingMethodRadio_105" 
+                                            class="ml-[15px] w-[15px] h-[15px] p-[3px] shrink-0" 
+                                            value="today"
+                                            x-model="selected">
+                                        <div class="flex-1">
+                                        <span class="font-bold"> توصيل خلال ساعتين </span>
+                                        <p x-show="selected === 'today'" class="mt-2">يُرجى الطلب قبل الساعة 5 مساءً</p>
+                                    </div>
+                                    <span>مجاناً</span>
+                                </label>
+                            </div>
+                            <!-- Third Radio Button -->
+                            <div class="border border-t-0 py-4 px-5 min-h-[50px]"
+                                    :class="{ 'border-black border-t-[1px]': selected === 'preferred', 'border-gray-300': selected !== 'preferred' }">
+                                    <label for="preferred" class="flex items-baseline justify-start w-full h-auto cursor-pointer">
+                                        <input id="preferred" type="radio" name="shippingMethodRadio_105" 
+                                            class="ml-[15px] w-[15px] h-[15px] p-[3px] shrink-0" 
+                                            value="preferred"
+                                            x-model="selected">
+                                        <div class="flex-1">
+                                        <span class="font-bold">اليوم (الوقت المفضل), يناير ٦، ٢٠٢٥</span>
+                                        <div x-show="selected === 'preferred'">
+                                        <p class="mt-2">يُرجى الطلب قبل الساعة 8 مساءً</p>
+                                        <h4 class="font-medium mt-2">يُرجى اختيار الوقت المفضل للتوصيل</h4>
+                                        <select name="time" id="time" class="w-[200px] h-10 mt-2">
+                                            <option value="fTime">15:00 - 18:00</option>
+                                            <option value="sTime">15:00 - 18:00</option>
+                                            <option value="tTime">15:00 - 18:00</option>
+                                            <option value="foTime">15:00 - 18:00</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                    <span>مجاناً</span>
+                                </label>
+                            </div>
+                            <!-- Third Radio Button -->
+                            <div class="border border-t-0 py-4 px-5 min-h-[50px]"
+                                    :class="{ 'border-black border-t-[1px]': selected === 'tommorow', 'border-gray-300': selected !== 'tommorow' }">
+                                    <label for="tommorow" class="flex items-baseline justify-start w-full h-auto cursor-pointer">
+                                        <input id="tommorow" type="radio" name="shippingMethodRadio_105" 
+                                            class="ml-[15px] w-[15px] h-[15px] p-[3px] shrink-0" 
+                                            value="tommorow"
+                                            x-model="selected">
+                                        <div class="flex-1">
+                                        <span class="font-bold">غدًا (الوقت المفضل), يناير ٧، ٢٠٢٥</span>
+                                        <div x-show="selected === 'tommorow'">
+                                        <p class="mt-2">يُرجى الطلب قبل الساعة 8 مساءً</p>
+                                        <h4 class="font-medium mt-2">يُرجى اختيار الوقت المفضل للتوصيل</h4>
+                                        <select name="time" id="time" class="w-[200px] h-10 mt-2">
+                                            <option value="fTime">15:00 - 18:00</option>
+                                            <option value="sTime">15:00 - 18:00</option>
+                                            <option value="tTime">15:00 - 18:00</option>
+                                            <option value="foTime">15:00 - 18:00</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                    <span>مجاناً</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-[#fafafa] border border-[#2d2d2d] mt-5 h-[85px] px-5 flex items-center justify-start">
+                            <div class="text-[#2d2d2d] flex-1 text-base font-bold ">
+                                <div class="flex gap-2">
+                                <svg width="20" height="20" viewBox="0 0 30 30" class="svg"><circle cx="15" cy="15" r="15" fill="#006c35"></circle><path fill="#ffffff" d="M12 7.1H12l-.3.6V8h.3l.1-.2c0-.2-.1 0-.2-.1 0-.2.1-.3.3-.4L12 7zm2 0l-.1.2c0 .1-.3.3-.1.7.1.3.2.7.1 1.1l-.2.3c-.2.2-.3.2-.5.1 0 0-.2-.1-.2-.4V8c-.2-.2-.4-.2-.4 0-.4.3-.6.8-.7 1.3-.1.3-.2.2-.3.1-.2-.2-.2-1.6-.4-1.3-.4 1 .2 2.2.6 2 .3.2.4-.4.6-1 0-.2.1-.2.1 0 0 .7.1.9.3 1.1.5.4.8 0 .9 0l.3-.3h.3l.4.4c.2 0 .6 0 .7-.2l.2-.4h.3s-.2.1 0 .3h.1c.3-.1.4-.6.4-.6l-.1-.2-.2.2-.5-.1c0-.2 0-.5-.2-.7 0 0-.1-.3 0-.4h.3l-.4-.7h-.5v.4.5c.2.2.4.6.3 1 0 0-.1.2-.4.2 0 0-.2 0-.3-.7 0-.5 0-1.1-.2-1.4l-.1-.3zm-.6 0l-.2.3v.7c-.1.1.1.2.2 0l.1-.7v-.2zm2.4.1l-.1.2v.5l.3.4 1.2 1.7a17.7 17.7 0 01.2 4.3c.1 0 .4-.3.5-.7v-2-.6l1.3 2.4v-1l-1-1.8-.4-.7-.1-1c-.1-.5.2 0 .1-.2 0-.5-.3-.8-.7-1.3 0-.1 0-.2-.2 0V8l-.3-.2c-.2-.2-.2-.3-.5-.4l-.3-.2zm7.1.1l-.2.4v.8c-.5-.5.2 0 0-.5l-.7-.6c-.1 0-.2-.2-.2 0v.7A41.7 41.7 0 0123 9.8c0 1 0 1.8.2 2.7 0 .4-.2 1-.3 1h-.3l-.4-.6c-.2-.1-.3 0-.4 0-.4.4-.6 1-.8 1.4 0 .1-.2.2-.4 0-.5-.6-.2-1.6-.3-1.3-.4.5-.2 1.3-.1 1.4.1.3.2.5.5.6.3.2.5.1.6 0 .2-.3.2-1 .4-1 0-.3.2-.3.3-.2.1.2.3.3.4.3.2.2.5.3.8 0 .2 0 .3-.2.4-.4.2-.3 0-2 0-3l.6.8V14c0 .2.6-.5.6-.7v-.7l.8 1.3v-1l-.8-1.4-.2-1.1-.2-1v-.5h.2L24 7.3c0-.1-.2-.1-.4.1v.7l.4 2.2-.7-.9v-.1-.8h.1s.1 0 0-.2l-.5-1v-.1zm-18.3 0c-.1 0-.3 0-.2.2l.2.5v.4c.2 0 .3-.2.3-.4s0-.6-.3-.7zm20.9 0l-.1.2c-.1.1-.2.5-.1.8a43.3 43.3 0 01.4 5.6l-.5.6-.7.3c-.3.2-.3.4 0 .4.5 0 1 0 1.5-.7l.2-1c0-1.6 0-3.3-.2-4.5 0-.1-.1-.4 0-.4l.2-.1-.6-1-.1-.2zm-5.4 0v.2c-.2.4-.3.8-.2 1 .4 2 .7 3.7.7 5.5.2 0 .4-.4.4-.8V12l-.4-3c-.1-.5.3-.1.3-.4l-.7-1.1v-.1zm-13 0V7.7H7v-.2h-.1v.1l-.1.1h-.1v-.2h-.1l-.1.2.1.4c.3.1.7 0 .7-.4v-.1l-.1-.1zm3.4 0l-.2.2c-.2.1-.2.4 0 .5 0 0 .2.2 0 .3L9.2 9.4h.7l1-1.1V8c-.1 0-.1 0 0 0 .2-.2.1-.5 0-.7h-.3zm8.7 0v.2c-.2.2-.3.5-.3.8.3 1.7.3 3.2.5 4.8l-.1.5c-.4.4-1 1-1.6 1.2 0 0 .2.4.5.4.5 0 1-.3 1.3-1.1.1-.2.3-.5.3-.8a18.2 18.2 0 00-.3-4.6h.2c.1-.2-.2-.9-.4-1.2v-.1zm-13.5.1l-.1.2v.8l.2 1.2c0 .6-.3.3-.3 0V8.4l-.3-.1c-.1 0-.4.3-.5.8v.5c-.1.3-.3.5-.4 0-.1-.4-.2-1.3-.4-1 0 .6-.1 1.9.5 2 .7 0 .3-1.2.6-1.4 0-.2.1-.2.1 0v1c0 .4.3.5.4.6.2 0 .4 0 .4.2l.1 1.9s.5.1.5-1c0-.8-.2-1.4 0-1.5 0-.1.1-.1.2 0l.6.2c.4-.2.7-.4.7-.7 0-.4 0-.7-.2-1v-.3c0 .1.2.1.2 0-.1-.2-.2-.5-.4-.6-.2-.1-.4 0-.5.2 0 .3.1.7.4 1v.6h-.3L7 9.3v-.9l-.3-.4h-.3v1.1l.2.4c0 .1-.2.1-.2 0l-.2-1c0-.4 0-1-.2-1 0-.1 0-.2-.2-.2zm2.6 0h-.1c-.2.1-.3.3-.3.5l.5 3c0 .2 0 .4-.2.4-.3-.2-.3-.5-.7-.5-.3 0-.7.3-.7.6v.7c.2.3.5.3.7.2.2 0 .3-.3.4-.2 0 0 0 .6-.9 1-.5.3-.9.4-1.1 0-.2-.3 0-1.3-.4-1-1 2.5 2.4 2.8 2.7 0l.2-.1c0 2.6-2.5 2.8-3 2V13l-.2-.2c0-.1-.2 0-.3.4v.6c.1 2 3.3 1.2 3.9-.5.2-.8 0-1.5 0-1.6.4.4.8 0 1 0a.1.1 0 01.2 0c.2.1.6 0 .7-.3l.1-1-.3.2v.3h-.1c0 .1-.2.1-.2 0 0-.3-.4-.4-.6.2h-.4c0-.4 0-.5-.4-.3l-.2-2.1h.3l-.5-1.3h-.1zm9.9 0c-.1 0-.3.1-.2.3l.3.5v.5l.3-.5c0-.2-.1-.6-.4-.7zm-7.7.3l.1.1V8l-.2-.1v-.2zm14.3.4a.2.2 0 00-.2.3l.3.5v.6l.2-.6c0-.1 0-.7-.3-.8zm-8 .2l.1.1v.3l-.1-.2c-.2-.3 0-.2 0-.2zm1.9.9h-.1v.2h-.1v-.2h-.1v.1l-.1.1h-.1v-.2H18l-.1.2.1.4c.3.1.7 0 .7-.4v-.1l-.1-.1zm-8.3 0l-.1.1c-.3.1-.3.5-.2.7.1.2.3.1.3.1.3 0 .4-.4.4-.4l-.3.1h-.1v-.4-.1zm11.7.1c-.1 0-.2.1-.2.3v.2h-.2v-.1h-.4v.4c.1.3.6.7.8.7v-.7c0-.1 0-.2.2-.2h.1v-.5H22zm-9.7.8l-.1.1-.2.5.4 1 .2 1.3c-.3.5-.8 1-1.4 1.3h-.5a.3.3 0 01-.2-.3c.5-.3 1-.5 1.4-1.3v-1a1 1 0 00-.2-.5h.3l-.4-.7h-.5c-.1.1-.2.4 0 .7l.4.7v.4c0 .2-1 .9-1 1V13v-.5c-.3.2-.4.8-.4 1-.7.4-1.6.8-2 1.3-.3.4 1.7-.4 1.9-.5 0 0 0 .2.2.3.2.3.6.5 1 .4.7-.3 1.1-.8 1.5-1.3h.3c.3.6 1 1 2.1 1 .3-.2.1-.4 0-.4l-.6-.4c0-.2.1-.4.3-.5.7 0 1.4-.2 2-.4l.2-.7h.2l-.2-.2H15c.5-.1 1.4-.3 1.5-1.2 0-.4-.2-.7-.8-.8-.4 0-.7.4-.6.9l-.1.3c-.8.1-1.7.6-1.7 1 0 0-.2-.1-.1-.3 0-.6-.3-1.2-.6-1.8l-.2-.2zm2 .4v.2l-.2-.1v-.1H14v.1H14l-.1-.1c-.2 0-.2.1-.2.2 0 0 0 .3.2.4.2 0 .8 0 .7-.4v-.2h-.1zm8.4.3l-1.2.8v.5l1.2-.9v-.4zm-7.3.1h.2l.1.2c0 .1-.1.1-.2 0l-.1-.1zm-10 .2c-.6 0-1.5.8-1.5 1.2l1.9-.9c-.1-.1 0-.3-.4-.3zm2 .3V11.7H7.2v-.2l.2-.1zm15 .2a.2.2 0 00-.1.3l.2.6v.5s.3-.2.3-.5c0-.2 0-.8-.3-.9zm-12.8.6c-.1 0-.2 0-.1.2l.2.4v.4l.3-.4c0-.1-.1-.5-.3-.6h-.1zm3.8.5l1 .1c.2 0 .3.2.1.3-.2.1-.4.2-.4.5v.3h-.3c-.1-.2-.5-.4-.6-1a.2.2 0 01.2-.2zm-9.4.4v.1c-.4.6-.4 1.4-.2 1.7 0 .1.2.2.4.1.2 0 .3-.5.2-.7 0-.1 0-.1-.2 0-.1.3-.2 0-.2-.1v-.9-.2zm12.1.8l-.4.3v.1c0 .1 0 0 .1 0s.2 0 .2.2v.2h.2l.7-.2v-.3c-.2 0-.4 0-.5.2h-.2v-.5zm7.7.3h-.1l-.1.1.1.2s.1.1 0 .2l-.2.2v.2c.3 0 .8-.3.8-.3v-.1h-.2s-.1 0 0-.2v-.2l-.1-.1h-.2zm-3.2 6.5c-.4 0-.3.4-.1.6H9.8l-3-.1c.5.7 1.2.8 2.1.8h11.6c-.1.3 0 .7.2.8l.3-.1h1.7s.1.2.3.2c.3 0 .5-.1.5-.7 0 0 0-1-.7-.9l-.5.1h-1.4v-.5h-.1v-.2h-.1zM21 22h1.6v.4H22c0-.2-.4-.2-.4-.1h-.8V22z"></path></svg>
+                                <span >الشحن من المملكة العربية السعودية  (1 منتج)</span>
+                                </div>
+                            </div>
+                            <img alt="Image" class="w-[33px] h-[50px]" src="//ounass-ae.atgcdn.ae/small_light(p=thmb,ch=158,cc=fafafa,of=jpg,q=70)/pub/media/catalog/product/2/1/218046355_green_in.jpg?ts=1735727864.7929">
+                        </div>
+                        <div class="border border-black border-t-0 py-4 px-5 min-h-[50px]">
+                                <p  class="ml-[15px] w-[15px] h-[15px] p-[3px] shrink-0"  value="two_hours" x-model="selected">
+                                <div class="flex justify-between">
+                                    <span class="font-bold"> 2-4 أيام</span>
+                                    <span>مجاناً</span>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center lg:items-start">
+                    <h2 class="text-2xl text-black mt-5">اختيارات التغليف</h2>
+                    <div class="flex  mt-5">
+                        <label class="flex items-center justify-between border border-gray-300 p-4 lg:w-[400px] md:w-[350px] w-full bg-white cursor-pointer">
+                        <div>
+                            <h4 class="text-lg font-medium text-gray-800">تغليف صديق البيئة</h4>
+                            <p class="text-sm text-gray-500 mt-1">أفضل للبيئة، سيتم تغليف طلباتك الجمال في <br> ظروف مطبوعة</p>
+                        </div>
+                        <input type="radio" name="packaging" value="eco" class="w-5 h-5 text-[#b87253] border-gray-300 focus:ring-white" />
+                        </label>
+                    
+                        <label class="flex items-center justify-between border-l border-t border-b border-gray-300 p-4 lg:w-[400px] md:w-[350px] w-full bg-white cursor-pointer">
+                        <div>
+                            <h4 class="text-lg font-medium text-gray-800">تغليف أنيق مميز</h4>
+                            <p class="text-sm text-gray-500 mt-1">لمسة فاخرة للمناسبات الخاصة</p>
+                        </div>
+                        <input type="radio" name="packaging" value="eco" class="w-5 h-5 text-[#b87253] border-gray-300 focus:ring-white" />
+                        </label>
+                    </div>
+                </div>
+                <div class="flex lg:justify-end justify-center">
+                    <a href="./payment.html" class="flex flex-row justify-center items-center content-center flex-nowrap appearance-none border-none text-sm m-0 p-0 no-underline bg-none transition-all duration-300 w-80 h-[50px] font-bold text-white bg-[#b87253] relative uppercase mt-5">
+                        متابعة
+                    </a>
+                </div>
+            </div>
+            <div class="">
+                <div class="md:w-[500px] border p-3">
+                    <div class="flex justify-between">
+                        <h2 class="text-xl text-black">ملخص الطلبية</h2>
+                        <a href="./Cart.html" class="font-bold border-none bg-transparent flex justify-center flex-col text-xs text-[#b87253] uppercase underline cursor-pointer pl-0">تعديل</a>    
+                    </div>
+                    <div class="my-4 flex flex-row gap-2">
+                        <img src="../images/cartImage.webp" class="w-[100px] h-[150px] object-cover" alt="Wishlist">
+                        <div class="flex flex-col justify-between gap-1">
+                            <div>
+                                <h3 class="text-xl font-medium">عبايات عبايات</h3>
+                                <p class="text-base text-black">Wrap-up Abaya Set in Crepe</p>
+                                <p class="text-sm font-normal text-gray-400"> اللون : <span class="text-gray-600">اسود</span></p>
+                                <p class="text-sm font-normal text-gray-400"> المقاس : <span class="text-gray-600">30</span></p>    
+                                <p class="text-sm font-normal text-gray-400"> الكمية : <span class="text-gray-600">1</span></p>    
+                            </div>
+                        </div>
+                        <p class="flex-1 flex justify-end text-[#b87253] font-medium">850 د.إ.</p>
+                    </div>  
+                    <hr>
+                    <div class="mt-4 flex flex-row gap-2">
+                        <img src="../images/cartImage.webp" class="w-[100px] h-[150px] object-cover" alt="Wishlist">
+                        <div class="flex flex-col justify-between gap-1">
+                            <div>
+                                <h3 class="text-xl font-medium">عبايات عبايات</h3>
+                                <p class="text-base text-black">Wrap-up Abaya Set in Crepe</p>
+                                <p class="text-sm font-normal text-gray-400"> اللون : <span class="text-gray-600">اسود</span></p>
+                                <p class="text-sm font-normal text-gray-400"> المقاس : <span class="text-gray-600">30</span></p>    
+                                <p class="text-sm font-normal text-gray-400"> الكمية : <span class="text-gray-600">1</span></p>    
+                            </div>
+                        </div>
+                        <p class="flex-1 flex justify-end text-[#b87253] font-medium">850 د.إ.</p>
+                    </div>  
+                    <div class="flex justify-between mt-5">
+                        <h2 class="text-xs text-[#4a4a4a] font-bold">الإجمالي الفرعي</h2>
+                        <p class="font-bold flex justify-center flex-col text-xs text-[#b87253]">2,500 د.إ.</a>    
+                    </div>
+                    <div class="flex justify-between mt-2">
+                        <h2 class="text-xs text-[#4a4a4a] font-bold">تكلفة التوصيل</h2>
+                        <p class="font-bold flex justify-center flex-col text-xs text-[#b87253]">مجاناً</p>    
+                    </div>
+                    <div class="flex items-center justify-between mt-2">
+                        <div class="flex items-center gap-2">
+                            <h2 class="text-lg text-black font-bold">المجموع الإجمالي</h2>
+                            <p class="text-[10px] text-[#7b7b7b]">شامل ضريبة القيمة المضافة</p>
+                        </div>
+                        <p class="font-bold flex justify-center text-lg text-black">مجاناً</p>    
+                    </div>
+                </div>
+                <div class="flex items-start gap-3 text-xs leading-none mt-5">
+                    <img src="../images/like.webp" class="w-[25px] h-[30.3px]" alt="Like Icon">
+                    <div class="flex flex-col items-start w-full">
+                        <div class="mb-[5px] text-[#b87253] normal-case font-bold text-[12px]">
+                            لا تتردد في الشراء!</div>
+                        <div class="text-[#2d2d2d] font-normal text-[12px]">نوفر خدمة إرجاع مجانية لفترة تصل إلى 30 يوم من الشراء.
+                            <a class="text-[#7a7a7a] underline pr-[5px]" href="/content/online-returns" target="_blank" rel="noopener noreferrer">اعرف المزيد</a>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            
+        </section>
+    <!-- End Content -->
+
+    <!-- Start Footer -->
+        <div id="footer"></div>
+    <!-- Start Footer -->
+</body>
+</html>

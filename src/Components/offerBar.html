@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offer Bar</title>
+</head>
+<body>
+    <section class="bg-[#333333] h-10 md:flex hidden items-center">
+        <div class="container mx-auto flex items-center justify-between lg:px-36 px-5">
+            <p class="text-white font-normal text-xl">خصومات تصل الى 50%</p>
+            <div class="flex items-center gap-3">
+                <div class="flex items-center gap-1"> 
+                    <img src="../images/lang.svg" alt="Language">    
+                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white focus:ring-0 focus:outline-none font-normal rounded-lg text-[13px] text-center inline-flex items-center" type="button">المملكة العربية السعودية<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                    </button> 
+                    <!-- Dropdown menu -->
+                    <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-60">
+                        <ul class="py-2 text-sm text-gray-700 flex flex-col items-center justify-around" aria-labelledby="dropdownDefaultButton">
+                        <li class="flex items-center gap-1">
+                            <img src="../images/lang.svg" alt="Language">
+                            <a href="#" class="block px-4 py-2">المملكة العربية السعودية</a>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <img src="../images/lang.svg" alt="Language">
+                            <a href="#" class="block px-4 py-2">المملكة العربية السعودية</a>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <img src="../images/lang.svg" alt="Language">
+                            <a href="#" class="block px-4 py-2">المملكة العربية السعودية</a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w-[1px] h-3 bg-[#F8F8F8]"></div>
+                <img src="../images/language.webp" class="w-6 h-6 cursor-pointer" alt="Language">
+            </div>
+        </div>
+    </section>
+</body>
+</html>
