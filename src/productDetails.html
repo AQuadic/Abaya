@@ -12,11 +12,6 @@
     <!-- Alpine -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script src="../src/js/script.js"></script>
-    <style>
-        .slider img:target {
-            display: block;
-        }
-    </style>
 </head>
 <body>
     <!-- Start Offer Bar -->
@@ -123,7 +118,7 @@
     <!-- Black Bar -->
 
     <!-- Start Breadcrumbs  -->
-        <section class="container mx-auto py-5 rtl:pr-40">
+        <section class="container mx-auto py-5 md:rtl:pr-40 rtl:pr-6">
             <nav class="flex" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                 <li class="inline-flex items-center">
@@ -152,32 +147,30 @@
 
     <!-- Start Slider -->
         <section class="container mx-auto flex xl:flex-row flex-col gap-5 p-8">
-            <div class="flex gap-4">
-                <div class="flex flex-col gap-4">
-                    <a href="#image1">
-                        <img src="../images/abayaSwiper.webp" class="!w-[119px] !h-[123.8px] shrink-0" alt="Image">
-                    </a>
-                    <a href="#image2">
-                        <img src="../images/abaya.webp" class="!w-[119px] !h-[123.8px] shrink-0" alt="Image">
-                    </a>
-                    <a href="#image3">
-                        <img src="../images/abayaSwiper.webp" class="!w-[119px] !h-[123.8px] shrink-0" alt="Image">
-                    </a>
-                    <a href="#image4">
-                        <img src="../images/background-gradient.png" class="!w-[119px] !h-[123.8px] shrink-0" alt="Image">
-                    </a>
-                    <a href="#image5">
-                        <img src="../images/abaya.webp" class="!w-[119px] !h-[123.8px] shrink-0" alt="Image">
-                    </a>
+            <div class="flex gap-4" x-data="{ mainImage: '../images/abayaSwiper.webp' }">
+                <div class="flex justify-center gap-[20px]">
+                    <ul class="imgs-slider flex flex-col gap-2 p-0 m-0">
+                        <li>
+                            <img src="../images/abayaSwiper.webp" alt="Image 1" class="cursor-pointer md:w-[119px] w-[90px] h-[40px] md:h-[123px]" @click="mainImage = '../images/abayaSwiper.webp'">
+                        </li>
+                        <li>
+                            <img src="../images/abaya-slider.webp" alt="Image 2" class="cursor-pointer md:w-[119px] w-[90px] h-[40px] md:h-[123px]" @click="mainImage = '../images/abaya-slider.webp'">
+                        </li>
+                        <li>
+                            <img src="../images/abaya-slider.webp" alt="Image 3" class="cursor-pointer md:w-[119px] w-[90px] h-[40px] md:h-[123px]" @click="mainImage = '../images/abaya-slider.webp'">
+                        </li>
+                        <li>
+                            <img src="../images/abaya-slider4.webp" alt="Image 4" class="cursor-pointer md:w-[119px] w-[90px] h-[40px] md:h-[123px]" @click="mainImage = '../images/abaya-slider4.webp'">
+                        </li>
+                        <li>
+                            <img src="../images/abaya-slider4.webp" alt="Image 5" class="cursor-pointer md:w-[119px] w-[90px] h-[40px] md:h-[123px]" @click="mainImage = '../images/abaya-slider4.webp'">
+                        </li>
+                    </ul>
+                    <div class="">
+                        <img :src="mainImage" alt="Main Image" class="w-[703px] md:h-[650px] h-full">
+                    </div>
                 </div>
-                <div class="slider">
-                    <img  id="image1" src="../images/abayaSwiper.webp" alt="Image 1" class="!w-[703px] h-[690px] rounded-lg shadow-lg hidden">
-                    <img  id="image2" src="../images/abaya.webp" alt="Image 2" class="!w-[703px] h-[690px] rounded-lg shadow-lg hidden">
-                    <img  id="image3" src="../images/abayaSwiper.webp" alt="Image 3" class="!w-[703px] h-[690px] rounded-lg shadow-lg hidden">
-                    <img  id="image4" src="../images/background-gradient.png" alt="Image 4" class="!w-[703px] h-[690px] rounded-lg shadow-lg hidden">
-                    <img  id="image5" src="../images/abaya.webp" alt="Image 5" class="!w-[703px] h-[690px] rounded-lg shadow-lg hidden">
-                </div>
-            </div>
+            </div>            
             <div>
                 <div class="flex items-center gap-[10px]">
                     <img src="../images/store.webp" alt="Store">
@@ -236,9 +229,235 @@
                             <img src="../images/tag.svg" class="w-[17.31px] h-[17.31px]" alt="Tag">
                             <p class="text-[#71717A] font-medium ">تم توفير 100 درهم بشرائك ذلك المنتج</p>
                         </div>
-                        <div class="md:w-[586px] w-full h-14 flex items-center gap-2 px-2 mt-4 border border-[#EEEEEE]">
-                            <img src="../images/sizeTable.svg" alt="Icon">
-                            <p class="text-[#333333] text-base font-medium">جدول المقاسات</p>
+                        <div x-data="{ isOpen: false }">
+                            <!-- Clickable Div -->
+                            <div @click="isOpen = true" class="md:w-[586px] w-full h-14 flex items-center gap-2 px-2 mt-4 border border-[#EEEEEE] cursor-pointer">
+                                <img src="../images/sizeTable.svg" alt="Icon">
+                                <p class="text-[#333333] text-base font-medium">جدول المقاسات</p>
+                            </div>
+                            <div x-show="isOpen" class="fixed inset-0 bg-black bg-opacity-80 z-50 p-5 flex items-center justify-center">
+                                <div @click.away="isOpen = false" class="lg:w-[1069px] w-full lg:h-[777px] container mx-auto flex lg:flex-row flex-col justify-between p-6 bg-white rounded-[30px] border">
+                                    <div>
+                                        <h2 class="text-[#18181B] text-lg font-bold">ادخلي قياساتك</h2>
+                                        <div x-data="{ activeTab: 'tab1' }" class="p-4">
+                                            <!-- Buttons -->
+                                            <div class="flex gap-4 my-4">
+                                                <button @click="activeTab = 'tab1'"  :class="activeTab === 'tab1' ? 'bg-[#E3A7451A] text-[#E3A745] border border-[#E3A745]' : 'bg-gray-200 text-gray-700'" class="w-[165px] h-[42px] text-lg font-medium rounded-tl-[4px] rounded-tr-[4px]">انش</button>
+                                                <button @click="activeTab = 'tab2'"  :class="activeTab === 'tab2' ? 'bg-[#E3A7451A] text-[#E3A745] border border-[#E3A745]' : 'bg-gray-200 text-gray-700'" class="w-[165px] h-[42px] text-lg font-medium rounded-tr-[4px]">سم</button>
+                                            </div>
+                                            <!-- Content -->
+                                            <div class="mt-4">
+                                            <div x-show="activeTab === 'tab1'" class="">
+                                                <form class="mt-6">
+                                                    <div class="flex  gap-4 mb-4">
+                                                        <div>
+                                                            <label class="block text-sm font-medium text-[#333333]">طول الملابس</label>
+                                                            <label class="block text-xs font-normal text-[#A5A5A5] mt-1">Item length</label>
+                                                            <div class="relative">
+                                                                <input type="text" placeholder="اكتب قيمة الطول" class="mt-2 block md:w-[233.5px] w-full h-12 border-[#EEEEEE] rounded-sm focus:ring-0 focus:outline-none focus:border-black">
+                                                                <span class="absolute inset-y-0 md:flex hidden rtl:right-48 ltr:left-48 items-center text-[#333333]">انش</span>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <label class="block text-sm font-medium text-[#333333]">عرض الصدر</label>
+                                                            <label class="block text-xs font-normal text-[#A5A5A5] mt-1">Brust width</label>
+                                                            <div class="relative">
+                                                                <input type="text" placeholder="اكتب قيمة العرض" class="mt-2 block md:w-[233.5px] w-full h-12 border-[#EEEEEE] rounded-sm focus:ring-0 focus:outline-none focus:border-black">
+                                                                <span class="absolute inset-y-0 md:flex hidden rtl:right-48 ltr:left-48 items-center text-[#333333]">انش</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                        
+                                                    <div class="flex  gap-4 mb-4">
+                                                        <div>
+                                                            <label class="block text-sm font-medium text-[#333333]">الحوض</label>
+                                                            <label class="block text-xs font-normal text-[#A5A5A5] mt-1">Hip</label>
+                                                            <div class="relative">
+                                                                <input type="text" placeholder="اكتب قيمة محيط الحوض" class="mt-2 block md:w-[233.5px] w-full h-12 border-[#EEEEEE] rounded-sm focus:ring-0 focus:outline-none focus:border-black">
+                                                                <span class="absolute inset-y-0 md:flex hidden rtl:right-48 ltr:left-48 items-center text-[#333333]">انش</span>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <label class="block text-sm font-medium text-[#333333]">الخصر</label>
+                                                            <label class="block text-xs font-normal text-[#A5A5A5] mt-1">Waist</label>
+                                                            <div class="relative">
+                                                                <input type="text" placeholder="اكتب محيط الخصر" class="mt-2 block md:w-[233.5px] w-full h-12 border-[#EEEEEE] rounded-sm focus:ring-0 focus:outline-none focus:border-black">
+                                                                <span class="absolute inset-y-0 md:flex hidden rtl:right-48 ltr:left-48 items-center text-[#333333]">انش</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                        
+                                                    <div class="flex  gap-4 mb-4">
+                                                        <div>
+                                                            <label class="block text-sm font-medium text-[#333333]">الكم من الرقبة</label>
+                                                            <label class="block text-xs font-normal text-[#A5A5A5] mt-1">Sleeves form Neck</label>
+                                                            <div class="relative">
+                                                                <input type="text" placeholder="اكتب قيمة الكم من الرقبة" class="mt-2 block md:w-[233.5px] w-full h-12 border-[#EEEEEE] rounded-sm focus:ring-0 focus:outline-none focus:border-black">
+                                                                <span class="absolute inset-y-0 md:flex hidden rtl:right-48 ltr:left-48 items-center text-[#333333]">انش</span>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <label class="block text-sm font-medium text-[#333333]">عرض الكم</label>
+                                                            <label class="block text-xs font-normal text-[#A5A5A5] mt-1">Sleeves Width</label>
+                                                            <div class="relative">
+                                                                <input type="text" placeholder="اكتب قيمة عرض الكم" class="mt-2 block md:w-[233.5px] w-full h-12 border-[#EEEEEE] rounded-sm focus:ring-0 focus:outline-none focus:border-black">
+                                                                <span class="absolute inset-y-0 md:flex hidden rtl:right-48 ltr:left-48 items-center text-[#333333]">انش</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                        
+                                                    <div class="mb-4">
+                                                        <label class="block text-sm font-medium text-[#333333]">ملاحظات إضافية</label>
+                                                        <textarea placeholder="اكتب أي ملاحظة للخياط..." class="mt-1 p-2 block md:w-[483px] w-full h-[113px] border-gray-300 rounded-md shadow-sm focus:ring-0 focus:outline-none focus:border-black"></textarea>
+                                                    </div>
+                                        
+                                                    <!-- Buttons -->
+                                                    <div class="flex gap-4 mb-6">
+                                                        <button type="submit" class="w-[413px] h-14 text-white font-medium bg-[#1D1F1F] rounded-sm">أضف العربية</button>
+                                                        <button type="button" class="w-[60px] h-14 text-[#F55157] font-medium border rounded-sm">إلغاء</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div x-show="activeTab === 'tab2'" class="">
+                                                <form class="mt-6">
+                                                    <div class="flex  gap-4 mb-4">
+                                                        <div>
+                                                            <label class="block text-sm font-medium text-[#333333]">طول الملابس</label>
+                                                            <label class="block text-xs font-normal text-[#A5A5A5] mt-1">Item length</label>
+                                                            <div class="relative">
+                                                                <input type="text" placeholder="اكتب قيمة الطول" class="mt-2 block md:w-[233.5px] w-full h-12 border-[#EEEEEE] rounded-sm focus:ring-0 focus:outline-none focus:border-black">
+                                                                <span class="absolute inset-y-0 md:flex hidden rtl:right-48 ltr:left-48 items-center text-[#333333]">سم</span>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <label class="block text-sm font-medium text-[#333333]">عرض الصدر</label>
+                                                            <label class="block text-xs font-normal text-[#A5A5A5] mt-1">Brust width</label>
+                                                            <div class="relative">
+                                                                <input type="text" placeholder="اكتب قيمة العرض" class="mt-2 block md:w-[233.5px] w-full h-12 border-[#EEEEEE] rounded-sm focus:ring-0 focus:outline-none focus:border-black">
+                                                                <span class="absolute inset-y-0 md:flex hidden rtl:right-48 ltr:left-48 items-center text-[#333333]">سم</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                        
+                                                    <div class="flex  gap-4 mb-4">
+                                                        <div>
+                                                            <label class="block text-sm font-medium text-[#333333]">الحوض</label>
+                                                            <label class="block text-xs font-normal text-[#A5A5A5] mt-1">Hip</label>
+                                                            <div class="relative">
+                                                                <input type="text" placeholder="اكتب قيمة محيط الحوض" class="mt-2 block md:w-[233.5px] w-full h-12 border-[#EEEEEE] rounded-sm focus:ring-0 focus:outline-none focus:border-black">
+                                                                <span class="absolute inset-y-0 md:flex hidden rtl:right-48 ltr:left-48 items-center text-[#333333]">سم</span>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <label class="block text-sm font-medium text-[#333333]">الخصر</label>
+                                                            <label class="block text-xs font-normal text-[#A5A5A5] mt-1">Waist</label>
+                                                            <div class="relative">
+                                                                <input type="text" placeholder="اكتب محيط الخصر" class="mt-2 block md:w-[233.5px] w-full h-12 border-[#EEEEEE] rounded-sm focus:ring-0 focus:outline-none focus:border-black">
+                                                                <span class="absolute inset-y-0 md:flex hidden rtl:right-48 ltr:left-48 items-center text-[#333333]">سم</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                        
+                                                    <div class="flex  gap-4 mb-4">
+                                                        <div>
+                                                            <label class="block text-sm font-medium text-[#333333]">الكم من الرقبة</label>
+                                                            <label class="block text-xs font-normal text-[#A5A5A5] mt-1">Sleeves form Neck</label>
+                                                            <div class="relative">
+                                                                <input type="text" placeholder="اكتب قيمة الكم من الرقبة" class="mt-2 block md:w-[233.5px] w-full h-12 border-[#EEEEEE] rounded-sm focus:ring-0 focus:outline-none focus:border-black">
+                                                                <span class="absolute inset-y-0 md:flex hidden rtl:right-48 ltr:left-48 items-center text-[#333333]">سم</span>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <label class="block text-sm font-medium text-[#333333]">عرض الكم</label>
+                                                            <label class="block text-xs font-normal text-[#A5A5A5] mt-1">Sleeves Width</label>
+                                                            <div class="relative">
+                                                                <input type="text" placeholder="اكتب قيمة عرض الكم" class="mt-2 block md:w-[233.5px] w-full h-12 border-[#EEEEEE] rounded-sm focus:ring-0 focus:outline-none focus:border-black">
+                                                                <span class="absolute inset-y-0 md:flex hidden rtl:right-48 ltr:left-48 items-center text-[#333333]">سم</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                        
+                                                    <div class="mb-4">
+                                                        <label class="block text-sm font-medium text-[#333333]">ملاحظات إضافية</label>
+                                                        <textarea placeholder="اكتب أي ملاحظة للخياط..." class="mt-1 p-2 block md:w-[483px] w-full h-[113px] border-gray-300 rounded-md shadow-sm focus:ring-0 focus:outline-none focus:border-black"></textarea>
+                                                    </div>
+                                        
+                                                    <!-- Buttons -->
+                                                    <div class="flex gap-4 mb-6">
+                                                        <button type="submit" class="w-[413px] h-14 text-white font-medium bg-[#1D1F1F] rounded-sm">أضف العربية</button>
+                                                        <button type="button" class="w-[60px] h-14 text-[#F55157] font-medium border rounded-sm">إلغاء</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div x-data="{ tab: 'sizeTable' }" class="overflow-hidden">
+                                        <!-- Tabs Navigation -->
+                                        <div class="flex border-b border-[#E3A745]">
+                                            <button @click="tab = 'instructions'" :class="tab === 'instructions' ? 'bg-[#E3A745] text-white font-medium text-base' : 'bg-transparent text-[#666666]'" class="w-[165px] h-[56px] text-center font-semibold"> ارشادات المقاسات</button>
+                                            <button @click="tab = 'sizeTable'" :class="tab === 'sizeTable' ? 'bg-[#E3A745] text-white font-medium text-base' : 'bg-transparent text-[#666666]'" class="w-[165px] h-[56px] text-center font-semibold" > جدول المقاسات</button>
+                                        </div>
+                            
+                                        <div x-show="tab === 'instructions'" class="mt-[30px]">
+                                            <img src="../images/sizesImage.webp" class="md:w-[502px] md:h-[643px]" alt="Image">
+                                        </div>
+                                    
+                                        <div x-show="tab === 'sizeTable'" x-cloak>
+                                            <div class="relative overflow-x-auto mt-5">
+                                                <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+                                                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                                                        <tr>
+                                                            <th scope="col" class="px-6 py-3">القياس</th>
+                                                            <th scope="col" class="px-6 py-3">الصدر(سم)</th>
+                                                            <th scope="col" class="px-6 py-3">الخصر(سم)</th>
+                                                            <th scope="col" class="px-6 py-3">الورك(سم)</th>
+                                                            <th scope="col" class="px-6 py-3">الطول(سم)</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class=" border-b">
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">S</th>
+                                                            <td class="px-6 py-4">90</td>
+                                                            <td class="px-6 py-4">70</td>
+                                                            <td class="px-6 py-4">95</td>
+                                                            <td class="px-6 py-4">160</td>
+                                                        </tr>
+                                                        <tr class=" border-b">
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">M</th>
+                                                            <td class="px-6 py-4">95</td>
+                                                            <td class="px-6 py-4">75</td>
+                                                            <td class="px-6 py-4">100</td>
+                                                            <td class="px-6 py-4">165</td>
+                                                        </tr>
+                                                        <tr class=" border-b">
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">L</th>
+                                                            <td class="px-6 py-4">100</td>
+                                                            <td class="px-6 py-4">80</td>
+                                                            <td class="px-6 py-4">105</td>
+                                                            <td class="px-6 py-4">170</td>
+                                                        </tr>
+                                                        <tr class=" border-b">
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">XL</th>
+                                                            <td class="px-6 py-4">105</td>
+                                                            <td class="px-6 py-4">85</td>
+                                                            <td class="px-6 py-4">110</td>
+                                                            <td class="px-6 py-4">175</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">XXL</th>
+                                                            <td class="px-6 py-4">110</td>
+                                                            <td class="px-6 py-4">90</td>
+                                                            <td class="px-6 py-4">115</td>
+                                                            <td class="px-6 py-4">180</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="mt-4">
                             <h3 class="text-[#333333] font-medium">الألوان المتاحة</h3>
@@ -285,7 +504,7 @@
                             </button>
                         
                             <!-- POP UP -->
-                            <section class="fixed top-60 w-[343px] right-44 mx-auto container"  x-show="showPopup"  @click.away="showPopup = false" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform translate-y-4" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-4">
+                            <section class="fixed top-60 w-[343px] sm:right-44 mx-auto container"  x-show="showPopup"  @click.away="showPopup = false" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform translate-y-4" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-4">
                                 <div class=" border-b-[3px] border-[#01E17B] h-[82px] bg-[#242C32] flex items-center text-left justify-center gap-5 rounded-lg" style="box-shadow: 0px 8px 10px 0px #00000033">
                                     <div>
                                         <h1 class="text-white font-bold text-[17px]">Added to cart</h1>
@@ -350,7 +569,7 @@
                 <div class="p-6">
                 <div x-show="tab === 'details'">
                     <h2 class="text-4xl font-medium mb-4 text-[#333333]">للحظات لا تنسى</h2>
-                    <p class="text-[#666666] text-base xl:w-[1170px]">يتميز هاتف ابل الذكي بإعداد كاميرا مزدوجة تبلغ دقتها 12 ميجابكسل تتيح لك التقاط أجمل الصور بتفاصيل خلابة ورائعة. سواء كانت مناظر طبيعية أو لحظات ثمينة لا تريد نسيانها أو كائنات سريعة الحركة؛ يمكنك التقاط صور لكل ذلك في أفضل الحالات باستخدام إعدادات الكاميرا المتطورة. قم بتصوير مقاطع الفيديو مثل المحترفين وإنشاء نقطة مرجعية لاسترجاع اللحظات المهمة. لن تؤثر ظروف الإضاءة المنخفضة على جودة صورتك، حيث توفر الكاميرا العريضة بدقة 12 ميجابكسل تركيزًا تلقائيًا أسرع بثلاث مرات في الإضاءة المنخفضة. مع الوضع الليلي، ليست هناك حاجة للفلاش بعد الآن، حيث يلتقط هذا الإعداد الصور بلون طبيعي وسطوع لا مثيل له. أعط الشيء الذي تريد تصويره الأضواء والتركيز الذي يستحقه مع وضع الصور الشخصية. تستفيد خاصية اتش دي ار الذكية من التعلم الآلي للتعرف على الأشخاص ومعاملتهم بطريقة مختلفة عن بقية اللقطة، مما توفر ميزات رائعة وظلال ولون بشرة طبيعية. التقط صور سيلفي رائعة مع كاميرا ترو ديبث بدقة تبلغ 12 ميجابكسل. مع خاصية مثبت الصور البصري، لن يكون التقاط صور واضحة مشكلة بعد الآن.</p>
+                    <p class="text-[#666666] text-base xl:w-[1170px]">يتميز هاتف ابل الذكي بإعداد كاميرا مزدوجة تبلغ دقتها 12 ميجابكسل تتيح لك التقاط أجمل الصور بتفاصيل خلابة ورائعة. سواء كانت مناظر طبيعية أو لحظات ثمينة لا تريد نسيانها أو كائنات سريعة الحركة؛ يمكنك التقاط صور لكل ذلك في أفضل الحالات باستخدام إعدادات الكاميرا المتطورة. قم بتصوير مقاطع الفيديو مثل ا[#333333] وانشاء نقطة مرجعية لاسترجاع اللحظات المهمة. لن تؤثر ظروف الإضاءة المنخفضة على جودة صورتك، حيث توفر الكاميرا العريضة بدقة 12 ميجابكسل تركيزًا تلقائيًا أسرع بثلاث مرات في الإضاءة المنخفضة. مع الوضع الليلي، ليست هناك حاجة للفلاش بعد الآن، حيث يلتقط هذا الإعداد الصور بلون طبيعي وسطوع لا مثيل له. أعط الشيء الذي تريد تصويره الأضواء والتركيز الذي يستحقه مع وضع الصور الشخصية. تستفيد خاصية اتش دي ار الذكية من التعلم الآلي للتعرف على الأشخاص ومعاملتهم بطريقة مختلفة عن بقية اللقطة، مما توفر ميزات رائعة وظلال ولون بشرة طبيعية. التقط صور سيلفي رائعة مع كاميرا ترو ديبث بدقة تبلغ 12 ميجابكسل. مع خاصية مثبت الصور البصري، لن يكون التقاط صور واضحة مشكلة بعد الآن.</p>
                     <div class="mt-6">
                     <img src="../images/perfume.webp" alt="Image">
                     <p class="text-[#666666] text-base xl:w-[1170px] mt-4">يضيف هاتف ايفون 11 الذكي سرعة فائقة إلى كل ما تفعله، من خلال شريحة ايه 12 بيونيك التي تتميز بمحرك عصبي. تساعد هذه الشريحة القوية على تسهيل أداء المهام الكثيفة للقيام بها بطريقة سلسة. سواء كانت تقوم بتصوير فيديو بدقة 4 كيه بسرعة 60 إطارًا في الثانية في نطاق ديناميكي ممتد أو إعادة إلقاء الضوء على الشخص في مقدمة الصورة؛ تستطيع هذه الشريحة فعل كل هذا بسرعة مثيرة للإعجاب. بالإضافة إلى ذلك،</p>
