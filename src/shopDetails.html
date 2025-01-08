@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +12,14 @@
     <!-- Alpine -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script src="./js/script.js"></script>
+    <style>
+        input[type=range]::-webkit-slider-thumb {
+            pointer-events: all;
+            width: 24px;
+            height: 24px;
+            -webkit-appearance: none;
+        }
+    </style>
 </head>
 <body>
     <!-- Start Offer Bar -->
@@ -173,42 +181,42 @@
                         </div>
                         <ul x-show="open" class="flex flex-col gap-1.5 border-b-[1px] py-3 transition-all duration-300 ease-out"x-transition:enter="transition ease-out duration-300"x-transition:enter-start="opacity-0 max-h-0"x-transition:enter-end="opacity-100 max-h-screen"style="overflow: hidden;">
                             <li class="flex items-center gap-2">
-                                <input type="radio" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
+                                <input type="radio" name="category" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
                                 <div class="flex justify-between items-center flex-1">
                                     <h3 class="text-[#333333] font-normal text-sm">الكل</h3>
                                     <p class="text-[#333333] font-normal text-sm">(100)</p>
                                 </div>
                             </li>
                             <li class="flex items-center gap-2">
-                                <input type="radio" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
+                                <input type="radio" name="category" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
                                 <div class="flex justify-between items-center flex-1">
                                     <h3 class="text-[#333333] font-normal text-sm">الإلكترونيات والموبايلات</h3>
                                     <p class="text-[#333333] font-normal text-sm">(60)</p>
                                 </div>
                             </li>
                             <li class="flex items-center gap-2">
-                                <input type="radio" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
+                                <input type="radio" name="category" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
                                 <div class="flex justify-between items-center flex-1">
                                     <h3 class="text-[#333333] font-normal text-sm">التلفزيونات والشاشات</h3>
                                     <p class="text-[#333333] font-normal text-sm">(25)</p>
                                 </div>
                             </li>
                             <li class="flex items-center gap-2">
-                                <input type="radio" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
+                                <input type="radio" name="category" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
                                 <div class="flex justify-between items-center flex-1">
                                     <h3 class="text-[#333333] font-normal text-sm">سماعات أذن</h3>
                                     <p class="text-[#333333] font-normal text-sm">(30)</p>
                                 </div>
                             </li>
                             <li class="flex items-center gap-2">
-                                <input type="radio" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
+                                <input type="radio" name="category" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
                                 <div class="flex justify-between items-center flex-1">
                                     <h3 class="text-[#333333] font-normal text-sm">كاميرات ديجتال</h3>
                                     <p class="text-[#333333] font-normal text-sm">(36)</p>
                                 </div>
                             </li>
                             <li class="flex items-center gap-2">
-                                <input type="radio" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
+                                <input type="radio" name="category" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
                                 <div class="flex justify-between items-center flex-1">
                                     <h3 class="text-[#333333] font-normal text-sm">مكبرات صوت</h3>
                                     <p class="text-[#333333] font-normal text-sm">(10)</p>
@@ -216,6 +224,7 @@
                             </li>
                             <p class="text-[#E3A745] font-normal text-sm cursor-pointer">عرض المزيد</p>
                         </ul>
+
                     </div>
                     <!-- Brand Filter -->
                     <div class="p-4 md:p-0 mt-2" x-data="{ open: true }">
@@ -225,42 +234,42 @@
                         </div>
                         <ul x-show="open" class="flex flex-col gap-1.5 border-b-[1px] py-3 transition-all duration-300 ease-out" x-transition:enter="transition ease-out duration-300"x-transition:enter-start="opacity-0 max-h-0"x-transition:enter-end="opacity-100 max-h-screen"style="overflow: hidden;">
                                 <li class="flex items-center gap-2">
-                                    <input type="radio" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
+                                    <input type="radio" name="brand" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
                                     <div class="flex justify-between items-center flex-1">
                                         <h3 class="text-[#333333] font-normal text-sm">الكل</h3>
                                         <p class="text-[#333333] font-normal text-sm">(100)</p>
                                     </div>
                                 </li>
                                 <li class="flex items-center gap-2">
-                                    <input type="radio" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
+                                    <input type="radio" name="brand" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
                                     <div class="flex justify-between items-center flex-1 ">
                                         <h3 class="text-[#333333] font-normal text-sm">إتش بي</h3>
                                         <p class="text-[#333333] font-normal text-sm">(30)</p>
                                     </div>
                                 </li>
                                 <li class="flex items-center gap-2">
-                                    <input type="radio" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
+                                    <input type="radio" name="brand" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
                                     <div class="flex justify-between items-center flex-1 ">
                                         <h3 class="text-[#333333] font-normal text-sm">أبل</h3>
                                         <p class="text-[#333333] font-normal text-sm">(34)</p>
                                     </div>
                                 </li>
                                 <li class="flex items-center gap-2">
-                                    <input type="radio" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
+                                    <input type="radio" name="brand" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
                                     <div class="flex justify-between items-center flex-1 ">
                                         <h3 class="text-[#333333] font-normal text-sm">سامسونج</h3>
                                         <p class="text-[#333333] font-normal text-sm">(25)</p>
                                     </div>
                                 </li>
                                 <li class="flex items-center gap-2">
-                                    <input type="radio" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
+                                    <input type="radio" name="brand" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
                                     <div class="flex justify-between items-center flex-1">
                                         <h3 class="text-[#333333] font-normal text-sm">ديل</h3>
                                         <p class="text-[#333333] font-normal text-sm">(12)</p>
                                     </div>
                                 </li>
                                 <li class="flex items-center gap-2">
-                                    <input type="radio" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
+                                    <input type="radio" name="brand" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
                                     <div class="flex justify-between items-center flex-1 ">
                                         <h3 class="text-[#333333] font-normal text-sm">لينوفو</h3>
                                         <p class="text-[#333333] font-normal text-sm">(9)</p>
@@ -325,14 +334,14 @@
                         </div>
                         <ul x-show="open" class="flex flex-col gap-1.5 border-b-[1px] py-3 transition-all duration-300 ease-out"x-transition:enter="transition ease-out duration-300"x-transition:enter-start="opacity-0 max-h-0"x-transition:enter-end="opacity-100 max-h-screen"style="overflow: hidden;">
                             <li class="flex items-center gap-2">
-                                <input type="radio" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
+                                <input type="radio" name="color" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
                                 <div class="flex justify-between items-center flex-1">
                                     <h3 class="text-[#333333] font-normal text-sm">الكل</h3>
                                     <p class="text-[#333333] font-normal text-sm">(50)</p>
                                 </div>
                             </li>                            
                             <li class="flex items-center gap-2">
-                                <input type="radio" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
+                                <input type="radio" name="color" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
                                 <div class="flex justify-between items-center flex-1">
                                     <div class="flex gap-1">
                                         <img src="../images/redBall.svg" alt="Red Ball">
@@ -342,7 +351,7 @@
                                 </div>
                             </li>
                             <li class="flex items-center gap-2">
-                                <input type="radio" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
+                                <input type="radio" name="color" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
                                 <div class="flex justify-between items-center flex-1">
                                     <div class="flex gap-1">
                                         <img src="../images/greenBall.svg" alt="Green Ball">
@@ -352,7 +361,7 @@
                                 </div>
                             </li>
                             <li class="flex items-center gap-2">
-                                <input type="radio" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
+                                <input type="radio" name="color" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
                                 <div class="flex justify-between items-center flex-1">
                                     <div class="flex gap-1">
                                         <img src="../images/blackBall.svg" alt="Green Ball">
@@ -362,7 +371,7 @@
                                 </div>
                             </li>
                             <li class="flex items-center gap-2">
-                                <input type="radio" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
+                                <input type="radio" name="color" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
                                 <div class="flex justify-between items-center flex-1">
                                     <div class="flex gap-1">
                                         <img src="../images/brownBall.svg" alt="Brown Ball">
@@ -372,7 +381,7 @@
                                 </div>
                             </li>
                             <li class="flex items-center gap-2">
-                                <input type="radio" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
+                                <input type="radio" name="color" class="w-5 h-5 text-[#E3A745] border-gray-300 focus:ring-white">
                                 <div class="flex justify-between items-center flex-1">
                                     <div class="flex gap-1">
                                         <img src="../images/yellowBall.svg" alt="Yellow Ball">
@@ -651,9 +660,9 @@
     <script>
         function range() {
         return {
-            minprice: 1000, 
-            maxprice: 7000,
-            min: 100, 
+            minprice: 500, 
+            maxprice: 10000,
+            min: 50, 
             max: 10000,
             minthumb: 0,
             maxthumb: 0, 
