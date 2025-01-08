@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Abaya Mall">
+    <title>Track Order</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- flowbite -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <!-- Alpine -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="../src/js/script.js"></script>
+</head>
+<body>
+
+    <!-- Start Offer Bar -->
+        <div id="offer"></div>
+    <!-- End Offer Bar -->
+
+    <!-- Start Navbar -->
+        <div id="navbar"></div>
+    <!-- End Navbar -->
+    
+    <!-- Start Breadcrumbs  -->
+        <section class="bg-gray-50 h-10 flex items-center justify-center mt-5 py-5 md:rtl:pr-40 rtl:pr-6 md:ltr:pl-40 ltr:p-6">
+            <nav class=" container mx-auto" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+                <li class="inline-flex items-center">
+                    <p class="inline-flex items-center text-base font-normal text-[#666666]">
+                    الصفحة الرئيسية
+                    </a>
+                </li>
+                <li class="inline-flex items-center">
+                    <div class="flex items-center">
+                    <p class="text-[#666666]">/</p>
+                    <p class="inline-flex items-center text-base font-normal text-black">
+                        تتبع الطلبية
+                    </a>
+                    </div>
+                </li>
+                </ol>
+            </nav>
+        </section>
+    <!-- End Breadcrumbs  -->
+
+    <!-- Start Content -->
+        <section class="container mx-auto my-5 gap-4 md:px-20">
+            <h1 class="text-2xl font-bold flex-1 my-10">تفاصيل الطلبية</h1>
+            <div class="flex items-center gap-2">
+                <img src="../images/orderIcon.png" class="w-12 h-12 bg-gray-100 rounded-full p-2" alt="Icon">
+                <p class="text-xl text-[#5e5e5e] font-medium">يرجي إدخال رقم الطلبية الذي تم إرساله عبر البريد الإلكتروني/الرسالة النصية لتتبع حالة طلبيتك</p>
+            </div>
+            <form class="my-6 flex flex-wrap items-center gap-4">
+                <div class="flex flex-col gap-2">
+                    <label for="orderNum" class="text-xl ">رقم الطلبية</label>
+                    <input type="text" name="orderNum" id="orderNum" class="w-[400px] h-14 focus:ring-0 focus:outline-none focus:border-black">
+                    <p class="text-xs text-red-400">رقم الطلبية مطلوب</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="email" class="text-xl ">البريد الإلكتروني</label>
+                    <input type="email" name="email" id="email" class="w-[400px] h-14 focus:ring-0 focus:outline-none focus:border-black">
+                    <p class="text-xs text-red-400">البريد الإلكتروني مطلوب</p>
+                </div>
+                <a href="./orderDetails.html" class="flex items-center justify-center w-[400px] h-14 mt-2 text-white font-medium bg-[#3d3c3c]">عرض حالة الطلبية</a>
+            </form>
+            <hr>
+            <div class="flex items-center gap-2 mt-6">
+                <img src="../images/orderIcon.png" class="w-12 h-12 bg-gray-100 rounded-full p-2" alt="Icon">
+                <p class="text-xl text-[#5e5e5e] font-medium">إذا كان لديك حساب, يمكنك تتبع حالة توصيل طلبيتك بتسجيل الدخول إلي حسابك واختيار "حسابي " ثم اختيار "الطلبيات"</p>
+            </div>
+        </section>
+    <!-- End Content -->
+
+    <!-- Start Footer -->
+        <div id="footer"></div>
+    <!-- Start Footer -->
+</body>
+</html>
