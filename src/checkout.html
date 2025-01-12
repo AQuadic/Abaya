@@ -30,7 +30,7 @@
                 <div class="flex items-center gap-5">
                     <div class="flex flex-row justify-between items-center flex-nowrap relative">
                         <a class="text-white flex-1 gap-2 text-center font-bold text-sm flex items-center" href="./checkout.html">
-                            <img src="../images/truck.png" class="w-6 h-6 transform scale-x-[-1]" alt="Truck">
+                            <img src="../images/truck.png" class="w-6 h-6 transform rtl:scale-x-[-1]" alt="Truck">
                             <span>عنوان التوصيل</span>
                         </a>
                     </div>
@@ -44,7 +44,7 @@
                     <hr class="bg-[#bbb] w-20">
                     <div class="flex flex-row justify-between items-center flex-nowrap relative">
                         <a class="text-[#9b9b9b] flex-1 gap-2 text-center font-bold text-sm flex items-center" href="./confirmation.html">
-                            <img src="../images/icon-like.png" class="w-6 h-6 transform scale-x-[-1]" alt="Like">
+                            <img src="../images/icon-like.png" class="w-6 h-6 transform rtl:scale-x-[-1]" alt="Like">
                             <span>شكراً لك</span>
                         </a>
                     </div>
@@ -56,8 +56,11 @@
     <!-- Start Content -->
         <section class="container mx-auto flex xl:flex-row flex-col items-center lg:items-start gap-5 my-10">
             <div class="lg:w-[804px]">
-                <h1 class="text-[30px] text-black">اختر عنوان التوصيل</h1>
                 <div x-data="{ showForm: false }">
+                    <div class="flex md:flex-row flex-col gap-4 px-4 md:px-0 justify-between">
+                        <h1 class="text-[30px] text-black">اختر عنوان التوصيل</h1>
+                        <button x-show="showForm" x-transition.opacity.duration.300ms @click="showForm = false" class="w-44 h-12 bg-black rounded-sm text-white mb-5">Back To Map</button>                
+                    </div>
                     <!-- Group iframe and buttons together -->
                     <div x-show="!showForm">
                         <!-- Google Maps Iframe -->

@@ -190,9 +190,9 @@
                     </h2>
                     <hr>
                     <div id="accordion-collapse-body-2" class="accordion-content items-center justify-between md:w-[480px] w-full p-5 bg-white mb-6" x-show="openIndex === 2" x-transition class="hidden mb-6 mt-[-22px] text-[#475156] font-normal text-sm">
-                        <form class="relative">
-                            <input type="text" class="w-full h-11 focus:ring-0 focus:outline-none focus:border-black" placeholder="" value="">
-                            <button type="submit" class="absolute left-2 top-2 flex text-base font-medium text-gray-500">استخدام</button>
+                        <form class="relative"  x-data="{ inputValue: '' }">
+                            <input type="text" class="w-full h-11 focus:ring-0 focus:outline-none focus:border-black" placeholder="" x-model="inputValue" />
+                            <button type="submit" class="absolute left-2 top-2 flex text-base font-medium transition-colors duration-300":class="inputValue.trim() ? 'text-[#b87253]' : 'text-gray-500'">استخدام</button>
                         </form>
                     </div>
                 

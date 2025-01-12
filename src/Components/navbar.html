@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" x-data="{ cartCount: localStorage.getItem('cartCount') ? parseInt(localStorage.getItem('cartCount')) : 0 }"><head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -381,36 +382,46 @@
                     </div>
                 </div>
 
-                <div class="relative flex gap-2 group">
-                    <!-- Bag Icon -->
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="w-5 h-5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z"></path>
-                    </svg>
-                    <a href="#" class="text-black text-base font-normal">
-                        الحقيبة (<span x-text="cartCount"></span>)
+                <div x-data="{ isCartOpen: false }" class="relative">
+                    <!-- Cart Link -->
+                    <a
+                        href="#"
+                        @click.prevent="isCartOpen = !isCartOpen"
+                        class="text-black text-base font-normal flex items-center gap-2"
+                    >
+                        <!-- Bag Icon -->
+                        <svg
+                            stroke="currentColor"
+                            fill="currentColor"
+                            stroke-width="0"
+                            viewBox="0 0 24 24"
+                            class="w-5 h-5"
+                            height="1em"
+                            width="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z"></path>
+                        </svg>
+                        <span id="cartCount">الحقيبة (0)</span>
                     </a>
-                    <!-- Pop-up Content -->
-                    <div class="absolute hidden group-hover:block top-full left-[-100px] mt-2 bg-white border border-gray-400 p-4 w-96 h-auto z-50">
+                    <!-- Cart Pop-up -->
+                    <div x-show="isCartOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-1" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-1" class="absolute left-[-100px] mt-2 bg-white border border-gray-400 p-4 w-96 h-auto z-50">
+                        <!-- Pop-up Content -->
                         <p class="font-semibold">حقيبتي</p>
-                        <hr class="shadow-sm mt-2">
-                        <div class="mt-2 flex">
-                            <img src="../../images/cartImage.webp" class="w-20 h-20" alt="Image">
-                            <div>
-                                <p>ميراس</p>
-                                <p>Nello Wallet in Metallic Textured</p>
-                                <p> اللون :<span>أخضر</span></p>
-                                <p> المقاس :<span>10</span></p>
-                                <p> الكمية :<span>1</span></p>
-                            </div>
+                        <hr class="shadow-sm mt-2" />
+                        <div id="cartItems" class="mt-2">
                         </div>
                         <div class="flex items-center justify-between mt-2">
                             <div class="flex items-center gap-2">
                                 <h2 class="text-lg text-black font-bold">المجموع الإجمالي</h2>
                                 <p class="text-[10px] text-[#7b7b7b]">شامل ضريبة القيمة المضافة</p>
                             </div>
-                            <p class="font-bold flex justify-center text-lg text-black">1500</p>    
+                            <p id="cartTotal" class="font-bold flex justify-center text-lg text-black">0</p>
                         </div>
-                        <a href="../../src/Cart.html" class="flex items-center justify-center text-white mt-5 w-full h-12 bg-[#b87253]">
+                        <a
+                            href="../../src/Cart.html"
+                            class="flex items-center justify-center text-white mt-5 w-full h-12 bg-[#b87253]"
+                        >
                             عرض الحقيبة
                         </a>
                     </div>
