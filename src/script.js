@@ -50,6 +50,22 @@ const cart = {
         this.updateCart();
     },
 
+    updateQuantity(productId, action) {
+        const item = this.items.find(item => item.id === productId);
+        if (!item) return;
+
+        if (action === 'increase') {
+            item.quantity++;
+        } else if (action === 'decrease' && item.quantity > 1) {
+            item.quantity--;
+        } else if (item.quantity === 1) {
+            this.removeItem(item.id);
+            return;
+        }
+
+        this.updateCart();
+    },
+
     updateCart() {
         const cartCount = document.getElementById('cartCount');
         const cartTotal = document.getElementById('cartTotal');
@@ -70,7 +86,19 @@ const cart = {
                     <img src="${item.image}" class="w-20 h-20" alt="Product Image">
                     <div>
                         <p>${item.name}</p>
-                        <p>الكمية: <span>${item.quantity}</span></p>
+                        <div class="flex items-center gap-4 mt-1">
+                            <button onclick="cart.updateQuantity(${item.id}, 'decrease')" class="text-gray-500 hover:text-gray-700">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/>
+                                </svg>
+                            </button>
+                            <span class="text-sm">${item.quantity}</span>
+                            <button onclick="cart.updateQuantity(${item.id}, 'increase')" class="text-gray-500 hover:text-gray-700">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                                </svg>
+                            </button>
+                        </div>
                         <p>السعر: <span>${item.price} ريال</span></p>
                         <button class="text-red-500 mt-2" onclick="cart.removeItem(${item.id})">حذف</button>
                     </div>
