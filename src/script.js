@@ -1,6 +1,6 @@
 // Load Navbar
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('../../src/Components/navbar.html')
+    fetch('./navbar.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('navbar').innerHTML = data;
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Load Offer
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('../../src/Components/offerBar.html')
+    fetch('./offerBar.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('offer').innerHTML = data;
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Load Footer
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('../../src/Components/footer.html')
+    fetch('./footer.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer').innerHTML = data;
