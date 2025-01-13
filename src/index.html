@@ -289,13 +289,23 @@
             </div>
         <div x-data="{ show: false }" class="relative">
             <div class="mt-[14px] flex flex-wrap justify-center sm:gap-[40px] gap-[10px]">
-                <div class="relative sm:w-[346px] w-[193.28px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
+                <div class="relative sm:w-[346px] w-[193.28px] h-auto rounded-[10px] hover:scale-105 duration-300 pb-2" style="box-shadow: 0px 4px 4px 0px #00000040;">
                     <img src="../images/abaya.webp" class="sm:w-[346px] w-[193.28px] sm:h-[466px] h-[260.31px]" alt="Abaya">
                     <img src="../images/redHeart.svg" class="sm:w-[27.93px] sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer" alt="Heart">
                     <div class="sm:px-[22px] px-3">
                         <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
-                        <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
-                        <div class="flex items-center justify-between">
+                        <div x-data="{ showFullText: false }" class="text-container">
+                            <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">
+                                <span x-show="!showFullText"> عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع
+                                    <span class="text-blue-500 hover:underline cursor-pointer" @click="showFullText = true">...</span>
+                                </span>
+                                <span x-show="showFullText">
+                                عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع وفستان فاخر داخلي
+                                <span class="text-blue-500 hover:underline cursor-pointer" @click="showFullText = false">عرض أقل</span>
+                                </span>
+                            </p>
+                        </div>
+                            <div class="flex items-center justify-between">
                             <p class="text-[#747474] font-normal sm:text-[15px] text-[8.38px] leading-[21px] sm:mt-[9px]">was AED <span class="font-bold">680</span></p>
                             <p class="text-[#747474] font-normal sm:text-[15px] text-[8.38px] leading-[21px] sm:mt-[9px]">AED <span class="font-bold sm:text-[32px] text-[17.88px]">580</span></p>
                         </div>
