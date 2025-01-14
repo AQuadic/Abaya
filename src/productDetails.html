@@ -141,14 +141,14 @@
                                 <p class="text-[#333333] text-base font-medium">جدول المقاسات</p>
                             </div>
                             <div x-show="isOpen" class="fixed inset-0 bg-black bg-opacity-80 z-50 p-5 flex items-center justify-center">
-                                <div @click.away="isOpen = false" class="lg:w-[1069px] w-full lg:h-[777px] container mx-auto flex lg:flex-row flex-col justify-between p-6 bg-white rounded-[30px] border">
+                                <div @click.away="isOpen = false"  class="lg:w-[1069px] w-full xl:h-[777px] h-[90vh] max-h-[777px] overflow-auto container mx-auto flex flex-wrap justify-between p-6 bg-white rounded-[30px] border">
                                     <div>
                                         <h2 class="text-[#18181B] text-lg font-bold">ادخلي قياساتك</h2>
                                         <div x-data="{ activeTab: 'tab1' }" class="p-4">
                                             <!-- Buttons -->
                                             <div class="flex gap-4 my-4">
-                                                <button @click="activeTab = 'tab1'"  :class="activeTab === 'tab1' ? 'bg-[#E3A7451A] text-[#E3A745] border border-[#E3A745]' : 'bg-gray-200 text-gray-700'" class="w-[165px] h-[42px] text-lg font-medium rounded-tl-[4px] rounded-tr-[4px]">انش</button>
-                                                <button @click="activeTab = 'tab2'"  :class="activeTab === 'tab2' ? 'bg-[#E3A7451A] text-[#E3A745] border border-[#E3A745]' : 'bg-gray-200 text-gray-700'" class="w-[165px] h-[42px] text-lg font-medium rounded-tr-[4px]">سم</button>
+                                                <button @click="activeTab = 'tab1'"  :class="activeTab === 'tab1' ? 'bg-[#E3A7451A] text-[#E3A745] border border-[#E3A745]' : 'bg-gray-200 text-gray-700'" class="md:w-[165px] w-[100px] h-[42px] text-lg font-medium rounded-tl-[4px] rounded-tr-[4px]">انش</button>
+                                                <button @click="activeTab = 'tab2'"  :class="activeTab === 'tab2' ? 'bg-[#E3A7451A] text-[#E3A745] border border-[#E3A745]' : 'bg-gray-200 text-gray-700'" class="md:w-[165px] w-[100px] h-[42px] text-lg font-medium rounded-tr-[4px]">سم</button>
                                             </div>
                                             <!-- Content -->
                                             <div class="mt-4">
@@ -218,7 +218,7 @@
                                         
                                                     <!-- Buttons -->
                                                     <div class="flex gap-4 mb-6">
-                                                        <button type="submit" class="w-[413px] h-14 text-white font-medium bg-[#1D1F1F] rounded-sm">أضف العربية</button>
+                                                        <button type="submit" class="md:w-[413px] w-[200px] h-14 text-white font-medium bg-[#1D1F1F] rounded-sm">أضف العربية</button>
                                                         <button type="button" class="w-[60px] h-14 text-[#F55157] font-medium border rounded-sm">إلغاء</button>
                                                     </div>
                                                 </form>
@@ -289,7 +289,7 @@
                                         
                                                     <!-- Buttons -->
                                                     <div class="flex gap-4 mb-6">
-                                                        <button type="submit" class="w-[413px] h-14 text-white font-medium bg-[#1D1F1F] rounded-sm">أضف العربية</button>
+                                                        <button type="submit" class="md:w-[413px] w-[200px] h-14 text-white font-medium bg-[#1D1F1F] rounded-sm">أضف العربية</button>
                                                         <button type="button" class="w-[60px] h-14 text-[#F55157] font-medium border rounded-sm">إلغاء</button>
                                                     </div>
                                                 </form>
