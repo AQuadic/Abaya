@@ -54,10 +54,10 @@
     <!-- End Tracking -->
 
     <!-- Start Content -->
-        <section class="container mx-auto flex xl:flex-row flex-col items-center lg:items-start gap-5 my-10">
+        <section class="container mx-auto flex xl:flex-row flex-col items-center xl:items-start gap-5 my-10">
             <div class="lg:w-[804px]">
                 <div x-data="{ showForm: false }">
-                    <div class="flex md:flex-row flex-col gap-4 px-4 md:px-0 justify-between">
+                    <div class="flex md:flex-row flex-col gap-4 px-4 lg:px-0 justify-between">
                         <h1 class="text-[30px] text-black">اختر عنوان التوصيل</h1>
                         <button x-show="showForm" x-transition.opacity.duration.300ms @click="showForm = false" class="w-44 h-12 bg-black rounded-sm text-white mb-5">Back To Map</button>                
                     </div>
@@ -110,21 +110,21 @@
                         <div class="flex flex-wrap gap-2">
                             <div class="mb-4">
                                 <label for="fName" class="block text-sm font-medium text-black mb-2">الاسم الأول*</label>
-                                <input type="text" id="fName" placeholder="جون" name="fName" class="w-[398px] h-12 focus:ring-0 outline-none focus:border-black">
+                                <input type="text" id="fName" placeholder="جون" name="fName" class="sm:w-[398px] w-full  h-12 focus:ring-0 outline-none focus:border-black">
                             </div>
                             <div class="mb-4">
                                 <label for="lName" class="block text-sm font-medium text-black mb-2">الاسم الأخير*</label>
-                                <input type="text" id="lName" placeholder="جون" name="lName" class="w-[398px] h-12 focus:ring-0 outline-none focus:border-black">
+                                <input type="text" id="lName" placeholder="جون" name="lName" class="sm:w-[398px] w-full  h-12 focus:ring-0 outline-none focus:border-black">
                             </div>
                             <div class="mb-4">
                                 <label for="email" class="block text-sm font-medium text-black mb-2">عنوان البريد الإلكتروني*</label>
-                                <input type="text" id="email" name="email" class="lg:w-[800px] md:w-[600px] w-[400px] h-12 focus:ring-0 outline-none focus:border-black">
+                                <input type="text" id="email" name="email" class="lg:w-[800px] md:w-[600px] sm:w-[400px] w-full h-12 focus:ring-0 outline-none focus:border-black">
                             </div>
                         </div>
                         <div class="flex flex-wrap gap-2">
                             <div class="mb-4">
                                 <label for="email" class="block text-sm font-medium text-black mb-2">رقم الهاتف*</label>
-                                <select name="phone" class="md:w-[200px] w-[400px] h-12 focus:ring-0 outline-none focus:border-black" id="phone">
+                                <select name="phone" class="md:w-[200px] sm:w-[400px] w-full h-12 focus:ring-0 outline-none focus:border-black" id="phone">
                                     <option value="+639">+639</option>
                                     <option value="+20">+20</option>
                                     <option value="+880">+880</option>
@@ -136,12 +136,12 @@
                             </div>
                             <div class="mb-4">
                                 <label for="phone" class="block text-sm font-medium text-black mb-2">رقم الهاتف*</label>
-                                <input type="text" placeholder="50121212121" id="phone" name="phone" class="lg:w-[590px] md:w-[300px] w-[400px] h-12 focus:ring-0 outline-none focus:border-black">
+                                <input type="text" placeholder="50121212121" id="phone" name="phone" class="lg:w-[590px] md:w-[300px] sm:w-[400px] w-full h-12 focus:ring-0 outline-none focus:border-black">
                             </div>
                         </div>
                     </form>
                 </div>
-                <div class="">
+                <div class="px-4 lg:px-0">
                     <div class="flex justify-between">
                         <h2 class="text-2xl text-black mt-5">تحديد موعد التوصيل</h2>
                         <a href="#" class="font-bold border-none bg-transparent flex justify-center flex-col text-xs text-[#b87253] uppercase underline cursor-pointer pl-0">بيانات الشحن</a>
