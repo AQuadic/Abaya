@@ -367,30 +367,31 @@
                         <div class="mt-4">
                             <h3 class="text-[#333333] font-medium">الألوان المتاحة</h3>
                             <div x-data="{ selectedColor: '' }" class="flex items-center gap-10 mt-4">
-                                <div class="flex flex-col items-center gap-4">
-                                    <div @click="selectedColor = 'yellow'" :class="selectedColor === 'yellow' ? 'ring-2 ring-[#000000]' : ''" class="w-6 h-6 rounded-full bg-[#ff961f] shadow-lg cursor-pointer">
-                                    </div>
-                                    <p class="text-[#A5A5A5]">أصفر</p>
+                                <div 
+                                    @click="selectedColor = 'yellow'" 
+                                    :class="selectedColor === 'yellow' ? 'bg-blue-100 p-2 rounded' : ''" 
+                                    class="flex flex-col items-center gap-2 cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full bg-[#ff961f] shadow-lg"></div>
+                                    <p :class="selectedColor === 'yellow' ? 'text-[#333333]' : 'text-[#A5A5A5]'">أصفر</p>
                                 </div>
-                                <div class="flex flex-col items-center gap-4">
-                                    <div @click="selectedColor = 'red'" :class="selectedColor === 'red' ? 'ring-2 ring-[#000000]' : ''" class="w-6 h-6 rounded-full bg-[#da5959] shadow-lg cursor-pointer">
-                                    </div>
-                                    <p class="text-[#A5A5A5]">أحمر</p>
+                                <div 
+                                    @click="selectedColor = 'red'" 
+                                    :class="selectedColor === 'red' ? 'bg-blue-100 p-2 rounded' : ''" 
+                                    class="flex flex-col items-center gap-2 cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full bg-[#da5959] shadow-lg"></div>
+                                    <p :class="selectedColor === 'red' ? 'text-[#333333]' : 'text-[#A5A5A5]'">أحمر</p>
                                 </div>
-                                <div class="flex flex-col items-center gap-4">
-                                    <div @click="selectedColor = 'black'" :class="selectedColor === 'black' ? 'ring-2 ring-[#000000]' : ''" class="w-6 h-6 rounded-full bg-[#000000] shadow-lg cursor-pointer">
-                                    </div>
-                                    <p class="text-[#A5A5A5]">أسود</p>
+                                <div @click="selectedColor = 'black'" :class="selectedColor === 'black' ? 'bg-blue-100 p-2 rounded' : ''" class="flex flex-col items-center gap-2 cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full bg-[#000000] shadow-lg"></div>
+                                    <p :class="selectedColor === 'black' ? 'text-[#333333]' : 'text-[#A5A5A5]'">أسود</p>
                                 </div>
-                                <div class="flex flex-col items-center gap-4">
-                                    <div @click="selectedColor = 'white'" :class="selectedColor === 'white' ? 'ring-2 ring-[#000000]' : ''" class="w-6 h-6 rounded-full bg-[#ffffff] shadow-lg cursor-pointer">
-                                    </div>
-                                    <p class="text-[#A5A5A5]">أبيض</p>
+                                <div @click="selectedColor = 'white'" :class="selectedColor === 'white' ? 'bg-blue-100 p-2 rounded' : ''" class="flex flex-col items-center gap-2 cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full bg-[#ffffff] shadow-lg"></div>
+                                    <p :class="selectedColor === 'white' ? 'text-[#333333]' : 'text-[#A5A5A5]'">أبيض</p>
                                 </div>
-                                <div class="flex flex-col items-center gap-4">
-                                    <div @click="selectedColor = 'gray'" :class="selectedColor === 'gray' ? 'ring-2 ring-[#000000]' : ''" class="w-6 h-6 rounded-full bg-[#dfdfdf] shadow-lg cursor-pointer">
-                                    </div>
-                                    <p class="text-[#A5A5A5]">رمادي</p>
+                                <div @click="selectedColor = 'gray'" :class="selectedColor === 'gray' ? 'bg-blue-100 p-2 rounded' : ''" class="flex flex-col items-center gap-2 cursor-pointer">
+                                    <div class="w-6 h-6 rounded-full bg-[#dfdfdf] shadow-lg"></div>
+                                    <p :class="selectedColor === 'gray' ? 'text-[#333333]' : 'text-[#A5A5A5]'">رمادي</p>
                                 </div>
                             </div>
                             
