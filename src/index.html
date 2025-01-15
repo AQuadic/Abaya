@@ -26,7 +26,7 @@
     <!-- End Navbar -->
 
     <!-- Black Bar -->
-        <div class="container mx-auto xl:flex hidden justify-around">
+        <div class="container mx-auto xl:flex hidden justify-around overflow-visible">
             <nav x-data="{
             navigationMenuOpen: false,
             navigationMenu: '',
@@ -51,8 +51,8 @@
                 this.navigationMenu = '';
             }
         }"
-        class="relative z-10 w-auto">
-        <div class="w-full max-w-7xl mx-auto h-auto overflow-hidden bg-white">
+        class="relative z-10 w-full overflow-visible">
+        <div class="w-full max-w-7xl mx-auto h-auto overflow-visible bg-white">
             <ul class="flex items-center justify-center flex-1 p-1 space-x-1 list-none  rounded-md">
                 <li>
                     <button :class="{ 'bg-neutral-100' : navigationMenu=='getting-started', 'hover:bg-neutral-100' : navigationMenu!='getting-started' }" @mouseover="navigationMenuOpen=true; navigationMenuReposition($el); navigationMenu='getting-started'" @mouseleave="navigationMenuLeave()" class="inline-flex items-center justify-center h-10 px-4 py-2 text-sm font-normal transition-colors rounded-md hover:text-neutral-900 focus:outline-none disabled:opacity-50 disabled:pointer-events-none group w-max">
@@ -117,8 +117,8 @@
                 
             </ul>
         </div>
-        <div x-ref="navigationDropdown" x-show="navigationMenuOpen" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" @mouseover="navigationMenuClearCloseTimeout()" @mouseleave="navigationMenuLeave()" class="absolute top-0 pt-3 duration-200 ease-out translate-x-[-60%] translate-y-8" x-cloak>
-            <div class="flex justify-center w-auto h-auto overflow-hidden bg-white">
+        <div x-ref="navigationDropdown" x-show="navigationMenuOpen" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" @mouseover="navigationMenuClearCloseTimeout()" @mouseleave="navigationMenuLeave()" class="absolute top-full left-0 right-0 w-full pt-3 duration-200 ease-out bg-white" x-cloak>
+            <div class="flex justify-center w-full h-auto overflow-hidden bg-white">
                 <div x-show="navigationMenu == 'getting-started'" class="flex items-stretch justify-center w-full max-w-2xl p-6 gap-x-3">
                     <div class="flex-shrink-0 w-48 rounded pt-28 pb-7 bg-gradient-to-br from-neutral-800 to-black">
                         <div class="relative px-7 space-y-1.5 text-white">
