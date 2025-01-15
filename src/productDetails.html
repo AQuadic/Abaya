@@ -141,7 +141,7 @@
                                 <p class="text-[#333333] text-base font-medium">جدول المقاسات</p>
                             </div>
                             <div x-show="isOpen" class="fixed inset-0 bg-black bg-opacity-80 z-50 p-5 flex items-center justify-center">
-                                <div @click.away="isOpen = false"  class="lg:w-[1069px] w-full xl:h-[777px] h-[90vh] max-h-[777px] overflow-auto container mx-auto flex flex-wrap justify-between p-6 bg-white rounded-[30px] border">
+                                <div @click.away="isOpen = false"  class="lg:w-[1069px] w-full xl:h-[777px] h-[90vh] max-h-[777px] overflow-auto container mx-auto flex lg:flex-row flex-col justify-between p-6 bg-white rounded-[30px] border">
                                     <div>
                                         <h2 class="text-[#18181B] text-lg font-bold">ادخلي قياساتك</h2>
                                         <div x-data="{ activeTab: 'tab1' }" class="p-4">
@@ -366,28 +366,34 @@
                         </div>
                         <div class="mt-4">
                             <h3 class="text-[#333333] font-medium">الألوان المتاحة</h3>
-                            <div class="flex items-center gap-10 mt-4">
+                            <div x-data="{ selectedColor: '' }" class="flex items-center gap-10 mt-4">
                                 <div class="flex flex-col items-center gap-4">
-                                    <div class="w-6 h-6 rounded-full bg-[#ff961f] shadow-lg"></div>
+                                    <div @click="selectedColor = 'yellow'" :class="selectedColor === 'yellow' ? 'ring-2 ring-[#000000]' : ''" class="w-6 h-6 rounded-full bg-[#ff961f] shadow-lg cursor-pointer">
+                                    </div>
                                     <p class="text-[#A5A5A5]">أصفر</p>
                                 </div>
                                 <div class="flex flex-col items-center gap-4">
-                                    <div class="w-6 h-6 rounded-full bg-[#da5959] shadow-lg"></div>
+                                    <div @click="selectedColor = 'red'" :class="selectedColor === 'red' ? 'ring-2 ring-[#000000]' : ''" class="w-6 h-6 rounded-full bg-[#da5959] shadow-lg cursor-pointer">
+                                    </div>
                                     <p class="text-[#A5A5A5]">أحمر</p>
                                 </div>
                                 <div class="flex flex-col items-center gap-4">
-                                    <div class="w-6 h-6 rounded-full bg-[#000000] shadow-lg"></div>
+                                    <div @click="selectedColor = 'black'" :class="selectedColor === 'black' ? 'ring-2 ring-[#000000]' : ''" class="w-6 h-6 rounded-full bg-[#000000] shadow-lg cursor-pointer">
+                                    </div>
                                     <p class="text-[#A5A5A5]">أسود</p>
                                 </div>
                                 <div class="flex flex-col items-center gap-4">
-                                    <div class="w-6 h-6 rounded-full bg-[#ffffff] shadow-lg"></div>
+                                    <div @click="selectedColor = 'white'" :class="selectedColor === 'white' ? 'ring-2 ring-[#000000]' : ''" class="w-6 h-6 rounded-full bg-[#ffffff] shadow-lg cursor-pointer">
+                                    </div>
                                     <p class="text-[#A5A5A5]">أبيض</p>
                                 </div>
                                 <div class="flex flex-col items-center gap-4">
-                                    <div class="w-6 h-6 rounded-full bg-[#dfdfdf] shadow-lg"></div>
+                                    <div @click="selectedColor = 'gray'" :class="selectedColor === 'gray' ? 'ring-2 ring-[#000000]' : ''" class="w-6 h-6 rounded-full bg-[#dfdfdf] shadow-lg cursor-pointer">
+                                    </div>
                                     <p class="text-[#A5A5A5]">رمادي</p>
                                 </div>
                             </div>
+                            
                         </div>
                         <div class="mt-4">
                             <h3 class="text-[#333333] font-medium">المقاسات المتاحة</h3>
@@ -398,7 +404,7 @@
                                 <div class="w-px h-4 bg-gray-200"></div>
                                 <button :class="selectedSize === 'L' ? 'bg-blue-100' : 'text-[#333333]'" @click="selectedSize = 'L'" class="focus:outline-none px-2 py-1 rounded"> L </button>
                                 <div class="w-px h-4 bg-gray-200"></div>
-                                <button :class="selectedSize === 'S' ? 'bg-blue-100' : 'text-[#A5A5A5]'" @click="selectedSize = 'S'" class="focus:outline-none px-2 py-1 rounded"> S </button>
+                                <button :class="selectedSize === 'S' ? 'bg-blue-100' : 'text-[#A5A5A5]'" @click="selectedSize = 'S'" class="focus:outline-none px-2 py-1 rounded" disabled> S </button>
                             </div>
                         </div>
                         <div x-data="{ showPopup: false }">
