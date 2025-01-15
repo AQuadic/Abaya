@@ -35,8 +35,9 @@ const cart = {
     items: [],
     total: 0,
 
+    // Add item to the cart
     addItem(product) {
-        const existingItem = this.items.find(item => item.id === product.id);
+        const existingItem = this.items.find(item => item.id === product.id && item.size === product.size);
         if (existingItem) {
             existingItem.quantity++;
         } else {
@@ -45,11 +46,13 @@ const cart = {
         this.updateCart();
     },
 
+    // Remove item from the cart
     removeItem(productId) {
         this.items = this.items.filter(item => item.id !== productId);
         this.updateCart();
     },
 
+    // Update item quantity
     updateQuantity(productId, action) {
         const item = this.items.find(item => item.id === productId);
         if (!item) return;
@@ -66,6 +69,7 @@ const cart = {
         this.updateCart();
     },
 
+    // Update the cart UI
     updateCart() {
         const cartCount = document.getElementById('cartCount');
         const cartTotal = document.getElementById('cartTotal');
@@ -100,6 +104,7 @@ const cart = {
                             </button>
                         </div>
                         <p>السعر: <span>${item.price} ريال</span></p>
+                        <p>المقاس: <span>${item.size}</span></p> <!-- Display size here -->
                         <button class="text-red-500 mt-2" onclick="cart.removeItem(${item.id})">حذف</button>
                     </div>
                 `;
@@ -112,6 +117,7 @@ const cart = {
         }
     },
 
+    // Load cart from localStorage
     loadCart() {
         const storedItems = localStorage.getItem('cartItems');
         if (storedItems) {
@@ -121,8 +127,96 @@ const cart = {
     }
 };
 
-window.onload = function() {
+// Favorites Implementation
+const favorites = {
+    items: [],
+
+    toggleItem(product) {
+        const existingItemIndex = this.items.findIndex(item => item.id === product.id);
+        if (existingItemIndex === -1) {
+            this.items.push({ ...product });
+        } else {
+            this.items.splice(existingItemIndex, 1);
+        }
+        this.updateFavorites();
+    },
+    removeItem(productId) {
+        this.items = this.items.filter(item => item.id !== productId);
+        this.updateFavorites();
+    
+        const heartIcon = document.querySelector(`img[data-id='${productId}']`);
+        if (heartIcon) {
+            const heartIconState = heartIcon.closest('[x-data]').__x.$data;
+            heartIconState.isRedHeart = false; 
+        }
+    },
+    updateFavorites() {
+        const favCount = document.getElementById('favCount');
+        const favItems = document.getElementById('favItems');
+
+        if (favCount && favItems) {
+            favCount.textContent = `قائمة الأمنيات (${this.items.length})`;
+
+            favItems.innerHTML = '';
+
+            if (this.items.length > 0) {
+                this.items.forEach(item => {
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'flex gap-2 mb-4';
+                    itemElement.innerHTML = `
+                        <img src="${item.image}" class="w-20 h-20" alt="Product Image">
+                        <div>
+                            <p>${item.name}</p>
+                            <p>السعر: <span>${item.price} ريال</span></p>
+                            <button class="text-red-500 mt-2" onclick="favorites.removeItem(${item.id})">حذف</button>
+                        </div>
+                    `;
+                    favItems.appendChild(itemElement);
+                });
+            } else {
+                favItems.innerHTML = `
+                    <div class="mt-2 flex flex-col items-center">
+                        <img src="../../images/Heart.svg" class="w-20 h-20" alt="Image">
+                        <p class="font-medium text-lg">ليس لديك منتجات في قائمة الأمنيات حاليا</p>
+                    </div>
+                `;
+            }
+
+            localStorage.setItem('favorites', JSON.stringify(this.items));
+        } else {
+            console.error('Favorites elements not found!');
+        }
+    },
+
+    loadFavorites() {
+        const storedItems = localStorage.getItem('favorites');
+        if (storedItems) {
+            this.items = JSON.parse(storedItems);
+            this.updateFavorites();
+        }
+    }
+};
+
+function addToFavorites(event) {
+    const button = event.currentTarget;
+    const product = {
+        id: parseInt(button.getAttribute('data-id')),
+        name: button.getAttribute('data-name'),
+        price: parseFloat(button.getAttribute('data-price')),
+        image: button.getAttribute('data-image'),
+    };
+
+    favorites.toggleItem(product);
+
+    const heartIcon = button.closest('[x-data]').__x.$data;
+    if (heartIcon) {
+        heartIcon.isRedHeart = favorites.items.some(item => item.id === product.id);
+    }
+}
+
+window.onload = function () {
     cart.loadCart();
+    favorites.loadFavorites();
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', () => {
             const product = {
@@ -130,7 +224,9 @@ window.onload = function() {
                 name: button.getAttribute('data-name'),
                 price: parseFloat(button.getAttribute('data-price')),
                 image: button.getAttribute('data-image'),
+                size: button.getAttribute('data-size'), // Include size
             };
+            console.log(product); // Debugging: Check if size is included
             cart.addItem(product);
         });
     });

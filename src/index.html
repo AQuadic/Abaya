@@ -640,12 +640,21 @@
                 <h1 class="text-[#232D20] font-medium text-2xl leading-[50.4px]">الأكثر مبيعاً</h1>
                 <a href="./allCards.html" class="text-[#232D20] font-medium text-[20px] leading-7">عرض الكل >></a>
             </div>
-        <div x-data="{ show: false }" class="relative">
-            <div class="mt-[14px] flex flex-wrap justify-center sm:gap-[40px] gap-[10px]">
+            <div x-data="{ show: false }" class="relative">
+                <div class="mt-[14px] flex flex-wrap justify-center sm:gap-[40px] gap-[10px]">
                 <div class="relative sm:w-[346px] w-[193.28px] h-auto rounded-[10px] hover:scale-105 duration-300 pb-2" style="box-shadow: 0px 4px 4px 0px #00000040;">
-                    <img src="../images/abaya.webp" class="sm:w-[346px] w-[193.28px] sm:h-[466px] h-[260.31px]" alt="Abaya">
-                    <img src="../images/redHeart.svg" class="sm:w-[27.93px] sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer" alt="Heart">
-                    <div class="sm:px-[22px] px-3">
+                        <img src="../images/abaya.webp" class="sm:w-[346px] w-[193.28px] sm:h-[466px] h-[260.31px]" alt="Abaya">
+                        <div x-data="{ 
+                            isRedHeart: false,
+                            checkHeart() {
+                                const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                                this.isRedHeart = favorites.some(item => item.id === 1);
+                            } 
+                        }" 
+                        x-init="checkHeart">
+                        <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="1"  data-name="First Abaya"  data-price="500"  data-image="../images/abaya-slider2.webp">
+                        </div>
+                        <div class="sm:px-[22px] px-3">
                         <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
                         <div x-data="{ showFullText: false }" class="text-container">
                             <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">
@@ -666,7 +675,7 @@
                             <img src="../images/Group.svg" class="sm:w-[22px] sm:h-[22px] w-[12.29px] h-[12.29px]" alt="Icon">
                             <p class="text-[#747474] font-medium sm:text-base text-[8.94px] sm:leading-[22.5px]">عباية تشك</p>
                         </div>
-                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="1"data-name="Nello Wallet in Metallic Textured"data-price="1500"data-image="../images/abaya-slider3.webp">
+                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="1"data-name="Nello Wallet in Metallic Textured"data-price="15000"  data-size="M" data-image="../images/abaya-slider3.webp">
                             <img src="../images/addTocart.svg" class="sm:w-[19.75px] sm:h-[17.5px] w-[11.03px] h-[9.78px]" alt="Cart">
                             <p class="text-white font-medium sm:text-lg text-[10.05px] sm:leading-[25.2px]">اضافة الى السلة</p>
                         </button>
@@ -675,7 +684,16 @@
 
                 <div class="relative sm:w-[346px] w-[193.28px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
                     <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-[193.28px] sm:h-[466px] h-[260.31px]" alt="Abaya">
-                    <img src="../images/abayaHeart.svg" class="sm:w-[27.93px] sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer" alt="Heart">
+                    <div x-data="{ 
+                        isRedHeart: false,
+                        checkHeart() {
+                            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                            this.isRedHeart = favorites.some(item => item.id === 2);
+                        } 
+                    }" 
+                    x-init="checkHeart">
+                    <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="2"  data-name="Hello"  data-price="900"  data-image="../images/abaya-slider2.webp">
+                    </div>
                     <div class="sm:px-[22px] px-3">
                         <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
@@ -687,7 +705,7 @@
                             <img src="../images/Group.svg" class="sm:w-[22px] sm:h-[22px] w-[12.29px] h-[12.29px]" alt="Icon">
                             <p class="text-[#747474] font-medium sm:text-base text-[8.94px] sm:leading-[22.5px]">عباية تشك</p>
                         </div>
-                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="2"data-name="Nello Wallet in Metallic Textured"data-price="1500"data-image="../images/abaya-slider3.webp">
+                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="2" data-name="Nello Wallet in Metallic Textured" data-price="1500" data-size="XXL" data-image="../images/abaya-slider3.webp">
                             <img src="../images/addTocart.svg" class="sm:w-[19.75px] sm:h-[17.5px] w-[11.03px] h-[9.78px]" alt="Cart">
                             <p class="text-white font-medium sm:text-lg text-[10.05px] sm:leading-[25.2px]">اضافة الى السلة</p>
                         </button>
@@ -696,7 +714,16 @@
 
                 <div class="relative sm:w-[346px] w-[193.28px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
                     <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-[193.28px] sm:h-[466px] h-[260.31px]" alt="Abaya">
-                    <img src="../images/abayaHeart.svg" class="sm:w-[27.93px] sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer" alt="Heart">
+                    <div x-data="{ 
+                        isRedHeart: false,
+                        checkHeart() {
+                            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                            this.isRedHeart = favorites.some(item => item.id === 3);
+                        } 
+                    }" 
+                    x-init="checkHeart">
+                    <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="3"  data-name="Hi"  data-price="700"  data-image="../images/abaya-slider2.webp">
+                    </div>
                     <div class="sm:px-[22px] px-3">
                         <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
@@ -708,7 +735,7 @@
                             <img src="../images/Group.svg" class="sm:w-[22px] sm:h-[22px] w-[12.29px] h-[12.29px]" alt="Icon">
                             <p class="text-[#747474] font-medium sm:text-base text-[8.94px] sm:leading-[22.5px]">عباية تشك</p>
                         </div>
-                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="3"data-name="Nello Wallet in Metallic Textured"data-price="1500"data-image="../images/abaya-slider3.webp">
+                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="3"data-name="Nello Wallet in Metallic Textured" data-size="XL" data-price="1500"data-image="../images/abaya-slider3.webp">
                             <img src="../images/addTocart.svg" class="sm:w-[19.75px] sm:h-[17.5px] w-[11.03px] h-[9.78px]" alt="Cart">
                             <p class="text-white font-medium sm:text-lg text-[10.05px] sm:leading-[25.2px]">اضافة الى السلة</p>
                         </button>
@@ -717,7 +744,16 @@
 
                 <div class="relative sm:w-[346px] w-[193.28px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
                     <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-[193.28px] sm:h-[466px] h-[260.31px]" alt="Abaya">
-                    <img src="../images/abayaHeart.svg" class="sm:w-[27.93px] sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer" alt="Heart">
+                    <div x-data="{ 
+                        isRedHeart: false,
+                        checkHeart() {
+                            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                            this.isRedHeart = favorites.some(item => item.id === 4);
+                        } 
+                    }" 
+                    x-init="checkHeart">
+                    <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="4"  data-name="Hello" data-size="s" data-price="1200"  data-image="../images/abaya-slider2.webp">
+                    </div>
                     <div class="sm:px-[22px] px-3">
                         <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
@@ -729,7 +765,7 @@
                             <img src="../images/Group.svg" class="sm:w-[22px] sm:h-[22px] w-[12.29px] h-[12.29px]" alt="Icon">
                             <p class="text-[#747474] font-medium sm:text-base text-[8.94px] sm:leading-[22.5px]">عباية تشك</p>
                         </div>
-                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="4"data-name="Nello Wallet in Metallic Textured"data-price="1500"data-image="../images/abaya-slider3.webp">
+                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="4"data-name="Nello Wallet in Metallic Textured"data-price="1500" data-size="XXL" data-image="../images/abaya-slider3.webp">
                             <img src="../images/addTocart.svg" class="sm:w-[19.75px] sm:h-[17.5px] w-[11.03px] h-[9.78px]" alt="Cart">
                             <p class="text-white font-medium sm:text-lg text-[10.05px] sm:leading-[25.2px]">اضافة الى السلة</p>
                         </button>
@@ -738,7 +774,16 @@
 
                 <div class="relative sm:w-[346px] w-[193.28px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
                     <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-[193.28px] sm:h-[466px] h-[260.31px]" alt="Abaya">
-                    <img src="../images/abayaHeart.svg" class="sm:w-[27.93px] sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer" alt="Heart">
+                    <div x-data="{ 
+                        isRedHeart: false,
+                        checkHeart() {
+                            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                            this.isRedHeart = favorites.some(item => item.id === 5);
+                        } 
+                    }" 
+                    x-init="checkHeart">
+                    <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="5"  data-name="Hello"  data-price="900"  data-image="../images/abaya-slider2.webp">
+                    </div>
                     <div class="sm:px-[22px] px-3">
                         <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
@@ -750,7 +795,7 @@
                             <img src="../images/Group.svg" class="sm:w-[22px] sm:h-[22px] w-[12.29px] h-[12.29px]" alt="Icon">
                             <p class="text-[#747474] font-medium sm:text-base text-[8.94px] sm:leading-[22.5px]">عباية تشك</p>
                         </div>
-                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="5"data-name="Nello Wallet in Metallic Textured"data-price="1500"data-image="../images/abaya-slider3.webp">
+                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="5"data-name="Nello Wallet in Metallic Textured"data-price="1500" data-size="S" data-image="../images/abaya-slider3.webp">
                             <img src="../images/addTocart.svg" class="sm:w-[19.75px] sm:h-[17.5px] w-[11.03px] h-[9.78px]" alt="Cart">
                             <p class="text-white font-medium sm:text-lg text-[10.05px] sm:leading-[25.2px]">اضافة الى السلة</p>
                         </button>
@@ -759,7 +804,16 @@
 
                 <div class="relative sm:w-[346px] w-[193.28px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
                     <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-[193.28px] sm:h-[466px] h-[260.31px]" alt="Abaya">
-                    <img src="../images/abayaHeart.svg" class="sm:w-[27.93px] sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer" alt="Heart">
+                    <div x-data="{ 
+                        isRedHeart: false,
+                        checkHeart() {
+                            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                            this.isRedHeart = favorites.some(item => item.id === 6);
+                        } 
+                    }" 
+                    x-init="checkHeart">
+                    <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="6"  data-name="Abaya"  data-price="900"  data-image="../images/abaya-slider2.webp">
+                    </div>
                     <div class="sm:px-[22px] px-3">
                         <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
@@ -771,7 +825,7 @@
                             <img src="../images/Group.svg" class="sm:w-[22px] sm:h-[22px] w-[12.29px] h-[12.29px]" alt="Icon">
                             <p class="text-[#747474] font-medium sm:text-base text-[8.94px] sm:leading-[22.5px]">عباية تشك</p>
                         </div>
-                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="6"data-name="Nello Wallet in Metallic Textured"data-price="1500"data-image="../images/abaya-slider3.webp">
+                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="6"data-name="Nello Wallet in Metallic Textured"data-price="1500" data-size="M"data-image="../images/abaya-slider3.webp">
                             <img src="../images/addTocart.svg" class="sm:w-[19.75px] sm:h-[17.5px] w-[11.03px] h-[9.78px]" alt="Cart">
                             <p class="text-white font-medium sm:text-lg text-[10.05px] sm:leading-[25.2px]">اضافة الى السلة</p>
                         </button>
@@ -780,7 +834,16 @@
 
                 <div class="relative sm:w-[346px] w-[193.28px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
                     <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-[193.28px] sm:h-[466px] h-[260.31px]" alt="Abaya">
-                    <img src="../images/abayaHeart.svg" class="sm:w-[27.93px] sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer" alt="Heart">
+                    <div x-data="{ 
+                        isRedHeart: false,
+                        checkHeart() {
+                            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                            this.isRedHeart = favorites.some(item => item.id === 7);
+                        } 
+                    }" 
+                    x-init="checkHeart">
+                    <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="7"  data-name="Abaya"  data-price="1000"  data-image="../images/abaya-slider2.webp">
+                    </div>
                     <div class="sm:px-[22px] px-3">
                         <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
@@ -792,7 +855,7 @@
                             <img src="../images/Group.svg" class="sm:w-[22px] sm:h-[22px] w-[12.29px] h-[12.29px]" alt="Icon">
                             <p class="text-[#747474] font-medium sm:text-base text-[8.94px] sm:leading-[22.5px]">عباية تشك</p>
                         </div>
-                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="7"data-name="Nello Wallet in Metallic Textured"data-price="1500"data-image="../images/abaya-slider3.webp">
+                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="7"data-name="Nello Wallet in Metallic Textured"data-price="1500" data-size="XL" data-image="../images/abaya-slider3.webp">
                             <img src="../images/addTocart.svg" class="sm:w-[19.75px] sm:h-[17.5px] w-[11.03px] h-[9.78px]" alt="Cart">
                             <p class="text-white font-medium sm:text-lg text-[10.05px] sm:leading-[25.2px]">اضافة الى السلة</p>
                         </button>
@@ -801,7 +864,16 @@
 
                 <div class="relative sm:w-[346px] w-[193.28px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
                     <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-[193.28px] sm:h-[466px] h-[260.31px]" alt="Abaya">
-                    <img src="../images/abayaHeart.svg" class="sm:w-[27.93px] sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer" alt="Heart">
+                    <div x-data="{ 
+                        isRedHeart: false,
+                        checkHeart() {
+                            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                            this.isRedHeart = favorites.some(item => item.id === 8);
+                        } 
+                    }" 
+                    x-init="checkHeart">
+                    <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="8"  data-name="Hello"  data-price="1100"  data-image="../images/abaya-slider2.webp">
+                    </div>
                     <div class="sm:px-[22px] px-3">
                         <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
@@ -813,7 +885,7 @@
                             <img src="../images/Group.svg" class="sm:w-[22px] sm:h-[22px] w-[12.29px] h-[12.29px]" alt="Icon">
                             <p class="text-[#747474] font-medium sm:text-base text-[8.94px] sm:leading-[22.5px]">عباية تشك</p>
                         </div>
-                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="8"data-name="Nello Wallet in Metallic Textured"data-price="1500"data-image="../images/abaya-slider3.webp">
+                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="8"data-name="Nello Wallet in Metallic Textured"data-price="1500" data-size="S" data-image="../images/abaya-slider3.webp">
                             <img src="../images/addTocart.svg" class="sm:w-[19.75px] sm:h-[17.5px] w-[11.03px] h-[9.78px]" alt="Cart">
                             <p class="text-white font-medium sm:text-lg text-[10.05px] sm:leading-[25.2px]">اضافة الى السلة</p>
                         </button>
@@ -832,11 +904,20 @@
                 <h1 class="text-[#232D20] font-medium text-2xl leading-[50.4px]">اختيارات عبايا مول</h1>
                 <a href="./allCards.html" class="text-[#232D20] font-medium text-[20px] leading-7">عرض الكل >></a>
             </div>
-        <div x-data="{ show: false }" class="relative">
+            <div x-data="{ show: false }" class="relative">
             <div class="mt-[14px] flex flex-wrap justify-center sm:gap-[40px] gap-[10px]">
                 <div class="relative sm:w-[346px] w-[193.28px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
                     <img src="../images/abaya.webp" class="sm:w-[346px] w-[193.28px] sm:h-[466px] h-[260.31px]" alt="Abaya">
-                    <img src="../images/redHeart.svg" class="sm:w-[27.93px] sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer" alt="Heart">
+                    <div x-data="{ 
+                        isRedHeart: false,
+                        checkHeart() {
+                            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                            this.isRedHeart = favorites.some(item => item.id === 9);
+                        } 
+                    }" 
+                    x-init="checkHeart">
+                    <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="9"  data-name="New abaya"  data-price="900"  data-image="../images/abaya-slider2.webp">
+                    </div>
                     <div class="sm:px-[22px] px-3">
                         <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
@@ -848,7 +929,7 @@
                             <img src="../images/Group.svg" class="sm:w-[22px] sm:h-[22px] w-[12.29px] h-[12.29px]" alt="Icon">
                             <p class="text-[#747474] font-medium sm:text-base text-[8.94px] sm:leading-[22.5px]">عباية تشك</p>
                         </div>
-                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="9"data-name="Nello Wallet in Metallic Textured"data-price="1500"data-image="../images/abaya-slider3.webp">
+                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="9"data-name="Nello Wallet in Metallic Textured"data-price="1500" data-size="S" data-image="../images/abaya-slider3.webp">
                             <img src="../images/addTocart.svg" class="sm:w-[19.75px] sm:h-[17.5px] w-[11.03px] h-[9.78px]" alt="Cart">
                             <p class="text-white font-medium sm:text-lg text-[10.05px] sm:leading-[25.2px]">اضافة الى السلة</p>
                         </button>
@@ -857,7 +938,16 @@
 
                 <div class="relative sm:w-[346px] w-[193.28px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
                     <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-[193.28px] sm:h-[466px] h-[260.31px]" alt="Abaya">
-                    <img src="../images/abayaHeart.svg" class="sm:w-[27.93px] sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer" alt="Heart">
+                    <div x-data="{ 
+                        isRedHeart: false,
+                        checkHeart() {
+                            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                            this.isRedHeart = favorites.some(item => item.id === 10);
+                        } 
+                    }" 
+                    x-init="checkHeart">
+                    <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="10"  data-name="Abaya Abaya"  data-price="1650"  data-image="../images/abaya-slider2.webp">
+                    </div>
                     <div class="sm:px-[22px] px-3">
                         <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
@@ -869,7 +959,7 @@
                             <img src="../images/Group.svg" class="sm:w-[22px] sm:h-[22px] w-[12.29px] h-[12.29px]" alt="Icon">
                             <p class="text-[#747474] font-medium sm:text-base text-[8.94px] sm:leading-[22.5px]">عباية تشك</p>
                         </div>
-                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="10"data-name="Nello Wallet in Metallic Textured"data-price="1500"data-image="../images/abaya-slider3.webp">
+                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="10"data-name="Nello Wallet in Metallic Textured"data-price="1500" data-size="XL" data-image="../images/abaya-slider3.webp">
                             <img src="../images/addTocart.svg" class="sm:w-[19.75px] sm:h-[17.5px] w-[11.03px] h-[9.78px]" alt="Cart">
                             <p class="text-white font-medium sm:text-lg text-[10.05px] sm:leading-[25.2px]">اضافة الى السلة</p>
                         </button>
@@ -878,7 +968,16 @@
 
                 <div class="relative sm:w-[346px] w-[193.28px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
                     <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-[193.28px] sm:h-[466px] h-[260.31px]" alt="Abaya">
-                    <img src="../images/abayaHeart.svg" class="sm:w-[27.93px] sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer" alt="Heart">
+                    <div x-data="{ 
+                        isRedHeart: false,
+                        checkHeart() {
+                            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                            this.isRedHeart = favorites.some(item => item.id === 11);
+                        } 
+                    }" 
+                    x-init="checkHeart">
+                    <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="11"  data-name="Hello"  data-price="900"  data-image="../images/abaya-slider2.webp">
+                    </div>
                     <div class="sm:px-[22px] px-3">
                         <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
@@ -890,7 +989,7 @@
                             <img src="../images/Group.svg" class="sm:w-[22px] sm:h-[22px] w-[12.29px] h-[12.29px]" alt="Icon">
                             <p class="text-[#747474] font-medium sm:text-base text-[8.94px] sm:leading-[22.5px]">عباية تشك</p>
                         </div>
-                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="11"data-name="Nello Wallet in Metallic Textured"data-price="1500"data-image="../images/abaya-slider3.webp">
+                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="11"data-name="Nello Wallet in Metallic Textured"data-price="1500" data-size="M" data-image="../images/abaya-slider3.webp">
                             <img src="../images/addTocart.svg" class="sm:w-[19.75px] sm:h-[17.5px] w-[11.03px] h-[9.78px]" alt="Cart">
                             <p class="text-white font-medium sm:text-lg text-[10.05px] sm:leading-[25.2px]">اضافة الى السلة</p>
                         </button>
@@ -899,7 +998,16 @@
 
                 <div class="relative sm:w-[346px] w-[193.28px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
                     <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-[193.28px] sm:h-[466px] h-[260.31px]" alt="Abaya">
-                    <img src="../images/abayaHeart.svg" class="sm:w-[27.93px] sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer" alt="Heart">
+                    <div x-data="{ 
+                        isRedHeart: false,
+                        checkHeart() {
+                            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                            this.isRedHeart = favorites.some(item => item.id === 12);
+                        } 
+                    }" 
+                    x-init="checkHeart">
+                    <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="12"  data-name="Hello"  data-price="200"  data-image="../images/abaya-slider2.webp">
+                    </div>
                     <div class="sm:px-[22px] px-3">
                         <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
@@ -911,7 +1019,7 @@
                             <img src="../images/Group.svg" class="sm:w-[22px] sm:h-[22px] w-[12.29px] h-[12.29px]" alt="Icon">
                             <p class="text-[#747474] font-medium sm:text-base text-[8.94px] sm:leading-[22.5px]">عباية تشك</p>
                         </div>
-                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="12"data-name="Nello Wallet in Metallic Textured"data-price="1500"data-image="../images/abaya-slider3.webp">
+                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="12"data-name="Nello Wallet in Metallic Textured"data-price="1500" data-size="XXL" data-image="../images/abaya-slider3.webp">
                             <img src="../images/addTocart.svg" class="sm:w-[19.75px] sm:h-[17.5px] w-[11.03px] h-[9.78px]" alt="Cart">
                             <p class="text-white font-medium sm:text-lg text-[10.05px] sm:leading-[25.2px]">اضافة الى السلة</p>
                         </button>
@@ -920,7 +1028,16 @@
 
                 <div class="relative sm:w-[346px] w-[193.28px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
                     <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-[193.28px] sm:h-[466px] h-[260.31px]" alt="Abaya">
-                    <img src="../images/abayaHeart.svg" class="sm:w-[27.93px] sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer" alt="Heart">
+                    <div x-data="{ 
+                        isRedHeart: false,
+                        checkHeart() {
+                            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                            this.isRedHeart = favorites.some(item => item.id === 13);
+                        } 
+                    }" 
+                    x-init="checkHeart">
+                    <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="13"  data-name="Hello"  data-price="800"  data-image="../images/abaya-slider2.webp">
+                    </div>
                     <div class="sm:px-[22px] px-3">
                         <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
@@ -932,7 +1049,7 @@
                             <img src="../images/Group.svg" class="sm:w-[22px] sm:h-[22px] w-[12.29px] h-[12.29px]" alt="Icon">
                             <p class="text-[#747474] font-medium sm:text-base text-[8.94px] sm:leading-[22.5px]">عباية تشك</p>
                         </div>
-                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="13"data-name="Nello Wallet in Metallic Textured"data-price="1500"data-image="../images/abaya-slider3.webp">
+                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="13"data-name="Nello Wallet in Metallic Textured"data-price="1500" data-size="2XL" data-image="../images/abaya-slider3.webp">
                             <img src="../images/addTocart.svg" class="sm:w-[19.75px] sm:h-[17.5px] w-[11.03px] h-[9.78px]" alt="Cart">
                             <p class="text-white font-medium sm:text-lg text-[10.05px] sm:leading-[25.2px]">اضافة الى السلة</p>
                         </button>
@@ -941,7 +1058,16 @@
 
                 <div class="relative sm:w-[346px] w-[193.28px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
                     <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-[193.28px] sm:h-[466px] h-[260.31px]" alt="Abaya">
-                    <img src="../images/abayaHeart.svg" class="sm:w-[27.93px] sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer" alt="Heart">
+                    <div x-data="{ 
+                        isRedHeart: false,
+                        checkHeart() {
+                            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                            this.isRedHeart = favorites.some(item => item.id === 14);
+                        } 
+                    }" 
+                    x-init="checkHeart">
+                    <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="14"  data-name="Hello"  data-price="900"  data-image="../images/abaya-slider2.webp">
+                    </div>
                     <div class="sm:px-[22px] px-3">
                         <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
@@ -953,7 +1079,7 @@
                             <img src="../images/Group.svg" class="sm:w-[22px] sm:h-[22px] w-[12.29px] h-[12.29px]" alt="Icon">
                             <p class="text-[#747474] font-medium sm:text-base text-[8.94px] sm:leading-[22.5px]">عباية تشك</p>
                         </div>
-                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="14"data-name="Nello Wallet in Metallic Textured"data-price="1500"data-image="../images/abaya-slider3.webp">
+                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="14"data-name="Nello Wallet in Metallic Textured"data-price="1500" data-size="XL" data-image="../images/abaya-slider3.webp">
                             <img src="../images/addTocart.svg" class="sm:w-[19.75px] sm:h-[17.5px] w-[11.03px] h-[9.78px]" alt="Cart">
                             <p class="text-white font-medium sm:text-lg text-[10.05px] sm:leading-[25.2px]">اضافة الى السلة</p>
                         </button>
@@ -962,7 +1088,16 @@
 
                 <div class="relative sm:w-[346px] w-[193.28px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
                     <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-[193.28px] sm:h-[466px] h-[260.31px]" alt="Abaya">
-                    <img src="../images/abayaHeart.svg" class="sm:w-[27.93px] sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer" alt="Heart">
+                    <div x-data="{ 
+                        isRedHeart: false,
+                        checkHeart() {
+                            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                            this.isRedHeart = favorites.some(item => item.id === 15);
+                        } 
+                    }" 
+                    x-init="checkHeart">
+                    <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="15"  data-name="Hello"  data-price="900"  data-image="../images/abaya-slider2.webp">
+                    </div>
                     <div class="sm:px-[22px] px-3">
                         <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
@@ -974,7 +1109,7 @@
                             <img src="../images/Group.svg" class="sm:w-[22px] sm:h-[22px] w-[12.29px] h-[12.29px]" alt="Icon">
                             <p class="text-[#747474] font-medium sm:text-base text-[8.94px] sm:leading-[22.5px]">عباية تشك</p>
                         </div>
-                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="15"data-name="Nello Wallet in Metallic Textured"data-price="1500"data-image="../images/abaya-slider3.webp">
+                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="15"data-name="Nello Wallet in Metallic Textured"data-price="1500" data-size="M" data-image="../images/abaya-slider3.webp">
                             <img src="../images/addTocart.svg" class="sm:w-[19.75px] sm:h-[17.5px] w-[11.03px] h-[9.78px]" alt="Cart">
                             <p class="text-white font-medium sm:text-lg text-[10.05px] sm:leading-[25.2px]">اضافة الى السلة</p>
                         </button>
@@ -983,7 +1118,16 @@
 
                 <div class="relative sm:w-[346px] w-[193.28px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
                     <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-[193.28px] sm:h-[466px] h-[260.31px]" alt="Abaya">
-                    <img src="../images/abayaHeart.svg" class="sm:w-[27.93px] sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer" alt="Heart">
+                    <div x-data="{ 
+                        isRedHeart: false,
+                        checkHeart() {
+                            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                            this.isRedHeart = favorites.some(item => item.id === 16);
+                        } 
+                    }" 
+                    x-init="checkHeart">
+                    <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="16"  data-name="Hello"  data-price="900"  data-image="../images/abaya-slider2.webp">
+                    </div>
                     <div class="sm:px-[22px] px-3">
                         <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
@@ -995,7 +1139,7 @@
                             <img src="../images/Group.svg" class="sm:w-[22px] sm:h-[22px] w-[12.29px] h-[12.29px]" alt="Icon">
                             <p class="text-[#747474] font-medium sm:text-base text-[8.94px] sm:leading-[22.5px]">عباية تشك</p>
                         </div>
-                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="16"data-name="Nello Wallet in Metallic Textured"data-price="1500"data-image="../images/abaya-slider3.webp">
+                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[174.84px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="16"data-name="Nello Wallet in Metallic Textured"data-price="1500" data-size="S" data-image="../images/abaya-slider3.webp">
                             <img src="../images/addTocart.svg" class="sm:w-[19.75px] sm:h-[17.5px] w-[11.03px] h-[9.78px]" alt="Cart">
                             <p class="text-white font-medium sm:text-lg text-[10.05px] sm:leading-[25.2px]">اضافة الى السلة</p>
                         </button>

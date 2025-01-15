@@ -7,22 +7,22 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>
-        #cartItems::-webkit-scrollbar {
+        .custom-scrollbar::-webkit-scrollbar {
             width: 8px; 
         }
 
-        #cartItems::-webkit-scrollbar-track {
+        .custom-scrollbar::-webkit-scrollbar-track {
             background: #f1f1f1;
             border-radius: 4px;
         }
 
-        #cartItems::-webkit-scrollbar-thumb {
+        .custom-scrollbar::-webkit-scrollbar-thumb {
             background: #b87253;
             border-radius: 4px;
             border: 2px solid #f1f1f1;
         }
 
-        #cartItems::-webkit-scrollbar-thumb:hover {
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
             background: #96563e;
         }
     </style>
@@ -387,14 +387,20 @@
                 <!-- Fav -->
                 <div class="relative flex gap-2 group">
                     <div class="flex items-center gap-2">
-                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="w-5 h-5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 4.595a5.904 5.904 0 0 0-3.996-1.558 5.942 5.942 0 0 0-4.213 1.758c-2.353 2.363-2.352 6.059.002 8.412l7.332 7.332c.17.299.498.492.875.492a.99.99 0 0 0 .792-.409l7.415-7.415c2.354-2.354 2.354-6.049-.002-8.416a5.938 5.938 0 0 0-4.209-1.754A5.906 5.906 0 0 0 12 4.595zm6.791 1.61c1.563 1.571 1.564 4.025.002 5.588L12 18.586l-6.793-6.793c-1.562-1.563-1.561-4.017-.002-5.584.76-.756 1.754-1.172 2.799-1.172s2.035.416 2.789 1.17l.5.5a.999.999 0 0 0 1.414 0l.5-.5c1.512-1.509 4.074-1.505 5.584-.002z"></path></svg>
-                        <a href="./Favorite.html" class="text-black text-base font-normal">قائمة الأمنيات (0)</a>
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="w-5 h-5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 4.595a5.904 5.904 0 0 0-3.996-1.558 5.942 5.942 0 0 0-4.213 1.758c-2.353 2.363-2.352 6.059.002 8.412l7.332 7.332c.17.299.498.492.875.492a.99.99 0 0 0 .792-.409l7.415-7.415c2.354-2.354 2.354-6.049-.002-8.416a5.938 5.938 0 0 0-4.209-1.754A5.906 5.906 0 0 0 12 4.595zm6.791 1.61c1.563 1.571 1.564 4.025.002 5.588L12 18.586l-6.793-6.793c-1.562-1.563-1.561-4.017-.002-5.584.76-.756 1.754-1.172 2.799-1.172s2.035.416 2.789 1.17l.5.5a.999.999 0 0 0 1.414 0l.5-.5c1.512-1.509 4.074-1.505 5.584-.002z"></path>
+                        </svg>
+                        <a href="./Favorite.html" class="text-black text-base font-normal" id="favCount">قائمة الأمنيات (0)</a>
                     </div>
                     <!-- Pop-up Content -->
                     <div class="absolute hidden group-hover:block top-full left-[-100px] mt-2 bg-white border border-gray-400 p-4 w-96 h-auto z-50">
-                        <div class="mt-2 flex flex-col items-center">
-                            <img src="../../images/Heart.svg" class="w-20 h-20" alt="Image">
-                            <p class="font-medium text-lg">ليس لديك منتجات في قائمة الأمنيات حاليا</p>
+                        <div class="max-h-64 overflow-y-auto">
+                            <div id="favItems" class="custom-scrollbar mt-2 max-h-48 overflow-y-auto">
+                                <div class="mt-2 flex flex-col items-center">
+                                    <img src="../../images/Heart.svg" class="w-20 h-20" alt="Image">
+                                    <p class="font-medium text-lg">ليس لديك منتجات في قائمة الأمنيات حاليا</p>
+                                </div>
+                            </div>
                         </div>
                         <a href="../../src/index.html" class="flex items-center justify-center text-white mt-5 w-full h-12 bg-[#b87253]">
                             ابدأ التسوق
@@ -416,7 +422,7 @@
                         <!-- Pop-up Content -->
                         <p class="font-semibold">حقيبتي</p>
                         <hr class="shadow-sm mt-2" />
-                        <div id="cartItems" class="mt-2 max-h-48 overflow-y-auto"></div>
+                        <div id="cartItems" class="custom-scrollbar mt-2 max-h-48 overflow-y-auto"></div>
                         <div class="flex items-center justify-between mt-2">
                             <div class="flex items-center gap-2">
                                 <h2 class="text-lg text-black font-bold">المجموع الإجمالي</h2>
