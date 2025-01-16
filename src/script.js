@@ -77,7 +77,7 @@ const cart = {
 
         if (cartCount && cartTotal && cartItems) {
             const count = this.items.reduce((sum, item) => sum + item.quantity, 0);
-            cartCount.textContent = `الحقيبة (${count})`;
+            cartCount.textContent = ` (${count})`;
 
             this.total = this.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
             cartTotal.textContent = `${this.total} ريال`;
@@ -155,7 +155,7 @@ const favorites = {
         const favItems = document.getElementById('favItems');
 
         if (favCount && favItems) {
-            favCount.textContent = `قائمة الأمنيات (${this.items.length})`;
+            favCount.textContent = `  (${this.items.length})`;
 
             favItems.innerHTML = '';
 
