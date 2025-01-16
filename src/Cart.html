@@ -193,6 +193,8 @@
                         <form class="relative"  x-data="{ inputValue: '' }">
                             <input type="text" class="w-full h-11 focus:ring-0 focus:outline-none focus:border-black" placeholder="" x-model="inputValue" />
                             <button type="submit" class="absolute rtl:left-2 ltr:right-2 top-2 flex text-base font-medium transition-colors duration-300":class="inputValue.trim() ? 'text-[#b87253]' : 'text-gray-500'">استخدام</button>
+                            <p class="text-xs text-red-500 p-1">The coupon code isn't valid. Verify the code and try again.</p>
+                            <p class="text-xs text-green-500 p-1">Discount code used</p>
                         </form>
                     </div>
                 
