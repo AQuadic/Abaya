@@ -61,7 +61,7 @@
     <!-- End Title -->
 
     <!-- Start Content -->
-        <section class="container mx-auto flex lg:flex-row flex-col justify-center items-center gap-6 mt-[40px] mb-[72px]">
+        <section class="container mx-auto flex lg:flex-row flex-col justify-center lg:items-start items-center gap-6 mt-[40px] mb-[72px]">
             <div class="lg:w-[872px] p-2">
                 <div x-data="{ counters: { counter1: 1, counter2: 1 } }" class="bg-white  rounded-[4px] overflow-hidden">
                     <div class="overflow-x-auto">
@@ -192,7 +192,7 @@
                     <div id="accordion-collapse-body-2" class="accordion-content items-center justify-between md:w-[480px] w-full p-5 bg-white mb-6" x-show="openIndex === 2" x-transition class="hidden mb-6 mt-[-22px] text-[#475156] font-normal text-sm">
                         <form class="relative"  x-data="{ inputValue: '' }">
                             <input type="text" class="w-full h-11 focus:ring-0 focus:outline-none focus:border-black" placeholder="" x-model="inputValue" />
-                            <button type="submit" class="absolute left-2 top-2 flex text-base font-medium transition-colors duration-300":class="inputValue.trim() ? 'text-[#b87253]' : 'text-gray-500'">استخدام</button>
+                            <button type="submit" class="absolute rtl:left-2 ltr:right-2 top-2 flex text-base font-medium transition-colors duration-300":class="inputValue.trim() ? 'text-[#b87253]' : 'text-gray-500'">استخدام</button>
                         </form>
                     </div>
                 
@@ -219,14 +219,9 @@
                                 </div>
                                 <div x-data="{ isOpen: false }">
                                     <button type="button" @click="isOpen = true" class="btn-reset hover:bg-gray-200 rounded-full transition-colors">
-                                        <button type="button" data-tabby-info="installments" data-tabby-price="700" data-tabby-currency="AED">C</button>
-                                        <svg width="16" height="16" viewBox="0 0 12 12" class="svg">
-                                            <g fill="none" stroke-linecap="round" stroke-width=".8" stroke="#000">
-                                                <path d="M11 6A5 5 0 1 1 1 6a5 5 0 0 1 10 0z" clip-rule="evenodd"></path>
-                                                <path d="M6 5v3M5 8h2M5 5h1"></path>
-                                                <path fill="#000" fill-rule="evenodd" d="M6 4h0z" clip-rule="evenodd"></path>
-                                            </g>
-                                        </svg>
+                                        <button type="button" >
+                                            <img src="../images/info-icon.svg" class="w-4 h-4" alt="Info Icon" data-tabby-info="installments" data-tabby-price="700" data-tabby-currency="AED">
+                                        </button>
                                     </button>
                                     <div x-show="isOpen" @click="isOpen = false" class="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
                                     <!-- Pop-up Modal -->
@@ -249,17 +244,11 @@
                                 </div>
                                 <div x-data="{ isOpen: false }">
                                     <button type="button" @click="isOpen = true" class="btn-reset hover:bg-gray-200 rounded-full transition-colors">
-                                        <svg width="16" height="16" viewBox="0 0 12 12" class="svg">
-                                            <g fill="none" stroke-linecap="round" stroke-width=".8" stroke="#000">
-                                                <path d="M11 6A5 5 0 1 1 1 6a5 5 0 0 1 10 0z" clip-rule="evenodd"></path>
-                                                <path d="M6 5v3M5 8h2M5 5h1"></path>
-                                                <path fill="#000" fill-rule="evenodd" d="M6 4h0z" clip-rule="evenodd"></path>
-                                            </g>
-                                        </svg>
+                                        <img src="../images/info-icon.svg" class="w-4 h-4" alt="Info Icon">
                                     </button>
                                     <div x-show="isOpen" @click="isOpen = false" class="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
                                     <!-- Pop-up Modal -->
-                                    <div  x-show="isOpen" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white bg-cover bg-no-repeat  p-6 rounded-lg shadow-lg z-50 md:w-[700px] w-[300px] overflow-auto xl:h-auto h-[500px]" style="background-image: url(../images/background-gradient.png);">
+                                    <div  x-show="isOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white bg-cover bg-no-repeat  p-6 rounded-lg shadow-lg z-50 md:w-[700px] w-[300px] overflow-auto xl:h-auto h-[500px]" style="background-image: url(../images/background-gradient.png);">
                                         <button @click="isOpen = false" class="text-black transition-colors absolute top-[15px] left-4 text-3xl">
                                             x
                                         </button>
@@ -342,7 +331,8 @@
                                         </div>
                                         <div></div>
                                     </div>
-                                    <a href="#" target="_blank" rel="noreferrer"><svg width="16" height="16" viewBox="0 0 12 12" class="svg"><g fill="none" stroke-linecap="round" stroke-width=".8" stroke="#000"><path d="M11 6A5 5 0 1 1 1 6a5 5 0 0 1 10 0z" clip-rule="evenodd"></path><path d="M6 5v3M5 8h2M5 5h1"></path><path fill="#000" fill-rule="evenodd" d="M6 4h0z" clip-rule="evenodd"></path></g></svg>
+                                    <a href="#" target="_blank" rel="noreferrer">
+                                        <img src="../images/info-icon.svg" class="w-4 h-4" alt="Info Icon">
                                     </a>
                             </div>
                     </div>
