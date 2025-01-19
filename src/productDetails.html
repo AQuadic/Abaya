@@ -126,14 +126,14 @@
                         <button @click="activeTab = 'tab1'"  :class="activeTab === 'tab1' ? 'bg-[#E3A7451A] text-[#E3A745] border border-[#E3A745]' : 'bg-gray-200 text-gray-700'" class="w-[156px] h-14 text-lg font-medium rounded-tl-[4px] rounded-tr-[4px]">جاهز</button>
                         <button @click="activeTab = 'tab2'"  :class="activeTab === 'tab2' ? 'bg-[#E3A7451A] text-[#E3A745] border border-[#E3A745]' : 'bg-gray-200 text-gray-700'" class="w-[156px] h-14 text-lg font-medium rounded-tr-[4px]">تفصيل</button>
                     </div>
+                    <h3 class="text-[#18181B] font-bold text-[28px] mt-2">AED580 <span class="text-[#71717A] text-[21px] line-through">AED 680</span></h3>
+                    <div class="flex items-end gap-2">
+                        <img src="../images/tag.svg" class="w-[17.31px] h-[17.31px]" alt="Tag">
+                        <p class="text-[#71717A] font-medium ">تم توفير 100 درهم بشرائك ذلك المنتج</p>
+                    </div>
                     <!-- Content -->
                     <div class="mt-4">
                     <div x-show="activeTab === 'tab1'" class="">
-                        <h3 class="text-[#18181B] font-bold text-[28px]">AED580 <span class="text-[#71717A] text-[21px] line-through">AED 680</span></h3>
-                        <div class="flex items-end gap-2">
-                            <img src="../images/tag.svg" class="w-[17.31px] h-[17.31px]" alt="Tag">
-                            <p class="text-[#71717A] font-medium ">تم توفير 100 درهم بشرائك ذلك المنتج</p>
-                        </div>
                         <div x-data="{ isOpen: false }">
                             <!-- Clickable Div -->
                             <div @click="isOpen = true" class="md:w-[586px] w-full h-14 flex items-center gap-2 px-2 mt-4 border border-[#EEEEEE] cursor-pointer">
@@ -435,11 +435,6 @@
                         </div>
                     </div>
                     <div x-show="activeTab === 'tab2'" class="">
-                        <h3 class="text-[#18181B] font-bold text-[28px]">AED580 <span class="text-[#71717A] text-[21px] line-through">AED 680</span></h3>
-                        <div class="flex items-end gap-2">
-                            <img src="../images/tag.svg" class="w-[17.31px] h-[17.31px]" alt="Tag">
-                            <p class="text-[#71717A] font-medium ">تم توفير 100 درهم بشرائك ذلك المنتج</p>
-                        </div>
                         <div x-data="{ isOpen: false }">
                             <div @click="isOpen = true" class="md:w-[586px] w-full h-14 flex items-center justify-between gap-2 px-2 mt-4 border border-[#EEEEEE] cursor-pointer">
                                 <img src="../images/sizeTable.svg" alt="Icon">
