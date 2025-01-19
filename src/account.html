@@ -48,7 +48,7 @@
     
     <!-- Start Content -->
         <section class="container mx-auto  mt-[40px] mb-[72px] px-5 xl:px-0">    
-            <div x-data="{ activePage: 'myProfile' }" class="lg:flex justify-center gap-[72px]">
+            <div x-data="{ activePage: 'deleteAccount' }" class="lg:flex justify-center gap-[72px]">
                 <div x-data="{ open: false }">
                     <button @click="open = !open" class="lg:hidden flex items-center gap-5 p-[3px] text-gray-800">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -265,9 +265,72 @@
                         <div>
                             <h1 class="text-2xl font-normal flex-1">Delete Account</h1>
                             <p class="text-sm mt-3">You may delete your Ounass account at any time, but all the information linked to this account will be deleted permanently and are not recoverable later.</p>
-                            <a href="#" class="uppercase flex justify-center items-center w-56 h-11 mt-3 bg-[#2d2d2d] text-white">Delete Account</a>
+                            <!-- <a href="#" class="uppercase flex justify-center items-center w-56 h-11 mt-3 bg-[#2d2d2d] text-white">Delete Account</a> -->
+                            <li @click="activePage = 'deleteAccount'" 
+                            class="uppercase flex justify-center items-center w-56 h-11 mt-3 bg-[#2d2d2d] text-white cursor-pointer">
+                            <p>delete account</p>
+                            </li>
                         </div>
                     </div>
+                    <!-- Delete Account -->
+                    <div x-show="activePage === 'deleteAccount'" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 translate-y-full" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-400" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-full"  x-cloak>
+                        <div class="flex md:flex-row flex-col gap-4 justify-between">
+                            <h1 class="text-2xl font-normal flex-1">Delete Account</h1>
+                            <div class="flex items-center gap-6">
+                                <p class="text-[#A67422] font-bold text-sm">Need help?</p>
+                                <div class="flex items-center gap-2">
+                                    <img src="../images/call.webp" class="w-5 h-5" alt="call"> 
+                                    <a href="tel:01012323245" class="uppercase">Call us</a>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <img src="../images/message.svg" class="w-6 h-6" alt="Message"> 
+                                    <a href="#" class="uppercase">Whatsapp</a>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-4">You will not be able to recover an Ounass account once it has been deleted. The following items will also be affected:</p>
+                        <div class="flex items-center gap-4 mt-6">
+                            <img src="../images/orderIcon.png" class="w-8 h-9" alt="Icon">
+                            <div class="flex flex-col gap-2">
+                                <p>You will no longer be able to view your <strong>Order History</strong></p>
+                                <p @click="activePage = 'myOrders'" class="uppercase underline text-[#b87253]">view my orders</p>                            
+                        </div>
+                        </div>
+                        <div class="flex items-center gap-4 mt-6">
+                            <img src="../images/bag-icon.svg" class="w-8 h-9" alt="Icon">
+                            <div class="flex flex-col gap-2">
+                                <p>Any items you have in your <strong>Shopping Bag</strong> will be removed</p>
+                                <a href="./Cart.html" class="uppercase underline text-[#b87253]">VIEW MY SHOPPING BAG</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 mt-6">
+                            <img src="../images/free-truck-icon.png" class="w-9 h-10" alt="Icon">
+                            <div class="flex flex-col gap-2">
+                                <p>Any future <strong>Active Orders</strong> can only be tracked on the Ounass App & website as a guest user.</p>
+                                <p @click="activePage = 'myOrders'" class="uppercase underline text-[#b87253]">view my orders</p>                            
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 mt-6">
+                            <img src="../images/Heart.svg" class="w-9 h-10" alt="Icon">
+                            <div class="flex flex-col gap-2">
+                                <p>Your <strong>Wishlist</strong> will be emptied</p>
+                                <a href="./Favorite.html" class="uppercase underline text-[#b87253]">VIEW MY WISHLIST</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 mt-6">
+                            <img src="../images/darkStar.svg" class="w-9 h-10" alt="Icon">
+                            <div class="flex flex-col gap-2">
+                                <p>All <strong>Favourited Designers</strong> will be removed from the Favourite Designers list</p>
+                                <p @click="activePage = 'favDesigners'" class="uppercase underline text-[#b87253]">VIEW MY FAVOURITE DESIGNERS</p>                            
+                                </div>
+                        </div>
+                        <div class="flex items-center gap-3 my-5 px-2">
+                            <input id="default-checkbox" type="checkbox" value="" class="w-7 h-7 text-black  border-gray-300 rounded focus:ring-black focus:ring-0">
+                            <label for="default-checkbox" class="ms-2 text-lg">I do agree <a href="" class="font-medium">Account deletion policy</a></label>
+                        </div>
+                        <button class="uppercase w-80 h-12 rounded-sm bg-[#2d2d2d] text-white mx-2">delete my account</button>
+                    </div>
+
                 </div>
             </div>
         </section>
