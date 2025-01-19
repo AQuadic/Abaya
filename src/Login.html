@@ -56,9 +56,31 @@
                     <button class="w-full bg-[#B87153] flex items-center justify-center gap-2 text-white py-2 h-[48px] font-bold text-sm">
                         تسجيل الدخول   
                     </button>
-                    <a href="#" class="flex justify-center text-[#1D1F1F] mt-6 font-medium underline">
-                        نسيت كلمة المرور
-                    </a>
+                    <div x-data="{ isOpen: false }" class="flex items-center justify-center">
+                        <a href="#" class="flex justify-center text-[#1D1F1F] mt-6 font-medium underline" x-on:click="isOpen = true">
+                            نسيت كلمة المرور
+                        </a>
+                        <div x-show="isOpen" x-on:click="isOpen = false" class="fixed inset-0 bg-black bg-opacity-50 z-40" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"></div>
+                        <div x-show="isOpen" class="fixed inset-0 flex items-center justify-center z-50" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95">
+                            <div class="bg-white p-4 rounded-lg shadow-lg sm:w-[450px] w-full m-5">
+                                <div class="flex items-center justify-between mb-4">
+                                    <!-- <button x-on:click="isOpen = false"><img src="../images/arrow-left-icon.png" class="w-4 h-4 translate ltr:scale-x-100 rtl:scale-x-[-1]" alt="Arrow"></button> -->
+                                    <h2 class="text-xl font-bold">Reset Your Password</h2>
+                                    <button x-on:click="isOpen = false"><img src="../images/closeIcon.svg" alt="Close Icon"></button>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-6">To retrieve your password, please enter your email address below and click 'Send Reset Link'.</p>
+                                <p class="text-gray-600 text-sm mb-6">A password reset link will then be sent to you by email.</p>
+                                <form>
+                                    <input type="email" placeholder="Email" class="w-full px-4 border border-gray-300 rounded-sm focus:outline-none focus:ring-0 focus:border-black" required>
+                                    <p class="text-xs text-red-500 p-1">Email is required</p>
+                                    <button type="submit" class="w-full bg-[#2d2d2d] uppercase text-white py-2 px-4 rounded-sm mt-4">
+                                        send reset link
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                
                 </form>
 
             </div>
