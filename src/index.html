@@ -655,8 +655,10 @@
                         <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="1"  data-name="First Abaya"  data-price="500"  data-image="../images/abaya-slider2.webp">
                         </div>
                         <div class="sm:px-[22px] px-3">
-                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
-                        <div x-data="{ showFullText: false }" class="text-container">
+                            <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">
+                                <span x-text="'Abaya Collection made with love '.substring(0, 16) + ('Abaya Collectionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn'.length > 15 ? '...' : '')"></span>
+                            </h2>
+                            <div x-data="{ showFullText: false }" class="text-container">
                             <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">
                                 <span x-show="!showFullText"> عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع
                                     <span class="text-blue-500 hover:underline cursor-pointer" @click="showFullText = true">...</span>
@@ -695,7 +697,9 @@
                     <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="2"  data-name="Hello"  data-price="900"  data-image="../images/abaya-slider2.webp">
                     </div>
                     <div class="sm:px-[22px] px-3">
-                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
+                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">
+                                <span x-text="'Abaya Collection made with love '.substring(0, 16) + ('Abaya Collectionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn'.length > 15 ? '...' : '')"></span>
+                        </h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
                         <div class="flex items-center justify-between">
                             <p class="text-[#747474] font-normal sm:text-[15px] text-[8.38px] leading-[21px] sm:mt-[9px]">was AED <span class="font-bold">680</span></p>
@@ -725,7 +729,9 @@
                     <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="3"  data-name="Hi"  data-price="700"  data-image="../images/abaya-slider2.webp">
                     </div>
                     <div class="sm:px-[22px] px-3">
-                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
+                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">
+                                <span x-text="'Abaya Collection made with love '.substring(0, 16) + ('Abaya Collectionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn'.length > 15 ? '...' : '')"></span>
+                        </h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
                         <div class="flex items-center justify-between">
                             <p class="text-[#747474] font-normal sm:text-[15px] text-[8.38px] leading-[21px] sm:mt-[9px]">was AED <span class="font-bold">680</span></p>
@@ -755,7 +761,9 @@
                     <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="4"  data-name="Hello" data-size="s" data-price="1200"  data-image="../images/abaya-slider2.webp">
                     </div>
                     <div class="sm:px-[22px] px-3">
-                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
+                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">
+                                <span x-text="'Abaya Collection made with love '.substring(0, 16) + ('Abaya Collectionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn'.length > 15 ? '...' : '')"></span>
+                        </h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
                         <div class="flex items-center justify-between">
                             <p class="text-[#747474] font-normal sm:text-[15px] text-[8.38px] leading-[21px] sm:mt-[9px]">was AED <span class="font-bold">680</span></p>
@@ -785,7 +793,9 @@
                     <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="5"  data-name="Hello"  data-price="900"  data-image="../images/abaya-slider2.webp">
                     </div>
                     <div class="sm:px-[22px] px-3">
-                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
+                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">
+                                <span x-text="'Abaya Collection made with love '.substring(0, 16) + ('Abaya Collectionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn'.length > 15 ? '...' : '')"></span>
+                        </h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
                         <div class="flex items-center justify-between">
                             <p class="text-[#747474] font-normal sm:text-[15px] text-[8.38px] leading-[21px] sm:mt-[9px]">was AED <span class="font-bold">680</span></p>
@@ -815,7 +825,9 @@
                     <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="6"  data-name="Abaya"  data-price="900"  data-image="../images/abaya-slider2.webp">
                     </div>
                     <div class="sm:px-[22px] px-3">
-                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
+                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">
+                                <span x-text="'Abaya Collection made with love '.substring(0, 16) + ('Abaya Collectionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn'.length > 15 ? '...' : '')"></span>
+                        </h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
                         <div class="flex items-center justify-between">
                             <p class="text-[#747474] font-normal sm:text-[15px] text-[8.38px] leading-[21px] sm:mt-[9px]">was AED <span class="font-bold">680</span></p>
@@ -845,7 +857,9 @@
                     <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="7"  data-name="Abaya"  data-price="1000"  data-image="../images/abaya-slider2.webp">
                     </div>
                     <div class="sm:px-[22px] px-3">
-                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
+                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">
+                                <span x-text="'Abaya Collection made with love '.substring(0, 16) + ('Abaya Collectionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn'.length > 15 ? '...' : '')"></span>
+                        </h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
                         <div class="flex items-center justify-between">
                             <p class="text-[#747474] font-normal sm:text-[15px] text-[8.38px] leading-[21px] sm:mt-[9px]">was AED <span class="font-bold">680</span></p>
@@ -875,7 +889,9 @@
                     <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="8"  data-name="Hello"  data-price="1100"  data-image="../images/abaya-slider2.webp">
                     </div>
                     <div class="sm:px-[22px] px-3">
-                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
+                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">
+                                <span x-text="'Abaya Collection made with love '.substring(0, 16) + ('Abaya Collectionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn'.length > 15 ? '...' : '')"></span>
+                        </h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
                         <div class="flex items-center justify-between">
                             <p class="text-[#747474] font-normal sm:text-[15px] text-[8.38px] leading-[21px] sm:mt-[9px]">was AED <span class="font-bold">680</span></p>
@@ -919,7 +935,9 @@
                     <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="9"  data-name="New abaya"  data-price="900"  data-image="../images/abaya-slider2.webp">
                     </div>
                     <div class="sm:px-[22px] px-3">
-                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
+                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">
+                                <span x-text="'Abaya Collection made with love '.substring(0, 16) + ('Abaya Collectionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn'.length > 15 ? '...' : '')"></span>
+                        </h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
                         <div class="flex items-center justify-between">
                             <p class="text-[#747474] font-normal sm:text-[15px] text-[8.38px] leading-[21px] sm:mt-[9px]">was AED <span class="font-bold">680</span></p>
@@ -949,7 +967,9 @@
                     <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="10"  data-name="Abaya Abaya"  data-price="1650"  data-image="../images/abaya-slider2.webp">
                     </div>
                     <div class="sm:px-[22px] px-3">
-                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
+                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">
+                                <span x-text="'Abaya Collection made with love '.substring(0, 16) + ('Abaya Collectionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn'.length > 15 ? '...' : '')"></span>
+                        </h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
                         <div class="flex items-center justify-between">
                             <p class="text-[#747474] font-normal sm:text-[15px] text-[8.38px] leading-[21px] sm:mt-[9px]">was AED <span class="font-bold">680</span></p>
@@ -979,7 +999,9 @@
                     <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="11"  data-name="Hello"  data-price="900"  data-image="../images/abaya-slider2.webp">
                     </div>
                     <div class="sm:px-[22px] px-3">
-                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
+                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">
+                                <span x-text="'Abaya Collection made with love '.substring(0, 16) + ('Abaya Collectionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn'.length > 15 ? '...' : '')"></span>
+                        </h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
                         <div class="flex items-center justify-between">
                             <p class="text-[#747474] font-normal sm:text-[15px] text-[8.38px] leading-[21px] sm:mt-[9px]">was AED <span class="font-bold">680</span></p>
@@ -1009,7 +1031,9 @@
                     <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="12"  data-name="Hello"  data-price="200"  data-image="../images/abaya-slider2.webp">
                     </div>
                     <div class="sm:px-[22px] px-3">
-                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
+                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">
+                                <span x-text="'Abaya Collection made with love '.substring(0, 16) + ('Abaya Collectionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn'.length > 15 ? '...' : '')"></span>
+                        </h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
                         <div class="flex items-center justify-between">
                             <p class="text-[#747474] font-normal sm:text-[15px] text-[8.38px] leading-[21px] sm:mt-[9px]">was AED <span class="font-bold">680</span></p>
@@ -1039,7 +1063,9 @@
                     <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="13"  data-name="Hello"  data-price="800"  data-image="../images/abaya-slider2.webp">
                     </div>
                     <div class="sm:px-[22px] px-3">
-                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
+                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">
+                                <span x-text="'Abaya Collection made with love '.substring(0, 16) + ('Abaya Collectionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn'.length > 15 ? '...' : '')"></span>
+                        </h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
                         <div class="flex items-center justify-between">
                             <p class="text-[#747474] font-normal sm:text-[15px] text-[8.38px] leading-[21px] sm:mt-[9px]">was AED <span class="font-bold">680</span></p>
@@ -1069,7 +1095,9 @@
                     <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="14"  data-name="Hello"  data-price="900"  data-image="../images/abaya-slider2.webp">
                     </div>
                     <div class="sm:px-[22px] px-3">
-                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
+                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">
+                                <span x-text="'Abaya Collection made with love '.substring(0, 16) + ('Abaya Collectionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn'.length > 15 ? '...' : '')"></span>
+                        </h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
                         <div class="flex items-center justify-between">
                             <p class="text-[#747474] font-normal sm:text-[15px] text-[8.38px] leading-[21px] sm:mt-[9px]">was AED <span class="font-bold">680</span></p>
@@ -1099,7 +1127,9 @@
                     <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="15"  data-name="Hello"  data-price="900"  data-image="../images/abaya-slider2.webp">
                     </div>
                     <div class="sm:px-[22px] px-3">
-                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
+                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">
+                                <span x-text="'Abaya Collection made with love '.substring(0, 16) + ('Abaya Collectionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn'.length > 15 ? '...' : '')"></span>
+                        </h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
                         <div class="flex items-center justify-between">
                             <p class="text-[#747474] font-normal sm:text-[15px] text-[8.38px] leading-[21px] sm:mt-[9px]">was AED <span class="font-bold">680</span></p>
@@ -1129,7 +1159,9 @@
                     <img  :src="isRedHeart ? '../images/shopHeart.svg' : '../images/abayaHeart.svg'"  class="sm:w-[27.93px] w-4 h-4 sm:h-[24.14px] absolute sm:top-5 top-2 sm:left-5 left-2 cursor-pointer transform transition-all duration-500":class="isRedHeart ? 'scale-125 opacity-100' : 'scale-100 opacity-75'"  @click="isRedHeart = !isRedHeart; addToFavorites($event)"  alt="Heart" data-id="16"  data-name="Hello"  data-price="900"  data-image="../images/abaya-slider2.webp">
                     </div>
                     <div class="sm:px-[22px] px-3">
-                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">عباية مون لايت</h2>
+                        <h2 class="sm:mt-[14px] mt-1 text-[#444144] font-bold sm:text-[32px] text-[17px] sm:leading-[44.8px]">
+                                <span x-text="'Abaya Collection made with love '.substring(0, 16) + ('Abaya Collectionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn'.length > 15 ? '...' : '')"></span>
+                        </h2>
                         <p class="text-[#747474] font-normal sm:text-[15px] text-[10px] sm:leading-[21px] sm:mt-[10.5px]">عباية لامعة وبراقة مع فستان داخلي وخطوط رقيقة وفريم لامع</p>
                         <div class="flex items-center justify-between">
                             <p class="text-[#747474] font-normal sm:text-[15px] text-[8.38px] leading-[21px] sm:mt-[9px]">was AED <span class="font-bold">680</span></p>
