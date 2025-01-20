@@ -590,41 +590,45 @@
                 <a href="./allCards.html" class="text-[#232D20] font-medium text-[20px] leading-7">عرض الكل >></a>
             </div>
             <div class="swiper-wrapper mt-[10px]">
-            <div class="swiper-slide w-[346px] h-[267px]  flex flex-col items-center rounded-[10px]">
+            <div class="swiper-slide w-[346px] h-auto flex flex-col items-center rounded-[10px]">
                 <img src="../images/sec-slider.webp" class="w-[346px] h-[197px] object-cover rounded-tl-[10px] rounded-tr-[10px]" alt="Abaya">
-                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full h-[113px] mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
-                    <h2 class="text-white font-bold text-[28px]">Abaya Collection</h2>
+                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full h-full mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
+                    <div x-data="{ title: 'Abaya Collection collection' }">
+                        <h2 class="text-white font-bold text-[28px] mt-5">
+                            <span x-text="title.substring(0, 16) + (title.length > 16 ? '...' : '')"></span>
+                        </h2>
+                    </div>
                     <h2 class="text-white font-normal text-sm md:flex hidden">فتحته للمتعة تحولت إلى هواية وشيء أحبه</h2>
                     <img src="../images/abaya-check.svg" class="absolute rtl:left-[5px] ltr:right-[7px] top-[-45px] w-[85px] h-[85px] rounded-full" alt="Check">
                 </div>
             </div>
-            <div class="swiper-slide w-[346px] h-[267px]  flex flex-col items-center rounded-[10px]">
+            <div class="swiper-slide w-[346px] h-auto flex flex-col items-center rounded-[10px]">
                 <img src="../images/sec-slider2.webp" class="w-[346px] h-[197px] object-cover rounded-tl-[10px] rounded-tr-[10px]" alt="Abaya">
-                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full h-[113px] mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
+                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full h-full mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
                     <h2 class="text-white font-bold text-[28px]">أليتا بليت</h2>
                     <h2 class="text-white font-normal text-sm md:flex hidden">علامة تجارية خليجية مميزة كل تصاميمها تشترك في الطيات بكل انواعها تأسست سنة 2015 .. المزيد</h2>
                     <img src="../images/abayaCheck.svg" class="absolute rtl:left-[5px] ltr:right-[7px] top-[-45px] w-[85px] h-[85px] rounded-full" alt="Check">
                 </div>
             </div>
-            <div class="swiper-slide w-[346px] h-[267px]  flex flex-col items-center rounded-[10px]">
+            <div class="swiper-slide w-[346px] h-auto flex flex-col items-center rounded-[10px]">
                 <img src="../images/abayaSlider.webp" class="w-[346px] h-[197px] object-cover rounded-tl-[10px] rounded-tr-[10px]" alt="Abaya">
-                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full h-[113px] mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
+                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full h-full mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
                     <h2 class="text-white font-bold text-[28px]">باي ديزاير</h2>
                     <h2 class="text-white font-normal text-sm md:flex hidden">اي ديزاير هو دار أزياء يركز بشكل أساسي على تصميم الأزياء النسائية الراقية من عبايات ... المزيد</h2>
                     <img src="../images/byDesigner.svg" class="absolute rtl:left-[5px] ltr:right-[7px] top-[-45px] w-[85px] h-[85px] rounded-full" alt="Check">
                 </div>
             </div>
-            <div class="swiper-slide w-[346px] h-[267px]  flex flex-col items-center rounded-[10px]">
+            <div class="swiper-slide w-[346px] h-auto flex flex-col items-center rounded-[10px]">
                 <img src="../images/abayaSlider2.webp" class="w-[346px] h-[197px] object-cover rounded-tl-[10px] rounded-tr-[10px]" alt="Abaya">
-                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full h-[113px] mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
+                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full h-full mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
                     <h2 class="text-white font-bold text-[28px]">قفطان أسايل</h2>
                     <h2 class="text-white font-normal text-sm md:flex hidden">انا مصمم ازياء. أصنع بشكل أساسي قفطان فاخر مصنوع يدويًا 100٪ بأقمشة عالية... المزيد</h2>
                     <img src="../images/koftan.svg" class="absolute rtl:left-[5px] ltr:right-[7px] top-[-45px] w-[85px] h-[85px] rounded-full" alt="Check">
                 </div>
             </div>
-            <div class="swiper-slide w-[346px] h-[267px]  flex flex-col items-center rounded-[10px]">
+            <div class="swiper-slide w-[346px] h-auto flex flex-col items-center rounded-[10px]">
                 <img src="../images/sec-slider.webp" class="w-[346px] h-[197px] object-cover rounded-tl-[10px] rounded-tr-[10px]" alt="Abaya">
-                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full h-[113px] mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
+                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full h-full mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
                     <h2 class="text-white font-bold text-[28px]">عبايه تشك</h2>
                     <h2 class="text-white font-normal text-sm md:flex hidden">فتحته للمتعة تحولت إلى هواية وشيء أحبه</h2>
                     <img src="../images/abaya-check.svg" class="absolute rtl:left-[5px] ltr:right-[7px] top-[-45px] w-[85px] h-[85px] rounded-full" alt="Check">
