@@ -40,8 +40,6 @@
             },
             navigationMenuReposition(navElement) {
                 this.navigationMenuClearCloseTimeout();
-                this.$refs.navigationDropdown.style.left = navElement.offsetLeft + 'px';
-                this.$refs.navigationDropdown.style.marginLeft = (navElement.offsetWidth/2) + 'px';
             },
             navigationMenuClearCloseTimeout(){
                 clearTimeout(this.navigationMenuCloseTimeout);
@@ -646,7 +644,7 @@
                             <img src="../images/Group.svg" class="sm:w-[22px] sm:h-[22px] w-[12.29px] h-[12.29px]" alt="Icon">
                             <p class="text-[#747474] font-medium sm:text-base text-[8.94px] sm:leading-[22.5px]">عباية تشك</p>
                         </div>
-                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[155px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart" data-id="1"data-name="Nello Wallet in Metallic Textured"data-price="15000"  data-size="M" data-image="../images/abaya-slider3.webp">
+                        <button @click="show = true; setTimeout(() => show = false, 2000)" class="sm:w-[313px] w-[155px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 border-t-4 border-black add-to-cart" data-id="1"data-name="Nello Wallet in Metallic Textured"data-price="15000"  data-size="M" data-image="../images/abaya-slider3.webp">
                             <img src="../images/addTocart.svg" class="sm:w-[19.75px] sm:h-[17.5px] w-[11.03px] h-[9.78px]" alt="Cart">
                             <p class="text-white font-medium sm:text-lg text-[10.05px] sm:leading-[25.2px]">اضافة الى السلة</p>
                         </button>
@@ -877,7 +875,7 @@
                     </div>
                 </div>
                 </div>
-                <div x-show="show" x-transition class="fixed top-10 right-10 bg-green-500 text-white px-6 py-2 rounded shadow-lg">Added to cart successfully</div>
+                <div x-show="show" x-transition class="fixed z-50 top-10 right-10 bg-green-500 text-white px-6 py-2 rounded shadow-lg">Added to cart successfully</div>
             </div>
             </div>
         </section>
@@ -1147,7 +1145,7 @@
                     </div>
                 </div>
             </div>
-                <div x-show="show" x-transition class="fixed top-10 right-10 bg-green-500 text-white px-6 py-2 rounded shadow-lg">Added to cart successfully</div>
+                <div x-show="show" x-transition class="fixed z-50 top-10 right-10 bg-green-500 text-white px-6 py-2 rounded shadow-lg">Added to cart successfully</div>
             </div>
         </section>
     <!-- اختيارات عبايا مول -->
