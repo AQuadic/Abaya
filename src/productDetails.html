@@ -56,39 +56,41 @@
 
     <!-- Start Slider -->
         <section class="container mx-auto flex xl:flex-row flex-col gap-5">
-            <div class="flex gap-4 p-4" x-data="{ mainImage: '../images/abayaSwiper.webp' }">
-                <div class="flex justify-center gap-[20px]">
-                    <ul class="imgs-slider flex flex-col gap-2 p-0 m-0">
-                        <li>
-                            <img src="../images/abayaSwiper.webp" alt="Image 1" class="cursor-pointer md:w-[119px] w-[90px] h-[40px] md:h-[123px]" x-bind:srcSet="mainImage === '../images/abayaSwiper.webp' ? '../images/abayaSwiper.webp , ../images/abayaSwiper.webp ' : ''" @click="mainImage = '../images/abayaSwiper.webp'">
-                        </li>
-                        <li>
-                            <img src="../images/abaya-slider.webp" alt="Image 2" class="cursor-pointer md:w-[119px] w-[90px] h-[40px] md:h-[123px]" x-bind:srcSet="mainImage === '../images/abaya-slider.webp' ? '../images/abaya-slider.webp , ../images/abaya-slider.webp ' : ''" @click="mainImage = '../images/abaya-slider.webp'">
-                        </li>
-                        <li>
-                            <img src="../images/abaya-slider.webp" alt="Image 3" class="cursor-pointer md:w-[119px] w-[90px] h-[40px] md:h-[123px]" x-bind:srcSet="mainImage === '../images/abaya-slider.webp' ? '../images/abaya-slider.webp , ../images/abaya-slider.webp ' : ''" @click="mainImage = '../images/abaya-slider.webp'">
-                        </li>
-                        <li>
-                            <img src="../images/abaya-slider4.webp" alt="Image 4" class="cursor-pointer md:w-[119px] w-[90px] h-[40px] md:h-[123px]" x-bind:srcSet="mainImage === '../images/abaya-slider4.webp' ? '../images/abaya-slider4.webp , ../images/abaya-slider4.webp ' : ''" @click="mainImage = '../images/abaya-slider4.webp'">
-                        </li>
-                        <li>
-                            <img src="../images/abaya-slider4.webp" alt="Image 5" class="cursor-pointer md:w-[119px] w-[90px] h-[40px] md:h-[123px]" x-bind:srcSet="mainImage === '../images/abaya-slider4.webp' ? '../images/abaya-slider4.webp , ../images/abaya-slider4.webp ' : ''" @click="mainImage = '../images/abaya-slider4.webp'">
-                        </li>
-                    </ul>
-                    <div class="">
-                        <img :src="mainImage" alt="Main Image" class="w-[703px] md:h-[650px] h-full">
-                    </div>
-                </div>
-            </div>            
+        <div id="default-carousel" class="relative w-full px-3" data-carousel="slide">
+        <div class="relative h-[387px] overflow-hidden rounded-lg md:h-[500px] z-0">
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="../images/abayaSwiper.webp" class="absolute block sm:w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="../images/abayaSwiper.webp" class="absolute block sm:w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="../images/abayaSwiper.webp" class="absolute block sm:w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="../images/abayaSwiper.webp" class="absolute block sm:w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="../images/abayaSwiper.webp" class="absolute block sm:w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+        </div>
+        <div class="absolute flex -translate-x-1/2 xl:top-1/2 top-[88%] z-50 left-1/2 space-x-3 rtl:space-x-reverse">
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+        </div>
+    </div>
             <div>
-                <div class="flex items-center gap-[10px]">
+                <div class="flex items-center gap-[10px] px-3">
                     <img src="../images/store.webp" alt="Store">
                     <div>
                         <p class="text-[#666666] text-base">متجر</p>
                         <h3 class="text-[#18181B] text-base">قفطان الاصيل</h3>
                     </div>
                 </div>
-                <h3 class="text-[#18181B] md:font-bold text-2xl mt-2">عباية مون لايت عباية مون لايت عباية مون لايت بخطوط  لامعة</h3>
+                <h3 class="text-[#18181B] md:font-bold text-2xl mt-2 px-3">عباية مون لايت عباية مون لايت عباية مون لايت بخطوط  لامعة</h3>
 
                 <div class="p-4">
                     <h3 class="text-[#18181B] font-bold text-[28px] mt-2">AED580 <span class="text-[#71717A] text-[21px] line-through">AED 680</span></h3>
@@ -96,7 +98,7 @@
                         <img src="../images/tag.svg" class="w-[17.31px] h-[17.31px]" alt="Tag">
                         <p class="text-[#71717A] font-medium ">تم توفير 100 درهم بشرائك ذلك المنتج</p>
                     </div>
-                    <div class="md:w-[686px] w-[350px] md:h-[88px] rounded-lg flex gap-4 p-3 border mt-4">
+                    <div class="md:w-[686px] w-[360px] md:h-[88px] rounded-lg flex gap-4 p-3 border mt-4">
                         <p class="text-sm  md:font-medium">4 دفعات بلا فوائد بقيمة <span class="text-lg">AED 210.00.</span>بدون رسوم, ومتوافقة مع أحكام الشريعة. <a href="#" class="underline">لمعرفة المزيد</a></p>
                         <a href="#" >
                             <img src="../images/tabby.svg" class="w-12 h-12" alt="Tabby">
@@ -445,7 +447,7 @@
             </div>
             <div class="swiper-wrapper mt-[10px]">
             <div class="swiper-slide relative sm:w-[346px] w-[174px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
-                <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px]" alt="Abaya">
+                <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-full sm:h-[466px] h-[260.31px]" alt="Abaya">
                 <div x-data="{ 
                     isRedHeart: false,
                     checkHeart() {
@@ -474,7 +476,7 @@
                 </div>
             </div>
             <div class="swiper-slide relative sm:w-[346px] w-[174px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
-                <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px]" alt="Abaya">
+                <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-full sm:h-[466px] h-[260.31px]" alt="Abaya">
                 <div x-data="{ 
                     isRedHeart: false,
                     checkHeart() {
@@ -503,7 +505,7 @@
                 </div>
             </div>
             <div class="swiper-slide relative sm:w-[346px] w-[174px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
-                <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px]" alt="Abaya">
+                <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-full sm:h-[466px] h-[260.31px]" alt="Abaya">
                 <div x-data="{ 
                     isRedHeart: false,
                     checkHeart() {
@@ -532,7 +534,7 @@
                 </div>
             </div>
             <div class="swiper-slide relative sm:w-[346px] w-[174px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
-                <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px]" alt="Abaya">
+                <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-full sm:h-[466px] h-[260.31px]" alt="Abaya">
                 <div x-data="{ 
                     isRedHeart: false,
                     checkHeart() {
@@ -561,7 +563,7 @@
                 </div>
             </div>
             <div class="swiper-slide relative sm:w-[346px] w-[174px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
-                <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px]" alt="Abaya">
+                <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-full sm:h-[466px] h-[260.31px]" alt="Abaya">
                 <div x-data="{ 
                     isRedHeart: false,
                     checkHeart() {
@@ -590,7 +592,7 @@
                 </div>
             </div>
             <div class="swiper-slide relative sm:w-[346px] w-[174px] sm:h-[709px] h-[396.05px] rounded-[10px] hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
-                <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px]" alt="Abaya">
+                <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-full sm:h-[466px] h-[260.31px]" alt="Abaya">
                 <div x-data="{ 
                     isRedHeart: false,
                     checkHeart() {
