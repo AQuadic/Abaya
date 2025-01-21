@@ -181,6 +181,59 @@
 
                         </tbody>
                     </table>
+                    <div x-data="{ isOpen: false, isSecondPopupOpen: false }">
+                        <button @click="isOpen = true" class="w-44 h-12 bg-[#444144] text-white rounded-sm m-2 hover:bg-[#333] transition-colors">إلغاء الطلب</button>
+                        <div x-show="isOpen" @click="isOpen = false" class="fixed inset-0 bg-black bg-opacity-50 z-40" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"></div>
+                        <div x-show="isOpen" @click.away="isOpen = false" class="fixed inset-0 flex items-center justify-center z-50">
+                            <div class="bg-white p-6 rounded-lg shadow-lg px-3 lg:w-[900px] w-[350px] h-auto">
+                                <h2 class="text-lg font-medium">Cancel Order</h2>
+                                <p>We are sorry for any inconvenience that may have caused your cancellation request. If you have a moment, please help us improve our services by telling us what went wrong.</p>
+                                <hr class="my-5">
+                
+                                <div class="flex items-center mb-8">
+                                    <input id="radio-1" type="radio" value="" name="radio" class="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-0">
+                                    <label for="radio-1" class="ms-2 text-sm font-medium text-gray-900">I changed my mind</label>
+                                </div>
+                                <div class="flex items-center mb-8">
+                                    <input id="radio-2" type="radio" value="" name="radio" class="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-0">
+                                    <label for="radio-2" class="ms-2 text-sm font-medium text-gray-900">My delivery was delayed</label>
+                                </div>
+                                <div class="flex items-center mb-8">
+                                    <input id="radio-3" type="radio" value="" name="radio" class="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-0">
+                                    <label for="radio-3" class="ms-2 text-sm font-medium text-gray-900">I purchased elsewhere</label>
+                                </div>
+                                <div class="flex items-center mb-8">
+                                    <input id="radio-4" type="radio" value="" name="radio" class="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-0">
+                                    <label for="radio-4" class="ms-2 text-sm font-medium text-gray-900">I found a lower price</label>
+                                </div>
+                                <div class="flex items-center mb-8">
+                                    <input id="radio-5" type="radio" value="" name="radio" class="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-0">
+                                    <label for="radio-5" class="ms-2 text-sm font-medium text-gray-900">I am unavailable</label>
+                                </div>
+                                <div class="rtl:text-left ltr:text-right">
+                                    <button @click="isOpen = false" class="w-32 h-12 bg-white border border-black uppercase">Back</button>
+                                    <button @click="isOpen = false; isSecondPopupOpen = true" class="w-32 h-12 bg-black text-white uppercase">Cancel Order</button>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div x-show="isSecondPopupOpen" @click="isSecondPopupOpen = false" class="fixed inset-0 bg-black bg-opacity-50 z-40" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"></div>
+                        <div x-show="isSecondPopupOpen" @click.away="isSecondPopupOpen = false" class="fixed inset-0 flex items-center justify-center z-50">
+                            <div class="bg-white p-6 rounded-lg shadow-lg px-3 lg:w-[900px] w-[350px] h-auto">
+                                <div class="flex items-center gap-4">
+                                    <img src="../images/check.png" class="w-6 h-6" alt="Check">
+                                    <h2 class="text-lg font-medium">Order Cancelled</h2>
+                                </div>
+                                <p class="mb-6">Your order has been successfully cancelled. Thank you for letting us know!</p>
+                                <hr class="my-4">
+                                <div class="flex justify-end">
+                                    <button @click="isSecondPopupOpen = false" class="w-32 h-12 bg-black text-white uppercase hover:bg-gray-800 transition-colors">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                
                 </div>
                 <hr class="border-2">
                 <div class="border w-full h-auto my-4 p-4">
