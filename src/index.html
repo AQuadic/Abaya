@@ -53,7 +53,7 @@
         }"
         class="relative z-10 w-full overflow-visible">
         <div class="w-full max-w-7xl mx-auto h-auto overflow-visible bg-white">
-            <ul class="flex items-center justify-center flex-1 p-1 space-x-1 list-none  rounded-md">
+            <ul class="flex items-center justify-center flex-1 p-1 space-x-6 list-none  rounded-md">
                 <li>
                     <button :class="{ 'bg-neutral-100' : navigationMenu=='getting-started', 'hover:bg-neutral-100' : navigationMenu!='getting-started' }" @mouseover="navigationMenuOpen=true; navigationMenuReposition($el); navigationMenu='getting-started'" @mouseleave="navigationMenuLeave()" class="inline-flex items-center justify-center h-10 px-4 py-2 text-sm font-normal transition-colors rounded-md hover:text-neutral-900 focus:outline-none disabled:opacity-50 disabled:pointer-events-none group w-max">
                         <span>التخفيضات</span> 
@@ -473,6 +473,7 @@
         </div>
     <!-- Black Bar -->
 
+<div class="container mx-auto max-w-7xl">
     <!-- Start Header Slider -->
         <div id="default-carousel" class="relative w-full" data-carousel="slide">
             <!-- Carousel wrapper -->
@@ -557,49 +558,94 @@
             <div class="swiper-wrapper mt-[10px]">
             <div class="swiper-slide w-[346px] md:h-auto h-[115px] flex flex-col items-center rounded-[10px]">
                 <img src="../images/sec-slider.webp" class="w-[346px] md:h-[197px] h-[120px] rounded-xl object-cover" alt="Abaya">
-                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full md:h-full h-[50px] mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
+                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full md:h-[100px] h-[50px] mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
                     <div x-data="{ title: 'عبايه تشك' }">
                         <h2 class="text-white md:font-bold md:text-[28px] text-sm ">
                             <span x-text="title.substring(0, 16) + (title.length > 16 ? '...' : '')"></span>
                         </h2>
                     </div>
-                    <h2 class="text-white font-normal text-sm md:flex hidden">فتحته للمتعة تحولت إلى هواية وشيء أحب فتحته للمتعة تحولت إلى هواية وشيء أحبه</h2>
+                    <div x-data="{ title: 'ي ديزاير هو دار أزياء يركز بشكل أساسي على تصميم الأزياء النسائية الراقية من عبايات ... المزيد' }">
+                        <h2 class="text-white font-normal text-sm md:flex hidden">
+                            <span x-text="title.substring(0, 50) + (title.length > 50 ? '...' : '')"></span>
+                        </h2>
+                    </div>
                     <img src="../images/abaya-check.svg" class="absolute rtl:left-[5px] ltr:right-[7px] md:top-[-45px] top-[-20px] md:w-[85px] md:h-[85px] w-[36.03px] h-[37px] rounded-full" alt="Check">
                 </div>
             </div>
             <div class="swiper-slide w-[346px] md:h-auto h-[115px] flex flex-col items-center rounded-[10px]">
                 <img src="../images/sec-slider2.webp" class="w-[346px] md:h-[197px] h-[120px] rounded-xl object-cover" alt="Abaya">
-                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full md:h-full h-[50px] mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
-                    <h2 class="text-white md:font-bold md:text-[28px] text-sm">أليتا بليت</h2>
-                    <h2 class="text-white font-normal text-sm md:flex hidden">علامة تجارية خليجية مميزة كل تصاميمها تشترك في الطيات بكل انواعها تأسست سنة 2015 .. المزيد</h2>
+                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full md:h-[100px] h-[50px] mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
+                    <h2 class="text-white md:font-medium md:text-[28px] text-sm">أليتا بليت</h2>
+                    <div x-data="{ title: 'ي ديزاير هو دار أزياء يركز بشكل أساسي على تصميم الأزياء النسائية الراقية من عبايات ... المزيد' }">
+                        <h2 class="text-white font-normal text-sm md:flex hidden">
+                            <span x-text="title.substring(0, 50) + (title.length > 50 ? '...' : '')"></span>
+                        </h2>
+                    </div>
                     <img src="../images/abayaCheck.svg" class="absolute rtl:left-[5px] ltr:right-[7px] md:top-[-45px] top-[-20px] md:w-[85px] md:h-[85px] w-[36.03px] h-[37px] rounded-full" alt="Check">
                 </div>
             </div>
             <div class="swiper-slide w-[346px] md:h-auto h-[115px] flex flex-col items-center rounded-[10px]">
                 <img src="../images/abayaSlider.webp" class="w-[346px] md:h-[197px] h-[120px] rounded-xl object-cover" alt="Abaya">
-                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full md:h-full h-[50px] mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
-                    <h2 class="text-white md:font-bold md:text-[28px] text-sm">باي ديزاير</h2>
-                    <h2 class="text-white font-normal text-sm md:flex hidden">اي ديزاير هو دار أزياء يركز بشكل أساسي على تصميم الأزياء النسائية الراقية من عبايات ... المزيد</h2>
+                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full md:h-[100px] h-[50px] mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
+                    <h2 class="text-white md:font-medium md:text-[28px] text-sm">باي ديزاير</h2>
+                    <div x-data="{ title: 'ي ديزاير هو دار أزياء يركز بشكل أساسي على تصميم الأزياء النسائية الراقية من عبايات ... المزيد' }">
+                        <h2 class="text-white font-normal text-sm md:flex hidden">
+                            <span x-text="title.substring(0, 50) + (title.length > 50 ? '...' : '')"></span>
+                        </h2>
+                    </div>
                     <img src="../images/byDesigner.svg" class="absolute rtl:left-[5px] ltr:right-[7px] md:top-[-45px] top-[-20px] md:w-[85px] md:h-[85px] w-[36.03px] h-[37px] rounded-full" alt="Check">
                 </div>
             </div>
             <div class="swiper-slide w-[346px] md:h-auto h-[115px] flex flex-col items-center rounded-[10px]">
                 <img src="../images/abayaSlider2.webp" class="w-[346px] md:h-[197px] h-[120px] rounded-xl object-cover" alt="Abaya">
-                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full md:h-full h-[50px] mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
-                    <h2 class="text-white md:font-bold md:text-[28px] text-sm">قفطان أسايل</h2>
-                    <h2 class="text-white font-normal text-sm md:flex hidden">انا مصمم ازياء. أصنع بشكل أساسي قفطان فاخر مصنوع يدويًا 100٪ بأقمشة عالية... المزيد</h2>
+                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full md:h-[100px] h-[50px] mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
+                    <h2 class="text-white md:font-medium md:text-[28px] text-sm">قفطان أسايل</h2>
+                    <div x-data="{ title: 'ي ديزاير هو دار أزياء يركز بشكل أساسي على تصميم الأزياء النسائية الراقية من عبايات ... المزيد' }">
+                        <h2 class="text-white font-normal text-sm md:flex hidden">
+                            <span x-text="title.substring(0, 50) + (title.length > 50 ? '...' : '')"></span>
+                        </h2>
+                    </div>
                     <img src="../images/koftan.svg" class="absolute rtl:left-[5px] ltr:right-[7px] md:top-[-45px] top-[-20px] md:w-[85px] md:h-[85px] w-[36.03px] h-[37px] rounded-full" alt="Check">
                 </div>
             </div>
             <div class="swiper-slide w-[346px] md:h-auto h-[115px] flex flex-col items-center rounded-[10px]">
                 <img src="../images/sec-slider.webp" class="w-[346px] md:h-[197px] h-[120px] rounded-xl object-cover" alt="Abaya">
-                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full md:h-full h-[50px] mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
-                    <h2 class="text-white md:font-bold md:text-[28px] text-sm">عبايه تشك</h2>
-                    <h2 class="text-white font-normal text-sm md:flex hidden">فتحته للمتعة تحولت إلى هواية وشيء أحبه</h2>
+                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full md:h-[100px] h-[50px] mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
+                    <h2 class="text-white md:font-medium md:text-[28px] text-sm">عبايه تشك</h2>
+                    <div x-data="{ title: 'ي ديزاير هو دار أزياء يركز بشكل أساسي على تصميم الأزياء النسائية الراقية من عبايات ... المزيد' }">
+                        <h2 class="text-white font-normal text-sm md:flex hidden">
+                            <span x-text="title.substring(0, 50) + (title.length > 50 ? '...' : '')"></span>
+                        </h2>
+                    </div>
+                    <img src="../images/abaya-check.svg" class="absolute rtl:left-[5px] ltr:right-[7px] md:top-[-45px] top-[-20px] md:w-[85px] md:h-[85px] w-[36.03px] h-[37px] rounded-full" alt="Check">
+                </div>
+            </div>
+            <div class="swiper-slide w-[346px] md:h-auto h-[115px] flex flex-col items-center rounded-[10px]">
+                <img src="../images/sec-slider.webp" class="w-[346px] md:h-[197px] h-[120px] rounded-xl object-cover" alt="Abaya">
+                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full md:h-[100px] h-[50px] mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
+                    <h2 class="text-white md:font-medium md:text-[28px] text-sm">عبايه تشك</h2>
+                    <div x-data="{ title: 'ي ديزاير هو دار أزياء يركز بشكل أساسي على تصميم الأزياء النسائية الراقية من عبايات ... المزيد' }">
+                        <h2 class="text-white font-normal text-sm md:flex hidden">
+                            <span x-text="title.substring(0, 50) + (title.length > 50 ? '...' : '')"></span>
+                        </h2>
+                    </div>
+                    <img src="../images/abaya-check.svg" class="absolute rtl:left-[5px] ltr:right-[7px] md:top-[-45px] top-[-20px] md:w-[85px] md:h-[85px] w-[36.03px] h-[37px] rounded-full" alt="Check">
+                </div>
+            </div>
+            <div class="swiper-slide w-[346px] md:h-auto h-[115px] flex flex-col items-center rounded-[10px]">
+                <img src="../images/sec-slider.webp" class="w-[346px] md:h-[197px] h-[120px] rounded-xl object-cover" alt="Abaya">
+                <div class="relative bg-[#444144] flex flex-col justify-center gap-2 px-4 w-full md:h-[100px] h-[50px] mt-[-50px] rounded-br-[10px] rounded-bl-[10px]">
+                    <h2 class="text-white md:font-medium md:text-[28px] text-sm">عبايه تشك</h2>
+                    <div x-data="{ title: 'ي ديزاير هو دار أزياء يركز بشكل أساسي على تصميم الأزياء النسائية الراقية من عبايات ... المزيد' }">
+                        <h2 class="text-white font-normal text-sm md:flex hidden">
+                            <span x-text="title.substring(0, 50) + (title.length > 50 ? '...' : '')"></span>
+                        </h2>
+                    </div>
                     <img src="../images/abaya-check.svg" class="absolute rtl:left-[5px] ltr:right-[7px] md:top-[-45px] top-[-20px] md:w-[85px] md:h-[85px] w-[36.03px] h-[37px] rounded-full" alt="Check">
                 </div>
             </div>
             </div>
+            
         </div>
     <!-- Shop Shopping -->
 
@@ -612,7 +658,9 @@
             <div x-data="{ show: false }" class="relative">
                 <div class="mt-[14px] flex flex-wrap justify-center sm:gap-[40px] gap-[10px]">
                 <div class="relative sm:w-[346px] w-[174px] h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2" style="box-shadow: 0px 4px 4px 0px #00000040;">
-                        <img src="../images/abaya.webp" class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px]" alt="Abaya">
+                        <div x-data="{ hover: false }" class="relative">
+                            <img :src="hover ? '../images/background-gradient.png' : '../images/abaya.webp'" class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px] transition duration-300 ease-in-out rounded-md" alt="Abaya" @mouseenter="hover = true" @mouseleave="hover = false">
+                        </div>
                         <div x-data="{ 
                             isRedHeart: false,
                             checkHeart() {
@@ -654,7 +702,9 @@
                 </div>
 
                 <div class="relative sm:w-[346px] w-[174px] sm:h-[709px] h-[396.05px] rounded-[10px] md:hover:scale-105 duration-300" style="box-shadow: 0px 4px 4px 0px #00000040;">
-                    <img src="../images/abayaTwo.webp" class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px]" alt="Abaya">
+                    <div x-data="{ hover: false }" class="relative">
+                        <img :src="hover ? '../images/abayaSwiper.webp' : '../images/abayaTwo.webp'" class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px] transition duration-300 ease-in-out rounded-md" alt="Abaya" @mouseenter="hover = true" @mouseleave="hover = false">
+                    </div>
                     <div x-data="{ 
                         isRedHeart: false,
                         checkHeart() {
@@ -878,7 +928,6 @@
                 </div>
                 </div>
                 <div x-show="show" x-transition class="fixed z-50 top-10 right-10 bg-green-500 text-white px-6 py-2 rounded shadow-lg">Added to cart successfully</div>
-            </div>
             </div>
         </section>
     <!-- الأكثر مبيعاً -->
@@ -1166,6 +1215,7 @@
             </form>
         </section>
     <!-- Join -->
+</div>
 
     <!-- Start Footer -->
         <div id="footer"></div>
@@ -1192,25 +1242,21 @@
                 spaceBetween: 20,
                 },
                 768: {
-                slidesPerView: 2.2,
-                spaceBetween: 40,
+                slidesPerView: 3,
+                spaceBetween: 20,
                 },
                 800: {
                 slidesPerView: 3,
                 spaceBetween: 40,
                 },
                 1024: {
-                slidesPerView: 3,
-                spaceBetween: 50,
+                slidesPerView: 4,
+                spaceBetween: 20,
                 },
                 1440: {
-                slidesPerView: 4,
-                spaceBetween: 50,
+                slidesPerView: 5,
+                spaceBetween: 20,
                 },
-                1445: {
-                slidesPerView: 4.4,
-                spaceBetween: 50,
-                }
             },
             });
         </script>

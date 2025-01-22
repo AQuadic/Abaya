@@ -51,103 +51,158 @@
             </div>
         </section>
     <!-- End Tracking -->
-
-    <!-- Start Content -->
-        <section class="container mx-auto flex xl:flex-row flex-col items-center xl:items-start gap-5 my-10">
-            <div class="lg:w-[900px] md:px-0 px-4">
-                <h1 class="text-2xl text-black font-medium">اختيار طريقة الدفع</h1>
-                <div x-data="{ selected: '' }" class="mt-5 space-y-4">
-                    <!-- First Radio Button -->
-                    <div class="border py-4 px-5 min-h-[50px]"
-                        :class="{ 'border-black border-t': selected === 'CreditCard', 'border-gray-300': selected !== 'CreditCard' }">
-                        <label for="CreditCard" class="flex items-center justify-start w-full md:w-[600px] h-auto cursor-pointer">
-                            <input id="CreditCard" type="radio" name="shippingMethodRadio_105"  class="ml-[15px] w-[15px] h-[15px] p-[3px] shrink-0 text-[#b87253] border-gray-300 focus:ring-white"  value="CreditCard" x-model="selected">
-                            <div class="flex-1">
-                                <div class="flex items-center gap-2">
-                                    <img src="../images/payment.svg" class="w-6 h-6" alt="Payment">
-                                    <span class="font-bold">بطاقة الائتمان</span>
-                                </div>
-                                <div x-show="selected === 'CreditCard'" class="mt-2">
-                                    <div class="space-y-2">
-                                        <label for="name">الاسم على البطاقة *</label>
-                                        <input type="text" name="name" id="name" placeholder="أسماء مصطفي" class="lg:w-[700px] w-full  h-12 focus:ring-0 outline-none focus:border-black">    
+    <div class="container mx-auto max-w-7xl">
+        <!-- Start Content -->
+            <section class="container mx-auto flex xl:flex-row flex-col items-center xl:items-start gap-5 my-10">
+                <div class="lg:w-[900px] md:px-0 px-4">
+                    <h1 class="text-2xl text-black font-medium">اختيار طريقة الدفع</h1>
+                    <div x-data="{ selected: '' }" class="mt-5 space-y-4">
+                        <!-- First Radio Button -->
+                        <div class="border py-4 px-5 min-h-[50px]"
+                            :class="{ 'border-black border-t': selected === 'CreditCard', 'border-gray-300': selected !== 'CreditCard' }">
+                            <label for="CreditCard" class="flex items-center justify-start w-full md:w-[600px] h-auto cursor-pointer">
+                                <input id="CreditCard" type="radio" name="shippingMethodRadio_105"  class="ml-[15px] w-[15px] h-[15px] p-[3px] shrink-0 text-[#b87253] border-gray-300 focus:ring-white"  value="CreditCard" x-model="selected">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2">
+                                        <img src="../images/payment.svg" class="w-6 h-6" alt="Payment">
+                                        <span class="font-bold">بطاقة الائتمان</span>
                                     </div>
-                                    <div class="space-y-2 mt-2 flex flex-col">
-                                        <label for="cardNum">رقم البطاقة *</label>
-                                        <input type="text" name="cardNum" id="cardNum" placeholder="1234 1234 1234 1234" class="lg:w-[700px] w-full  h-12 focus:ring-0 outline-none focus:border-black">    
+                                    <div x-show="selected === 'CreditCard'" class="mt-2">
+                                        <div class="space-y-2">
+                                            <label for="name">الاسم على البطاقة *</label>
+                                            <input type="text" name="name" id="name" placeholder="أسماء مصطفي" class="lg:w-[700px] w-full  h-12 focus:ring-0 outline-none focus:border-black">    
+                                        </div>
+                                        <div class="space-y-2 mt-2 flex flex-col">
+                                            <label for="cardNum">رقم البطاقة *</label>
+                                            <input type="text" name="cardNum" id="cardNum" placeholder="1234 1234 1234 1234" class="lg:w-[700px] w-full  h-12 focus:ring-0 outline-none focus:border-black">    
+                                        </div>
+                                        <ul class=" flex items-center gap-1 mt-2">
+                                            <li title="amex">
+                                                <img alt="amex" src="../images/amex.svg" class="w-8 h-[22px]">
+                                            </li>
+                                                <li title="visa">
+                                                    <img alt="visa" src="../images/visa (1).svg" class="w-8 h-[22px]">
+                                                </li>
+                                                <li title="mastercard">
+                                                    <img alt="mastercard" src="../images/mastercard (1).svg" class="w-8 h-[22px]">
+                                                </li>
+                                        </ul>
                                     </div>
-                                    <ul class=" flex items-center gap-1 mt-2">
-                                        <li title="amex">
-                                            <img alt="amex" src="../images/amex.svg" class="w-8 h-[22px]">
-                                        </li>
-                                            <li title="visa">
-                                                <img alt="visa" src="../images/visa (1).svg" class="w-8 h-[22px]">
-                                            </li>
-                                            <li title="mastercard">
-                                                <img alt="mastercard" src="../images/mastercard (1).svg" class="w-8 h-[22px]">
-                                            </li>
-                                    </ul>
-                                </div>
-                        </div>
-                    </label>
-                    </div>
-                    <!-- Second Radio Button -->
-                    <div class="border py-4 px-5 min-h-[50px]"
-                    :class="{ 'border-black border-t': selected === 'applePay', 'border-gray-300': selected !== 'applePay' }">
-                    <label for="applePay" class="flex items-center justify-start w-full md:w-[600px] h-auto cursor-pointer">
-                        <input id="applePay" type="radio" name="shippingMethodRadio_105"  class="ml-[15px] w-[15px] h-[15px] p-[3px] shrink-0 text-[#b87253] border-gray-300 focus:ring-white"  value="applePay" x-model="selected">
-                        <div class="flex-1">
-                            <div class="flex items-center gap-2">
-                                <img src="../images/apple-pay.svg" class="w-6 h-6" alt="Payment">
-                                <span class="font-bold">آبل باي</span>
                             </div>
+                        </label>
                         </div>
-                </label>
-                    </div>
-                    <!-- Third Radio Button -->
-                    <div class="border py-4 px-5 min-h-[50px]"
-                        :class="{ 'border-black border-t': selected === 'tabby', 'border-gray-300': selected !== 'tabby' }">
-                        <label for="tabby" class="flex items-center justify-start w-full md:w-[600px] h-auto cursor-pointer">
-                            <input id="tabby" type="radio" name="shippingMethodRadio_105"  class="ml-[15px] w-[15px] h-[15px] p-[3px] shrink-0 text-[#b87253] border-gray-300 focus:ring-white"  value="tabby" x-model="selected">
+                        <!-- Second Radio Button -->
+                        <div class="border py-4 px-5 min-h-[50px]"
+                        :class="{ 'border-black border-t': selected === 'applePay', 'border-gray-300': selected !== 'applePay' }">
+                        <label for="applePay" class="flex items-center justify-start w-full md:w-[600px] h-auto cursor-pointer">
+                            <input id="applePay" type="radio" name="shippingMethodRadio_105"  class="ml-[15px] w-[15px] h-[15px] p-[3px] shrink-0 text-[#b87253] border-gray-300 focus:ring-white"  value="applePay" x-model="selected">
                             <div class="flex-1">
                                 <div class="flex items-center gap-2">
-                                    <img src="../images/tabby.svg" class="w-6 h-6" alt="Payment">
-                                    <span class="font-bold">التقسيط مع تابي</span>
+                                    <img src="../images/apple-pay.svg" class="w-6 h-6" alt="Payment">
+                                    <span class="font-bold">آبل باي</span>
                                 </div>
-                                <div x-show="selected === 'tabby'" class="mt-2">
-                                    <p>ادفع <span class="font-medium text-lg">2,500 د.إ.</span> في 4 أقساط شهرية دون فائدة بمعدل <span class="font-medium text-lg">625.00 د.إ.</span></p>
-                                    <div class="flex md:flex-row gap-1 flex-col mt-5">
-                                        <div class="flex md:flex-col flex-row gap-2">
-                                            <div class="flex md:flex-row flex-col gap-1 items-center">
-                                                <div class="bg-[#b87253] rounded-full w-2 h-2"></div>
-                                                <div class="md:w-36 bg-slate-400 md:h-px w-px h-14"></div>
-                                            </div>
-                                            <div class="">
-                                                <p data-component-name="Text" class="text-sm font-primary font-bold">يناير ٦، ٢٠٢٥</p>
-                                                <p data-component-name="Text" class="text-sm font-primary">625.00د.إ.</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex md:flex-col flex-row gap-2">
-                                            <div class="flex md:flex-row flex-col gap-1 items-center">
-                                                <div class="bg-[#b87253] rounded-full w-2 h-2"></div>
-                                                <div class="md:w-36 bg-slate-400 md:h-px w-px h-14"></div>
-                                            </div><div class="">
-                                                <p data-component-name="Text" class="text-sm font-primary font-bold">فبراير ٦، ٢٠٢٥</p>
-                                                <p data-component-name="Text" class="text-sm font-primary">625.00د.إ.</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex md:flex-col flex-row gap-2">
-                                            <div class="flex md:flex-row flex-col gap-1 items-center">
-                                                <div class="bg-[#b87253] rounded-full w-2 h-2"></div>
-                                                <div class="md:w-36 bg-slate-400 md:h-px w-px h-14"></div>
-                                            </div>
+                            </div>
+                    </label>
+                        </div>
+                        <!-- Third Radio Button -->
+                        <div class="border py-4 px-5 min-h-[50px]"
+                            :class="{ 'border-black border-t': selected === 'tabby', 'border-gray-300': selected !== 'tabby' }">
+                            <label for="tabby" class="flex items-center justify-start w-full md:w-[600px] h-auto cursor-pointer">
+                                <input id="tabby" type="radio" name="shippingMethodRadio_105"  class="ml-[15px] w-[15px] h-[15px] p-[3px] shrink-0 text-[#b87253] border-gray-300 focus:ring-white"  value="tabby" x-model="selected">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2">
+                                        <img src="../images/tabby.svg" class="w-6 h-6" alt="Payment">
+                                        <span class="font-bold">التقسيط مع تابي</span>
+                                    </div>
+                                    <div x-show="selected === 'tabby'" class="mt-2">
+                                        <p>ادفع <span class="font-medium text-lg">2,500 د.إ.</span> في 4 أقساط شهرية دون فائدة بمعدل <span class="font-medium text-lg">625.00 د.إ.</span></p>
+                                        <div class="flex md:flex-row gap-1 flex-col mt-5">
+                                            <div class="flex md:flex-col flex-row gap-2">
+                                                <div class="flex md:flex-row flex-col gap-1 items-center">
+                                                    <div class="bg-[#b87253] rounded-full w-2 h-2"></div>
+                                                    <div class="md:w-36 bg-slate-400 md:h-px w-px h-14"></div>
+                                                </div>
                                                 <div class="">
-                                                    <p data-component-name="Text" class="text-sm font-primary font-bold">مارس ٦، ٢٠٢٥</p>
-                                                    <p data-component-name="Text" class="text-sm font-primary">625.00 د.إ.</p>
+                                                    <p data-component-name="Text" class="text-sm font-primary font-bold">يناير ٦، ٢٠٢٥</p>
+                                                    <p data-component-name="Text" class="text-sm font-primary">625.00د.إ.</p>
                                                 </div>
                                             </div>
                                             <div class="flex md:flex-col flex-row gap-2">
                                                 <div class="flex md:flex-row flex-col gap-1 items-center">
+                                                    <div class="bg-[#b87253] rounded-full w-2 h-2"></div>
+                                                    <div class="md:w-36 bg-slate-400 md:h-px w-px h-14"></div>
+                                                </div><div class="">
+                                                    <p data-component-name="Text" class="text-sm font-primary font-bold">فبراير ٦، ٢٠٢٥</p>
+                                                    <p data-component-name="Text" class="text-sm font-primary">625.00د.إ.</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex md:flex-col flex-row gap-2">
+                                                <div class="flex md:flex-row flex-col gap-1 items-center">
+                                                    <div class="bg-[#b87253] rounded-full w-2 h-2"></div>
+                                                    <div class="md:w-36 bg-slate-400 md:h-px w-px h-14"></div>
+                                                </div>
+                                                    <div class="">
+                                                        <p data-component-name="Text" class="text-sm font-primary font-bold">مارس ٦، ٢٠٢٥</p>
+                                                        <p data-component-name="Text" class="text-sm font-primary">625.00 د.إ.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="flex md:flex-col flex-row gap-2">
+                                                    <div class="flex md:flex-row flex-col gap-1 items-center">
+                                                        <div class="bg-[#b87253] rounded-full w-2 h-2"></div>
+                                                    </div>
+                                                    <div class="">
+                                                        <p data-component-name="Text" class="text-sm font-primary font-bold">أبريل ٦، ٢٠٢٥</p>
+                                                        <p data-component-name="Text" class="text-sm font-primary">625.00 د.إ.</p>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        <p class="mt-2">دائما <span class="font-medium">0 % فائدة و بلا رسوم</span> عند الدفع دون تأخير.</p>
+                                    </div>
+                            </div>
+                        </label>
+                        </div>
+                        <!-- Fourth Radio Button -->
+                        <div class="border py-4 px-5 min-h-[50px]"
+                            :class="{ 'border-black border-t': selected === 'tamara', 'border-gray-300': selected !== 'tamara' }">
+                            <label for="tamara" class="flex items-center justify-start w-full md:w-[600px] h-auto cursor-pointer">
+                                <input id="tamara" type="radio" name="shippingMethodRadio_105"  class="ml-[15px] w-[15px] h-[15px] p-[3px] shrink-0 text-[#b87253] border-gray-300 focus:ring-white"  value="tamara" x-model="selected">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2">
+                                        <img src="../images/tamara.svg" class="w-6 h-6" alt="Payment">
+                                        <span class="font-bold">التقسيط مع تمارا</span>
+                                    </div>
+                                    <div x-show="selected === 'tamara'" class="mt-2">
+                                        <div class="flex md:flex-row gap-1 flex-col mt-5">
+                                            <div class="flex md:flex-col flex-row gap-2">
+                                                <div class="flex md:flex-row flex-col gap-1 items-center">
+                                                    <div class="bg-[#b87253] rounded-full w-2 h-2"></div>
+                                                    <div class="md:w-36 bg-slate-400 md:h-px w-px h-14"></div>
+                                                </div>
+                                                <div class="">
+                                                    <p data-component-name="Text" class="text-sm font-primary font-bold">يناير ٦، ٢٠٢٥</p>
+                                                    <p data-component-name="Text" class="text-sm font-primary">625.00د.إ.</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex md:flex-col flex-row gap-2">
+                                                <div class="flex md:flex-row flex-col gap-1 items-center">
+                                                    <div class="bg-[#b87253] rounded-full w-2 h-2"></div>
+                                                    <div class="md:w-36 bg-slate-400 md:h-px w-px h-14"></div>
+                                                </div><div class="">
+                                                    <p data-component-name="Text" class="text-sm font-primary font-bold">فبراير ٦، ٢٠٢٥</p>
+                                                    <p data-component-name="Text" class="text-sm font-primary">625.00د.إ.</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex md:flex-col flex-row gap-2">
+                                                <div class="flex md:flex-row flex-col gap-1 items-center">
+                                                    <div class="bg-[#b87253] rounded-full w-2 h-2"></div>
+                                                    <div class="md:w-36 bg-slate-400 md:h-px w-px h-14"></div></div>
+                                                    <div class="">
+                                                        <p data-component-name="Text" class="text-sm font-primary font-bold">مارس ٦، ٢٠٢٥</p>
+                                                        <p data-component-name="Text" class="text-sm font-primary">625.00 د.إ.</p>
+                                                    </div>
+                                            </div>
+                                            <div class="flex md:flex-col flex-row gap-2">
+                                                <div class="flex items-center">
                                                     <div class="bg-[#b87253] rounded-full w-2 h-2"></div>
                                                 </div>
                                                 <div class="">
@@ -155,211 +210,157 @@
                                                     <p data-component-name="Text" class="text-sm font-primary">625.00 د.إ.</p>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <p class="mt-2">لا رسوم عند التأخر، نهائيًا</p>
                                     </div>
-                                    <p class="mt-2">دائما <span class="font-medium">0 % فائدة و بلا رسوم</span> عند الدفع دون تأخير.</p>
-                                </div>
+                            </div>
+                        </label>
                         </div>
-                    </label>
-                    </div>
-                    <!-- Fourth Radio Button -->
-                    <div class="border py-4 px-5 min-h-[50px]"
-                        :class="{ 'border-black border-t': selected === 'tamara', 'border-gray-300': selected !== 'tamara' }">
-                        <label for="tamara" class="flex items-center justify-start w-full md:w-[600px] h-auto cursor-pointer">
-                            <input id="tamara" type="radio" name="shippingMethodRadio_105"  class="ml-[15px] w-[15px] h-[15px] p-[3px] shrink-0 text-[#b87253] border-gray-300 focus:ring-white"  value="tamara" x-model="selected">
-                            <div class="flex-1">
-                                <div class="flex items-center gap-2">
-                                    <img src="../images/tamara.svg" class="w-6 h-6" alt="Payment">
-                                    <span class="font-bold">التقسيط مع تمارا</span>
-                                </div>
-                                <div x-show="selected === 'tamara'" class="mt-2">
-                                    <div class="flex md:flex-row gap-1 flex-col mt-5">
-                                        <div class="flex md:flex-col flex-row gap-2">
-                                            <div class="flex md:flex-row flex-col gap-1 items-center">
-                                                <div class="bg-[#b87253] rounded-full w-2 h-2"></div>
-                                                <div class="md:w-36 bg-slate-400 md:h-px w-px h-14"></div>
-                                            </div>
-                                            <div class="">
-                                                <p data-component-name="Text" class="text-sm font-primary font-bold">يناير ٦، ٢٠٢٥</p>
-                                                <p data-component-name="Text" class="text-sm font-primary">625.00د.إ.</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex md:flex-col flex-row gap-2">
-                                            <div class="flex md:flex-row flex-col gap-1 items-center">
-                                                <div class="bg-[#b87253] rounded-full w-2 h-2"></div>
-                                                <div class="md:w-36 bg-slate-400 md:h-px w-px h-14"></div>
-                                            </div><div class="">
-                                                <p data-component-name="Text" class="text-sm font-primary font-bold">فبراير ٦، ٢٠٢٥</p>
-                                                <p data-component-name="Text" class="text-sm font-primary">625.00د.إ.</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex md:flex-col flex-row gap-2">
-                                            <div class="flex md:flex-row flex-col gap-1 items-center">
-                                                <div class="bg-[#b87253] rounded-full w-2 h-2"></div>
-                                                <div class="md:w-36 bg-slate-400 md:h-px w-px h-14"></div></div>
-                                                <div class="">
-                                                    <p data-component-name="Text" class="text-sm font-primary font-bold">مارس ٦، ٢٠٢٥</p>
-                                                    <p data-component-name="Text" class="text-sm font-primary">625.00 د.إ.</p>
-                                                </div>
-                                        </div>
-                                        <div class="flex md:flex-col flex-row gap-2">
-                                            <div class="flex items-center">
-                                                <div class="bg-[#b87253] rounded-full w-2 h-2"></div>
-                                            </div>
-                                            <div class="">
-                                                <p data-component-name="Text" class="text-sm font-primary font-bold">أبريل ٦، ٢٠٢٥</p>
-                                                <p data-component-name="Text" class="text-sm font-primary">625.00 د.إ.</p>
-                                            </div>
-                                        </div>
+                        <!-- Fifth Radio Button -->
+                        <div class="border py-4 px-5 min-h-[50px]"
+                            :class="{ 'border-black border-t': selected === 'paypal', 'border-gray-300': selected !== 'paypal' }">
+                            <label for="paypal" class="flex items-center justify-start w-full md:w-[600px] h-auto cursor-pointer">
+                                <input id="paypal" type="radio" name="shippingMethodRadio_105"  class="ml-[15px] w-[15px] h-[15px] p-[3px] shrink-0 text-[#b87253] border-gray-300 focus:ring-white"  value="paypal" x-model="selected">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2">
+                                        <img src="../images/paypalRadio.svg" class="w-6 h-6" alt="Payment">
+                                        <span class="font-bold">PAYPAL</span>
                                     </div>
-                                    <p class="mt-2">لا رسوم عند التأخر، نهائيًا</p>
-                                </div>
+                                    <div x-show="selected === 'paypal'" class="mt-2">
+                                        <p>سيتم إعادة توجيهكم إلى صفحة باي بال لإتمام طلبيتكم.</p>
+                                        <p>للمزيد من المعلومات يرجى زيارة <a href="https://www.paypal.com" target="_blank" class="underline font-medium">www.paypal.com</a></p>                                </div>
+                            </div>
+                        </label>
                         </div>
-                    </label>
-                    </div>
-                    <!-- Fifth Radio Button -->
-                    <div class="border py-4 px-5 min-h-[50px]"
-                        :class="{ 'border-black border-t': selected === 'paypal', 'border-gray-300': selected !== 'paypal' }">
-                        <label for="paypal" class="flex items-center justify-start w-full md:w-[600px] h-auto cursor-pointer">
-                            <input id="paypal" type="radio" name="shippingMethodRadio_105"  class="ml-[15px] w-[15px] h-[15px] p-[3px] shrink-0 text-[#b87253] border-gray-300 focus:ring-white"  value="paypal" x-model="selected">
-                            <div class="flex-1">
-                                <div class="flex items-center gap-2">
-                                    <img src="../images/paypalRadio.svg" class="w-6 h-6" alt="Payment">
-                                    <span class="font-bold">PAYPAL</span>
+                        <!-- Six Radio Button -->
+                        <div class="border py-4 px-5 min-h-[50px]"
+                            :class="{ 'border-black border-t': selected === 'cash', 'border-gray-300': selected !== 'cash' }">
+                            <label for="cash" class="flex items-center justify-start w-full md:w-[600px] h-auto cursor-pointer">
+                                <input id="cash" type="radio" name="shippingMethodRadio_105"  class="ml-[15px] w-[15px] h-[15px] p-[3px] shrink-0 text-[#b87253] border-gray-300 focus:ring-white"  value="cash" x-model="selected">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2">
+                                        <img src="../images/cash.svg" class="w-6 h-6" alt="Payment">
+                                        <span class="font-bold">عند الاستلام</span>
+                                    </div>
+                                    <div x-show="selected === 'cash'" class="mt-2">
+                                        <p class="mt-2">يرجي العلم، في حال إرجاع الطلبية سوف يتم إضافة المبلغ كرصيد في حسابكم الشخصي على الموقع.</p>
+                                    </div>
                                 </div>
-                                <div x-show="selected === 'paypal'" class="mt-2">
-                                    <p>سيتم إعادة توجيهكم إلى صفحة باي بال لإتمام طلبيتكم.</p>
-                                    <p>للمزيد من المعلومات يرجى زيارة <a href="https://www.paypal.com" target="_blank" class="underline font-medium">www.paypal.com</a></p>                                </div>
+                        </label>
                         </div>
-                    </label>
+                        <div class="mt-8 w-full h-px bg-black"></div>
+                        <div class="mt-4 flex lg:flex-row flex-col gap-4 justify-between">
+                            <p>بالضغط على زر الطلب، فإنك توافق على <a href="#" class="underline font-medium">الشروط والأحكام</a></p>
+                            <a 
+                            x-bind:href="
+                                selected === 'CreditCard' ? '' : 
+                                selected === 'applePay' ? '' : 
+                                selected === 'tabby' ? '' : 
+                                selected === 'tamara' ? '' : 
+                                selected === 'paypal' ? '' : 
+                                selected === 'cash' ? 'cash-url' : ''
+                            "
+                            class="flex items-center justify-center text-white text-lg w-80 h-12 bg-[#b87253]"
+                        >
+                            <span x-text="
+                                selected === 'CreditCard' ? 'اطلب الان' : 
+                                selected === 'applePay' ? ' شراء باستخدام ابل باي' : 
+                                selected === 'tabby' ? ' ادفع بالأقساط مع تابي' : 
+                                selected === 'tamara' ? 'اطلب الآن' : 
+                                selected === 'paypal' ? 'الشراء والدفع بواسطة PayPal' : 
+                                selected === 'cash' ? ' الشراء والدفع نقداً عند الاستلام ' : 'اطلب الان'
+                            "></span>
+                        </a>
+                        </div>      
                     </div>
-                    <!-- Six Radio Button -->
-                    <div class="border py-4 px-5 min-h-[50px]"
-                        :class="{ 'border-black border-t': selected === 'cash', 'border-gray-300': selected !== 'cash' }">
-                        <label for="cash" class="flex items-center justify-start w-full md:w-[600px] h-auto cursor-pointer">
-                            <input id="cash" type="radio" name="shippingMethodRadio_105"  class="ml-[15px] w-[15px] h-[15px] p-[3px] shrink-0 text-[#b87253] border-gray-300 focus:ring-white"  value="cash" x-model="selected">
-                            <div class="flex-1">
-                                <div class="flex items-center gap-2">
-                                    <img src="../images/cash.svg" class="w-6 h-6" alt="Payment">
-                                    <span class="font-bold">عند الاستلام</span>
-                                </div>
-                                <div x-show="selected === 'cash'" class="mt-2">
-                                    <p class="mt-2">يرجي العلم، في حال إرجاع الطلبية سوف يتم إضافة المبلغ كرصيد في حسابكم الشخصي على الموقع.</p>
+                </div>
+                <div class="md:px-0 px-4">
+                    <div class="md:w-[500px] border p-3 mb-5">
+                        <div class="flex justify-between">
+                            <h2 class="text-2xl font-medium text-black">عنوان التوصيل</h2>
+                            <a href="./checkout.html" class="font-bold border-none bg-transparent flex justify-center flex-col text-xs text-[#b87253] uppercase underline cursor-pointer pl-0">تعديل</a>    
+                        </div>
+                        <div class="mt-4">
+                            <h4>أسماء مصطفي</h4>
+                            <p>+971-521212545</p>
+                            <p>9 شارع الضَّاعِل, السعادة</p>
+                            <p>شرق 42</p>
+                            <p>ABDB</p>
+                            <p>2120</p>
+                            <p>الإمارات العربية المتحدة</p>
+                        </div>
+                    </div>
+                    <div class="md:w-[500px] border p-3">
+                        <div class="flex justify-between">
+                            <h2 class="text-2xl font-medium text-black">ملخص الطلبية</h2>
+                            <a href="./Cart.html" class="font-bold border-none bg-transparent flex justify-center flex-col text-xs text-[#b87253] uppercase underline cursor-pointer pl-0">تعديل</a>    
+                        </div>
+                        <div class="my-4 flex flex-row gap-2">
+                            <img src="../images/cartImage.webp" class="w-[100px] h-[150px] object-cover" alt="Wishlist">
+                            <div class="flex flex-col justify-between gap-1">
+                                <div>
+                                    <h3 class="text-xl font-medium">عبايات عبايات</h3>
+                                    <p class="text-base text-black">Wrap-up Abaya Set in Crepe</p>
+                                    <p class="text-sm font-normal text-gray-400"> اللون : <span class="text-gray-600">اسود</span></p>
+                                    <p class="text-sm font-normal text-gray-400"> المقاس : <span class="text-gray-600">30</span></p>    
+                                    <p class="text-sm font-normal text-gray-400"> الكمية : <span class="text-gray-600">1</span></p>    
                                 </div>
                             </div>
-                    </label>
+                            <p class="flex-1 flex justify-end text-[#b87253] font-medium">850 د.إ.</p>
+                        </div>  
+                        <hr>
+                        <div class="mt-4 flex flex-row gap-2">
+                            <img src="../images/cartImage.webp" class="w-[100px] h-[150px] object-cover" alt="Wishlist">
+                            <div class="flex flex-col justify-between gap-1">
+                                <div>
+                                    <h3 class="text-xl font-medium">عبايات عبايات</h3>
+                                    <p class="text-base text-black">Wrap-up Abaya Set in Crepe</p>
+                                    <p class="text-sm font-normal text-gray-400"> اللون : <span class="text-gray-600">اسود</span></p>
+                                    <p class="text-sm font-normal text-gray-400"> المقاس : <span class="text-gray-600">30</span></p>    
+                                    <p class="text-sm font-normal text-gray-400"> الكمية : <span class="text-gray-600">1</span></p>    
+                                </div>
+                            </div>
+                            <p class="flex-1 flex justify-end text-[#b87253] font-medium">850 د.إ.</p>
+                        </div>  
+                        <div class="flex justify-between mt-5">
+                            <h2 class="text-xs text-[#4a4a4a] font-bold">الإجمالي الفرعي</h2>
+                            <p class="font-bold flex justify-center flex-col text-xs text-[#b87253]">2,500 د.إ.</a>    
+                        </div>
+                        <div class="flex justify-between mt-2">
+                            <h2 class="text-xs text-[#4a4a4a] font-bold">تكلفة التوصيل</h2>
+                            <p class="font-bold flex justify-center flex-col text-xs text-[#b87253]">مجاناً</p>    
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <div class="flex items-center gap-2">
+                                <h2 class="text-lg text-black font-bold">المجموع الإجمالي</h2>
+                                <p class="text-[10px] text-[#7b7b7b]">شامل ضريبة القيمة المضافة</p>
+                            </div>
+                            <p class="font-bold flex justify-center text-lg text-black">مجاناً</p>    
+                        </div>
                     </div>
-                    <div class="mt-8 w-full h-px bg-black"></div>
-                    <div class="mt-4 flex lg:flex-row flex-col gap-4 justify-between">
-                        <p>بالضغط على زر الطلب، فإنك توافق على <a href="#" class="underline font-medium">الشروط والأحكام</a></p>
-                        <a 
-                        x-bind:href="
-                            selected === 'CreditCard' ? '' : 
-                            selected === 'applePay' ? '' : 
-                            selected === 'tabby' ? '' : 
-                            selected === 'tamara' ? '' : 
-                            selected === 'paypal' ? '' : 
-                            selected === 'cash' ? 'cash-url' : ''
-                        "
-                        class="flex items-center justify-center text-white text-lg w-80 h-12 bg-[#b87253]"
-                    >
-                        <span x-text="
-                            selected === 'CreditCard' ? 'اطلب الان' : 
-                            selected === 'applePay' ? ' شراء باستخدام ابل باي' : 
-                            selected === 'tabby' ? ' ادفع بالأقساط مع تابي' : 
-                            selected === 'tamara' ? 'اطلب الآن' : 
-                            selected === 'paypal' ? 'الشراء والدفع بواسطة PayPal' : 
-                            selected === 'cash' ? ' الشراء والدفع نقداً عند الاستلام ' : 'اطلب الان'
-                        "></span>
-                    </a>
-                    </div>      
-                </div>
-            </div>
-            <div class="md:px-0 px-4">
-                <div class="md:w-[500px] border p-3 mb-5">
-                    <div class="flex justify-between">
-                        <h2 class="text-2xl font-medium text-black">عنوان التوصيل</h2>
-                        <a href="./checkout.html" class="font-bold border-none bg-transparent flex justify-center flex-col text-xs text-[#b87253] uppercase underline cursor-pointer pl-0">تعديل</a>    
-                    </div>
-                    <div class="mt-4">
-                        <h4>أسماء مصطفي</h4>
-                        <p>+971-521212545</p>
-                        <p>9 شارع الضَّاعِل, السعادة</p>
-                        <p>شرق 42</p>
-                        <p>ABDB</p>
-                        <p>2120</p>
-                        <p>الإمارات العربية المتحدة</p>
-                    </div>
-                </div>
-                <div class="md:w-[500px] border p-3">
-                    <div class="flex justify-between">
-                        <h2 class="text-2xl font-medium text-black">ملخص الطلبية</h2>
-                        <a href="./Cart.html" class="font-bold border-none bg-transparent flex justify-center flex-col text-xs text-[#b87253] uppercase underline cursor-pointer pl-0">تعديل</a>    
-                    </div>
-                    <div class="my-4 flex flex-row gap-2">
-                        <img src="../images/cartImage.webp" class="w-[100px] h-[150px] object-cover" alt="Wishlist">
-                        <div class="flex flex-col justify-between gap-1">
-                            <div>
-                                <h3 class="text-xl font-medium">عبايات عبايات</h3>
-                                <p class="text-base text-black">Wrap-up Abaya Set in Crepe</p>
-                                <p class="text-sm font-normal text-gray-400"> اللون : <span class="text-gray-600">اسود</span></p>
-                                <p class="text-sm font-normal text-gray-400"> المقاس : <span class="text-gray-600">30</span></p>    
-                                <p class="text-sm font-normal text-gray-400"> الكمية : <span class="text-gray-600">1</span></p>    
+                    <div class="flex items-start gap-3 text-xs leading-none mt-5">
+                        <img src="../images/like.webp" class="w-[25px] h-[30.3px]" alt="Like Icon">
+                        <div class="flex flex-col items-start w-full">
+                            <div class="mb-[5px] text-[#b87253] normal-case font-bold text-[12px]">
+                                لا تتردد في الشراء!</div>
+                            <div class="text-[#2d2d2d] font-normal text-[12px]">نوفر خدمة إرجاع مجانية لفترة تصل إلى 30 يوم من الشراء.
+                                <a class="text-[#7a7a7a] underline pr-[5px]" href="/content/online-returns" target="_blank" rel="noopener noreferrer">اعرف المزيد</a>
                             </div>
                         </div>
-                        <p class="flex-1 flex justify-end text-[#b87253] font-medium">850 د.إ.</p>
-                    </div>  
-                    <hr>
-                    <div class="mt-4 flex flex-row gap-2">
-                        <img src="../images/cartImage.webp" class="w-[100px] h-[150px] object-cover" alt="Wishlist">
-                        <div class="flex flex-col justify-between gap-1">
-                            <div>
-                                <h3 class="text-xl font-medium">عبايات عبايات</h3>
-                                <p class="text-base text-black">Wrap-up Abaya Set in Crepe</p>
-                                <p class="text-sm font-normal text-gray-400"> اللون : <span class="text-gray-600">اسود</span></p>
-                                <p class="text-sm font-normal text-gray-400"> المقاس : <span class="text-gray-600">30</span></p>    
-                                <p class="text-sm font-normal text-gray-400"> الكمية : <span class="text-gray-600">1</span></p>    
-                            </div>
-                        </div>
-                        <p class="flex-1 flex justify-end text-[#b87253] font-medium">850 د.إ.</p>
-                    </div>  
-                    <div class="flex justify-between mt-5">
-                        <h2 class="text-xs text-[#4a4a4a] font-bold">الإجمالي الفرعي</h2>
-                        <p class="font-bold flex justify-center flex-col text-xs text-[#b87253]">2,500 د.إ.</a>    
                     </div>
-                    <div class="flex justify-between mt-2">
-                        <h2 class="text-xs text-[#4a4a4a] font-bold">تكلفة التوصيل</h2>
-                        <p class="font-bold flex justify-center flex-col text-xs text-[#b87253]">مجاناً</p>    
-                    </div>
-                    <div class="flex items-center justify-between mt-2">
-                        <div class="flex items-center gap-2">
-                            <h2 class="text-lg text-black font-bold">المجموع الإجمالي</h2>
-                            <p class="text-[10px] text-[#7b7b7b]">شامل ضريبة القيمة المضافة</p>
-                        </div>
-                        <p class="font-bold flex justify-center text-lg text-black">مجاناً</p>    
-                    </div>
+                    <div class="flex gap-2 mt-2">
+                        <img src="../images/amex.svg" class="w-10 h-10" alt="Icon">
+                        <img src="../images/visa (1).svg" class="w-10 h-10" alt="Icon">
+                        <img src="../images/mastercard (1).svg" class="w-10 h-10" alt="Icon">
+                        <img src="../images/apple-pay.svg" class="w-10 h-10" alt="Icon">
+                        <img src="../images/tamara.svg" class="w-10 h-10" alt="Icon">
+                        <img src="../images/paypalRadio.svg" class="w-10 h-10" alt="Icon">
+                        <img src="../images/cash.svg" class="w-10 h-10" alt="Icon">
+                    </div> 
                 </div>
-                <div class="flex items-start gap-3 text-xs leading-none mt-5">
-                    <img src="../images/like.webp" class="w-[25px] h-[30.3px]" alt="Like Icon">
-                    <div class="flex flex-col items-start w-full">
-                        <div class="mb-[5px] text-[#b87253] normal-case font-bold text-[12px]">
-                            لا تتردد في الشراء!</div>
-                        <div class="text-[#2d2d2d] font-normal text-[12px]">نوفر خدمة إرجاع مجانية لفترة تصل إلى 30 يوم من الشراء.
-                            <a class="text-[#7a7a7a] underline pr-[5px]" href="/content/online-returns" target="_blank" rel="noopener noreferrer">اعرف المزيد</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex gap-2 mt-2">
-                    <img src="../images/amex.svg" class="w-10 h-10" alt="Icon">
-                    <img src="../images/visa (1).svg" class="w-10 h-10" alt="Icon">
-                    <img src="../images/mastercard (1).svg" class="w-10 h-10" alt="Icon">
-                    <img src="../images/apple-pay.svg" class="w-10 h-10" alt="Icon">
-                    <img src="../images/tamara.svg" class="w-10 h-10" alt="Icon">
-                    <img src="../images/paypalRadio.svg" class="w-10 h-10" alt="Icon">
-                    <img src="../images/cash.svg" class="w-10 h-10" alt="Icon">
-                </div> 
-            </div>
-        </section>
-    <!-- End Content -->
+            </section>
+        <!-- End Content -->
+    </div>
 
     <!-- Start Footer -->
         <div id="footer"></div>

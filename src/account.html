@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,7 @@
     <!-- End Navbar -->
     
     <!-- Start Breadcrumbs  -->
-        <section class="bg-gray-50 h-10 flex items-center justify-center mt-5 p-5 md:rtl:pr-40 rtl:pr-6">
+        <section class="bg-gray-50 h-10 flex items-center justify-center mt-5 p-5 xl:ltr:pl-52 xl:rtl:pr-52 rtl:pr-6">
             <nav class=" container mx-auto" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center gap-3">
                 <li class="inline-flex items-center">
@@ -45,315 +45,317 @@
             </nav>
         </section>
     <!-- End Breadcrumbs  -->
-    
-    <!-- Start Content -->
-        <section class="container mx-auto  mt-[40px] mb-[72px] px-5 xl:px-0">    
-            <div x-data="{ activePage: 'myOrders' }" class="lg:flex justify-center gap-[72px]">
-                <div x-data="{ open: false }">
-                    <button @click="open = !open" class="lg:hidden flex items-center gap-5 p-[3px] text-gray-800">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                        </svg>
-                        <p>Dashboard</p>
-                    </button>
-                
-                    <div :class="{ 'block': open, 'hidden': !open }" class="lg:block hidden mt-5 sm:mt-0 mb-2 mx-auto w-[266px]  border border-[#2d2d2d] bg-white">
-                        <ul>
-                            <li @click="activePage = 'myAccount'" 
-                                :class="{ 'bg-[#2d2d2d] text-white font-semibold': activePage === 'myAccount' }"
-                                class="flex items-center gap-3 sm:w-[264px] w-full h-14 ltr:pl-6 rtl:pr-6 cursor-pointer">
-                                <img class="w-5 h-5" :src="activePage === 'myAccount' ? '../images/user-account.svg' : '../images/buser-account.svg'" alt="Stack">
-                                <p class="text-sm" :class="activePage === 'myAccount' ? 'text-white' : 'text-[#5F6C72] font-normal'">My Account</p>
-                            </li>
-                        
-                            <li @click="activePage = 'myOrders'"
-                                :class="{ 'bg-[#2d2d2d] text-white font-semibold': activePage === 'myOrders' }"
-                                class="flex items-center gap-3 sm:w-[264px] w-full h-14 ltr:pl-6 rtl:pr-6 cursor-pointer">
-                                <img class="w-5 h-5" :src="activePage === 'myOrders' ? '../images/wprof-order.svg' : '../images/prof-order.svg'" alt="Storefront">
-                                <p class="text-sm" :class="activePage === 'myOrders' ? 'text-white' : 'text-[#5F6C72] font-normal'">My Orders</p>
-                            </li>
-                        
-                            <li @click="activePage = 'favDesigners'"
-                                :class="{ 'bg-[#2d2d2d] text-white font-semibold': activePage === 'favDesigners' }"
-                                class="flex items-center gap-3 sm:w-[264px] w-full h-14 ltr:pl-6 rtl:pr-6 cursor-pointer">
-                                <img class="w-5 h-5" :src="activePage === 'favDesigners' ? '../images/prof-star.svg' : '../images/prof-star.svg'" alt="Storefront">
-                                <p class="text-sm" :class="activePage === 'favDesigners' ? 'text-white' : 'text-[#5F6C72] font-normal'">My Favorite Designers</p>
-                            </li>
-                
-                            <li @click="activePage = 'myProfile'"
-                                :class="{ 'bg-[#2d2d2d] text-white font-semibold': activePage === 'myProfile' }"
-                                class="flex items-center gap-3 sm:w-[264px] w-full h-14 ltr:pl-6 rtl:pr-6 cursor-pointer">
-                                <img class="w-5 h-5" :src="activePage === 'myProfile' ? '../images/myProfile.svg' : '../images/myProfile.svg'" alt="Storefront">
-                                <p class="text-sm" :class="activePage === 'myProfile' ? 'text-white' : 'text-[#5F6C72] font-normal'">My Profile</p>
-                            </li>
 
-                            <div x-data="{ activePage: '', showLogoutModal: false }">
-                                <li @click="activePage = 'Log-out'; showLogoutModal = true"
+    <div class="container mx-auto max-w-7xl">
+        <!-- Start Content -->
+            <section class="container mx-auto  mt-[40px] mb-[72px] px-5 xl:px-0">    
+                <div x-data="{ activePage: 'myProfile' }" class="lg:flex justify-center gap-[72px]">
+                    <div x-data="{ open: false }">
+                        <button @click="open = !open" class="lg:hidden flex items-center gap-5 p-[3px] text-gray-800">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                            </svg>
+                            <p>Dashboard</p>
+                        </button>
+                    
+                        <div :class="{ 'block': open, 'hidden': !open }" class="lg:block hidden mt-5 sm:mt-0 mb-2 mx-auto w-[266px]  border border-[#2d2d2d] bg-white">
+                            <ul>
+                                <li @click="activePage = 'myAccount'" 
+                                    :class="{ 'bg-[#2d2d2d] text-white font-semibold': activePage === 'myAccount' }"
                                     class="flex items-center gap-3 sm:w-[264px] w-full h-14 ltr:pl-6 rtl:pr-6 cursor-pointer">
-                                    <img src="../images/SignOut.svg" alt="Log-out">
-                                    <p class="text-[#5F6C72] font-normal">Log-out</p>
+                                    <img class="w-5 h-5" :src="activePage === 'myAccount' ? '../images/user-account.svg' : '../images/buser-account.svg'" alt="Stack">
+                                    <p class="text-sm" :class="activePage === 'myAccount' ? 'text-white' : 'text-[#5F6C72] font-normal'">My Account</p>
                                 </li>
-                
-                                <div x-show="showLogoutModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50" x-cloak x-transition >
-                                    <div x-on:click.outside="showLogoutModal=false" class="bg-white p-6 rounded-md shadow-lg w-[300px]">
-                                        <h2 class="text-lg font-semibold mb-4">Confirm Log-out</h2>
-                                        <p class="mb-6">Are you sure you want to log out?</p>
-                                        <div class="flex justify-end gap-3">
-                                            <button @click="showLogoutModal = false" class="bg-gray-300 px-4 py-2 rounded-md">Cancel</button>
-                                            <button class="bg-[#A67422] text-white px-4 py-2 rounded-md">Log-out</button>
+                            
+                                <li @click="activePage = 'myOrders'"
+                                    :class="{ 'bg-[#2d2d2d] text-white font-semibold': activePage === 'myOrders' }"
+                                    class="flex items-center gap-3 sm:w-[264px] w-full h-14 ltr:pl-6 rtl:pr-6 cursor-pointer">
+                                    <img class="w-5 h-5" :src="activePage === 'myOrders' ? '../images/wprof-order.svg' : '../images/prof-order.svg'" alt="Storefront">
+                                    <p class="text-sm" :class="activePage === 'myOrders' ? 'text-white' : 'text-[#5F6C72] font-normal'">My Orders</p>
+                                </li>
+                            
+                                <li @click="activePage = 'favDesigners'"
+                                    :class="{ 'bg-[#2d2d2d] text-white font-semibold': activePage === 'favDesigners' }"
+                                    class="flex items-center gap-3 sm:w-[264px] w-full h-14 ltr:pl-6 rtl:pr-6 cursor-pointer">
+                                    <img class="w-5 h-5" :src="activePage === 'favDesigners' ? '../images/prof-star.svg' : '../images/prof-star.svg'" alt="Storefront">
+                                    <p class="text-sm" :class="activePage === 'favDesigners' ? 'text-white' : 'text-[#5F6C72] font-normal'">My Favorite Designers</p>
+                                </li>
+                    
+                                <li @click="activePage = 'myProfile'"
+                                    :class="{ 'bg-[#2d2d2d] text-white font-semibold': activePage === 'myProfile' }"
+                                    class="flex items-center gap-3 sm:w-[264px] w-full h-14 ltr:pl-6 rtl:pr-6 cursor-pointer">
+                                    <img class="w-5 h-5" :src="activePage === 'myProfile' ? '../images/myProfile.svg' : '../images/myProfile.svg'" alt="Storefront">
+                                    <p class="text-sm" :class="activePage === 'myProfile' ? 'text-white' : 'text-[#5F6C72] font-normal'">My Profile</p>
+                                </li>
+
+                                <div x-data="{ activePage: '', showLogoutModal: false }">
+                                    <li @click="activePage = 'Log-out'; showLogoutModal = true"
+                                        class="flex items-center gap-3 sm:w-[264px] w-full h-14 ltr:pl-6 rtl:pr-6 cursor-pointer">
+                                        <img src="../images/SignOut.svg" alt="Log-out">
+                                        <p class="text-[#5F6C72] font-normal">Log-out</p>
+                                    </li>
+                    
+                                    <div x-show="showLogoutModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50" x-cloak x-transition >
+                                        <div x-on:click.outside="showLogoutModal=false" class="bg-white p-6 rounded-md shadow-lg w-[300px]">
+                                            <h2 class="text-lg font-semibold mb-4">Confirm Log-out</h2>
+                                            <p class="mb-6">Are you sure you want to log out?</p>
+                                            <div class="flex justify-end gap-3">
+                                                <button @click="showLogoutModal = false" class="bg-gray-300 px-4 py-2 rounded-md">Cancel</button>
+                                                <button class="bg-[#A67422] text-white px-4 py-2 rounded-md">Log-out</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                    
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Content  -->
+                    <div class="flex-1">
+                        <!-- My Account Page -->
+                        <div x-show="activePage === 'myAccount'" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 translate-y-full" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-400" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-full"  x-cloak >
+                            <div class="flex md:flex-row flex-col gap-4 justify-between">
+                                <h1 class="text-2xl font-bold">My Account</h1>
+                                <div class="flex items-center gap-6">
+                                    <p class="text-[#A67422] font-bold text-sm">Need help?</p>
+                                    <div class="flex items-center gap-2">
+                                        <img src="../images/call.webp" class="w-5 h-5" alt="call"> 
+                                        <a href="tel:01012323245" class="uppercase">Call us</a>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <img src="../images/message.svg" class="w-6 h-6" alt="Message"> 
+                                        <a href="#" class="uppercase">Whatsapp</a>
+                                    </div>
+                                </div>
                             </div>
+
+                            <div>
+                                <div class="flex items-center justify-between pt-5 pb-3 border-b">
+                                    <h2 class="uppercase">Your recent orders</h2>
+                                    <a @click="activePage = 'myOrders'" href="#" class="underline text-[#b87253]">View all orders</a>
+                                </div>
+                                <p class="font-medium text-sm py-2">You don’t have any recent orders. For your purchase history, please visit My Orders.</p>
+                                
+                            </div>
+
+                            <div>
+                                <div class="flex items-center justify-between pt-5 pb-3 border-b">
+                                    <h2 class="uppercase">Your details</h2>
+                                    <a @click="activePage = 'myProfile'" href="#" class="underline text-[#b87253]">Edit</a>
+                                </div>
+                                <div class="mt-2 grid grid-cols-2">
+                                    <p class="text-[#7a7a7a]">First Name: <span class="text-[#2d2d2d]">Asmaa</span></p>
+                                    <p class="text-[#7a7a7a]">Last Name: <span class="text-[#2d2d2d]">Mostafa</span></p>
+                                </div>
+                                <div class="mt-2 grid grid-cols-2">
+                                    <p class="text-[#7a7a7a]">Email Address <span class="text-[#2d2d2d]">asmaa@gmail.com</span></p>
+                                    <p class="text-[#7a7a7a]">Phone Number: <span class="text-[#2d2d2d]">01111111111</span></p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-between pt-7 pb-3 border-b">
+                                <h2 class="uppercase">Your Address(es)</h2>
+                                <a @click="activePage = 'addressBook'" href="#" class="underline text-[#b87253]">Edit Address</a>
+                            </div>
+                            <p class="font-medium text-sm py-2">Please add your delivery address</p>
+                        </div>
                 
-                        </ul>
-                    </div>
-                </div>
-                <!-- Content  -->
-                <div class="flex-1">
-                    <!-- My Account Page -->
-                    <div x-show="activePage === 'myAccount'" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 translate-y-full" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-400" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-full"  x-cloak >
-                        <div class="flex md:flex-row flex-col gap-4 justify-between">
-                            <h1 class="text-2xl font-bold">My Account</h1>
-                            <div class="flex items-center gap-6">
-                                <p class="text-[#A67422] font-bold text-sm">Need help?</p>
-                                <div class="flex items-center gap-2">
-                                    <img src="../images/call.webp" class="w-5 h-5" alt="call"> 
-                                    <a href="tel:01012323245" class="uppercase">Call us</a>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <img src="../images/message.svg" class="w-6 h-6" alt="Message"> 
-                                    <a href="#" class="uppercase">Whatsapp</a>
-                                </div>
+                        <!-- My Orders Page -->
+                        <div class="" x-show="activePage === 'myOrders'" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 translate-y-full" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-400" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-full"  x-cloak>
+                            <div class="flex flex-col items-center justify-center gap-10 hidden">
+                                <h1 class="text-3xl">My Orders</h1>
+                                <img class="w-44 h-44" src="../images/bag-icon.svg" alt="Bag Icon">
+                                <p class="text-xl">You haven't placed an order yet.</p>
+                                <a href="#" class="uppercase flex justify-center items-center w-44 h-12 bg-[#2d2d2d] text-white">Shop Now in</a>    
                             </div>
+                            <div>
+                                <h1 class="text-2xl font-bold uppercase">open orders (1)</h1>
+                                <hr class="my-4 border-black">
+                                <div class="flex md:flex-row flex-col md:gap-0 gap-5 justify-between">
+                                    <div>
+                                        <p class="text-lg font-medium text-[#888484]">Ordered On: <span class="text-black">Jan 21,2025</span></p>
+                                        <p class="text-lg font-medium text-[#888484]">Status: <span class="text-black">Processing</span></p>
+                                        <div class="flex gap-4 mt-4">
+                                            <img src="../images/order.webp" class="w-20 h-20" alt="Order Image">
+                                            <img src="../images/store.webp" class="w-20 h-20" alt="Order Image">
+                                        </div>
+                                        </div>
+                                        <a href="./orderDetails.html" class="flex items-center justify-center w-44 h-12 bg-black text-white uppercase roundesm">view details</a>
+                                </div>
+                                <hr class="my-4">
+                            </div> 
                         </div>
-
-                        <div>
-                            <div class="flex items-center justify-between pt-5 pb-3 border-b">
-                                <h2 class="uppercase">Your recent orders</h2>
-                                <a @click="activePage = 'myOrders'" href="#" class="underline text-[#b87253]">View all orders</a>
-                            </div>
-                            <p class="font-medium text-sm py-2">You don’t have any recent orders. For your purchase history, please visit My Orders.</p>
+                
+                        <!-- Fav Designers -->
+                        <div  x-show="activePage === 'favDesigners'"  x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 translate-y-full" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-400" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-full"  x-cloak>
+                            <h1 class="text-3xl font-medium">My favourite Designers</h1>
+                            <div x-data="{ tab: 'Women' }" class="overflow-hidden mt-10">
+                                <div class="flex border-b border-black">
+                                    <button @click="tab = 'Women'" :class="tab === 'Women' ? 'bg-black text-white font-medium text-base' : 'bg-transparent text-[#666666] border border-black'" class="w-[165px] h-[56px] text-center font-semibold">
+                                        Women
+                                    </button>
+                                    <button @click="tab = 'Men'" :class="tab === 'Men' ? 'bg-black text-white font-medium text-base' : 'bg-transparent text-[#666666] border border-black'" class="w-[165px] h-[56px] text-center font-semibold" >
+                                    Men
+                                    </button>
+                                    <button @click="tab = 'support'" :class="tab === 'support' ? 'bg-black text-white font-medium text-base' : 'bg-transparent text-[#666666] border border-black'" class="w-[165px] h-[56px] text-center font-semibold">
+                                    Kids
+                                    </button>
+                                </div>
+                                <!-- Women Content -->
+                                <div class="p-6">
+                                <div x-show="tab === 'Women'">
+                                </div>
                             
+                                <!-- Men Tab -->
+                                <div x-show="tab === 'Men'" x-cloak>
+                                </div>
+                            
+                                <!-- Kids Tab -->
+                                <div x-show="tab === 'support'" x-cloak>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center justify-center mt-10 gap-5">
+                                <svg class="svg" width="72" height="72" viewBox="0 0 24 24"><path style="fill:#b87253" stroke="#b87253" class="svg-stroke" d="M12 19.6l-7.7 3.9c-.3.1-.6-.2-.5-.6l2.5-7.7L.6 9.8C.4 9.5.6 9 .8 9l7.5-1.6L11.8.6h.7l3.2 6.9L23.2 9c.3 0 .4.4.2.7l-5.7 5.4 1.8 7.7c0 .4-.4.7-.7.6L12 19.6z"></path></svg>
+                                <p class="text-[28px] text-center">Your favourite designers, <br> all in one place.</p>
+                                <p class="text-[13px] text-center">Get exciting updated on new collections, offers <br> and more.</p>    
+                            </div>
                         </div>
 
-                        <div>
-                            <div class="flex items-center justify-between pt-5 pb-3 border-b">
-                                <h2 class="uppercase">Your details</h2>
-                                <a @click="activePage = 'myProfile'" href="#" class="underline text-[#b87253]">Edit</a>
-                            </div>
-                            <div class="mt-2 grid grid-cols-2">
-                                <p class="text-[#7a7a7a]">First Name: <span class="text-[#2d2d2d]">Asmaa</span></p>
-                                <p class="text-[#7a7a7a]">Last Name: <span class="text-[#2d2d2d]">Mostafa</span></p>
-                            </div>
-                            <div class="mt-2 grid grid-cols-2">
-                                <p class="text-[#7a7a7a]">Email Address <span class="text-[#2d2d2d]">asmaa@gmail.com</span></p>
-                                <p class="text-[#7a7a7a]">Phone Number: <span class="text-[#2d2d2d]">01111111111</span></p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center justify-between pt-7 pb-3 border-b">
-                            <h2 class="uppercase">Your Address(es)</h2>
-                            <a @click="activePage = 'addressBook'" href="#" class="underline text-[#b87253]">Edit Address</a>
-                        </div>
-                        <p class="font-medium text-sm py-2">Please add your delivery address</p>
-                    </div>
-            
-                    <!-- My Orders Page -->
-                    <div class="" x-show="activePage === 'myOrders'" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 translate-y-full" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-400" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-full"  x-cloak>
-                        <div class="flex flex-col items-center justify-center gap-10 hidden">
-                            <h1 class="text-3xl">My Orders</h1>
-                            <img class="w-44 h-44" src="../images/bag-icon.svg" alt="Bag Icon">
-                            <p class="text-xl">You haven't placed an order yet.</p>
-                            <a href="#" class="uppercase flex justify-center items-center w-44 h-12 bg-[#2d2d2d] text-white">Shop Now in</a>    
-                        </div>
-                        <div>
-                            <h1 class="text-2xl font-bold uppercase">open orders (1)</h1>
-                            <hr class="my-4 border-black">
-                            <div class="flex md:flex-row flex-col md:gap-0 gap-5 justify-between">
-                                <div>
-                                    <p class="text-lg font-medium text-[#888484]">Ordered On: <span class="text-black">Jan 21,2025</span></p>
-                                    <p class="text-lg font-medium text-[#888484]">Status: <span class="text-black">Processing</span></p>
-                                    <div class="flex gap-4 mt-4">
-                                        <img src="../images/order.webp" class="w-20 h-20" alt="Order Image">
-                                        <img src="../images/store.webp" class="w-20 h-20" alt="Order Image">
+                        <!-- My Profile -->
+                        <div x-show="activePage === 'myProfile'" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 translate-y-full" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-400" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-full"  x-cloak>
+                            <div class="flex md:flex-row flex-col gap-4 justify-between">
+                                <h1 class="text-2xl font-normal flex-1">My Profile</h1>
+                                <div class="flex items-center gap-6">
+                                    <p class="text-[#A67422] font-bold text-sm">Need help?</p>
+                                    <div class="flex items-center gap-2">
+                                        <img src="../images/call.webp" class="w-5 h-5" alt="call"> 
+                                        <a href="tel:01012323245" class="uppercase">Call us</a>
                                     </div>
+                                    <div class="flex items-center gap-2">
+                                        <img src="../images/message.svg" class="w-6 h-6" alt="Message"> 
+                                        <a href="#" class="uppercase">Whatsapp</a>
                                     </div>
-                                    <a href="./orderDetails.html" class="flex items-center justify-center w-44 h-12 bg-black text-white uppercase roundesm">view details</a>
+                                </div>
                             </div>
-                            <hr class="my-4">
-                        </div> 
-                    </div>
-            
-                    <!-- Fav Designers -->
-                    <div  x-show="activePage === 'favDesigners'"  x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 translate-y-full" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-400" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-full"  x-cloak>
-                        <h1 class="text-3xl font-medium">My favourite Designers</h1>
-                        <div x-data="{ tab: 'Women' }" class="overflow-hidden mt-10">
-                            <div class="flex border-b border-black">
-                                <button @click="tab = 'Women'" :class="tab === 'Women' ? 'bg-black text-white font-medium text-base' : 'bg-transparent text-[#666666] border border-black'" class="w-[165px] h-[56px] text-center font-semibold">
-                                    Women
-                                </button>
-                                <button @click="tab = 'Men'" :class="tab === 'Men' ? 'bg-black text-white font-medium text-base' : 'bg-transparent text-[#666666] border border-black'" class="w-[165px] h-[56px] text-center font-semibold" >
-                                Men
-                                </button>
-                                <button @click="tab = 'support'" :class="tab === 'support' ? 'bg-black text-white font-medium text-base' : 'bg-transparent text-[#666666] border border-black'" class="w-[165px] h-[56px] text-center font-semibold">
-                                Kids
-                                </button>
+                            <div class="flex flex-wrap gap-2 mt-5">
+                                <div class="mb-4">
+                                    <label for="fName" class="block text-sm font-medium text-black mb-2">First name*</label>
+                                    <input type="text" id="fName" placeholder="Asmaa" name="fName" class="xl:w-[398px] w-[295px] h-12 focus:ring-0 outline-none focus:border-black">
+                                    <p class="text-xs text-red-500 mt-1">Please enter first name</p>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="lName" class="block text-sm font-medium text-black mb-2">Last name*</label>
+                                    <input type="text" id="lName" placeholder="Mostafa" name="lName" class="xl:w-[398px] w-[295px] h-12 focus:ring-0 outline-none focus:border-black">
+                                    <p class="text-xs text-red-500 mt-1">Please enter last name</p>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="email" class="block text-sm font-medium text-black mb-2">Email*</label>
+                                    <input type="text" id="email" placeholder="asmaa@gmail.com (not editable)" name="email" class="xl:w-[800px] md:w-[600px] w-[300px] h-12 focus:ring-0 outline-none focus:border-black" readonly>
+                                </div>
+                                <p class="text-[#9b9b9b] text-sm">These phone numbers and email addresses can be used to reach you via email, SMS and Push Notification.</p>
                             </div>
-                            <!-- Women Content -->
-                            <div class="p-6">
-                            <div x-show="tab === 'Women'">
+                            <a href="#" class="uppercase flex justify-center items-center w-56 h-11 mt-3 bg-[#2d2d2d] text-white">Update Details</a>
+                            <hr class="my-10 border-2 text-[#f5f5f5]">
+                            <div>
+                                <h1 class="text-2xl font-normal flex-1">Change Password</h1>
+                                <form class="flex flex-wrap gap-4 mt-4">
+                                    <div>
+                                        <label class="block text-[#191C1F] font-normal mb-2" for="display-name">Current Password</label>
+                                        <input type="password" id="current_password" class="xl:w-[936px] md:[700px] w-[300px] h-12 border p-2 focus:outline-none focus:ring-0 focus:border-black placeholder:text-[#475156]">
+                                        <p class="text-xs text-red-500 mt-1">Current Password is a required field</p>
+                                    </div>
+                            
+                                    <div>
+                                        <label class="block text-[#191C1F] font-normal mb-2" for="username">New Password</label>
+                                        <input type="password" placeholder="8+ characters" id="new_password" class="xl:w-[936px] md:[700px] w-[300px] h-12 border p-2 focus:outline-none focus:ring-0 focus:border-black placeholder:text-[#77878F]">
+                                        <p class="text-xs text-red-500 mt-1">New Password is a required field</p>
+                                    </div>
+                            
+                                    <div>
+                                        <label class="block text-[#191C1F] font-normal mb-2" for="full-name">Confirm Password</label>
+                                        <input type="password" id="confirm_password" class="xl:w-[936px] md:[700px] w-[300px] h-12 border p-2  focus:outline-none focus:ring-0 focus:border-black placeholder:text-[#475156]">
+                                        <p class="text-xs text-red-500 mt-1">Confirm Password is a required field</p>
+                                    </div>
+                                </form>
+                                <a href="#" class="uppercase flex justify-center items-center w-56 h-11 mt-3 bg-[#2d2d2d] text-white">Update Password</a>
                             </div>
-                        
-                            <!-- Men Tab -->
-                            <div x-show="tab === 'Men'" x-cloak>
-                            </div>
-                        
-                            <!-- Kids Tab -->
-                            <div x-show="tab === 'support'" x-cloak>
-                            </div>
+                            <hr class="my-10 border-2 text-[#f5f5f5]">
+                            <div>
+                                <h1 class="text-2xl font-normal flex-1">Delete Account</h1>
+                                <p class="text-sm mt-3">You may delete your Ounass account at any time, but all the information linked to this account will be deleted permanently and are not recoverable later.</p>
+                                <!-- <a href="#" class="uppercase flex justify-center items-center w-56 h-11 mt-3 bg-[#2d2d2d] text-white">Delete Account</a> -->
+                                <li @click="activePage = 'deleteAccount'" 
+                                class="uppercase flex justify-center items-center w-56 h-11 mt-3 bg-[#2d2d2d] text-white cursor-pointer">
+                                <p>delete account</p>
+                                </li>
                             </div>
                         </div>
-                        <div class="flex flex-col items-center justify-center mt-10 gap-5">
-                            <svg class="svg" width="72" height="72" viewBox="0 0 24 24"><path style="fill:#b87253" stroke="#b87253" class="svg-stroke" d="M12 19.6l-7.7 3.9c-.3.1-.6-.2-.5-.6l2.5-7.7L.6 9.8C.4 9.5.6 9 .8 9l7.5-1.6L11.8.6h.7l3.2 6.9L23.2 9c.3 0 .4.4.2.7l-5.7 5.4 1.8 7.7c0 .4-.4.7-.7.6L12 19.6z"></path></svg>
-                            <p class="text-[28px] text-center">Your favourite designers, <br> all in one place.</p>
-                            <p class="text-[13px] text-center">Get exciting updated on new collections, offers <br> and more.</p>    
+                        <!-- Delete Account -->
+                        <div x-show="activePage === 'deleteAccount'" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 translate-y-full" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-400" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-full"  x-cloak>
+                            <div class="flex md:flex-row flex-col gap-4 justify-between">
+                                <h1 class="text-2xl font-normal flex-1">Delete Account</h1>
+                                <div class="flex items-center gap-6">
+                                    <p class="text-[#A67422] font-bold text-sm">Need help?</p>
+                                    <div class="flex items-center gap-2">
+                                        <img src="../images/call.webp" class="w-5 h-5" alt="call"> 
+                                        <a href="tel:01012323245" class="uppercase">Call us</a>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <img src="../images/message.svg" class="w-6 h-6" alt="Message"> 
+                                        <a href="#" class="uppercase">Whatsapp</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mt-4">You will not be able to recover an Ounass account once it has been deleted. The following items will also be affected:</p>
+                            <div class="flex items-center gap-4 mt-6">
+                                <img src="../images/orderIcon.png" class="w-8 h-9" alt="Icon">
+                                <div class="flex flex-col gap-2">
+                                    <p>You will no longer be able to view your <strong>Order History</strong></p>
+                                    <p @click="activePage = 'myOrders'" class="uppercase underline text-[#b87253]">view my orders</p>                            
+                            </div>
+                            </div>
+                            <div class="flex items-center gap-4 mt-6">
+                                <img src="../images/bag-icon.svg" class="w-8 h-9" alt="Icon">
+                                <div class="flex flex-col gap-2">
+                                    <p>Any items you have in your <strong>Shopping Bag</strong> will be removed</p>
+                                    <a href="./Cart.html" class="uppercase underline text-[#b87253]">VIEW MY SHOPPING BAG</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 mt-6">
+                                <img src="../images/free-truck-icon.png" class="w-9 h-10" alt="Icon">
+                                <div class="flex flex-col gap-2">
+                                    <p>Any future <strong>Active Orders</strong> can only be tracked on the Ounass App & website as a guest user.</p>
+                                    <p @click="activePage = 'myOrders'" class="uppercase underline text-[#b87253]">view my orders</p>                            
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 mt-6">
+                                <img src="../images/Heart.svg" class="w-9 h-10" alt="Icon">
+                                <div class="flex flex-col gap-2">
+                                    <p>Your <strong>Wishlist</strong> will be emptied</p>
+                                    <a href="./Favorite.html" class="uppercase underline text-[#b87253]">VIEW MY WISHLIST</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 mt-6">
+                                <img src="../images/darkStar.svg" class="w-9 h-10" alt="Icon">
+                                <div class="flex flex-col gap-2">
+                                    <p>All <strong>Favourited Designers</strong> will be removed from the Favourite Designers list</p>
+                                    <p @click="activePage = 'favDesigners'" class="uppercase underline text-[#b87253]">VIEW MY FAVOURITE DESIGNERS</p>                            
+                                    </div>
+                            </div>
+                            <div class="flex items-center gap-3 my-5 px-2">
+                                <input id="default-checkbox" type="checkbox" value="" class="w-7 h-7 text-black  border-gray-300 rounded focus:ring-black focus:ring-0">
+                                <label for="default-checkbox" class="ms-2 text-lg">I do agree <a href="./accountDeletion.html" class="font-medium underline">Account deletion policy</a></label>
+                            </div>
+                            <button class="uppercase w-80 h-12 rounded-sm bg-[#2d2d2d] text-white mx-2">delete my account</button>
                         </div>
-                    </div>
 
-                    <!-- My Profile -->
-                    <div x-show="activePage === 'myProfile'" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 translate-y-full" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-400" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-full"  x-cloak>
-                        <div class="flex md:flex-row flex-col gap-4 justify-between">
-                            <h1 class="text-2xl font-normal flex-1">My Profile</h1>
-                            <div class="flex items-center gap-6">
-                                <p class="text-[#A67422] font-bold text-sm">Need help?</p>
-                                <div class="flex items-center gap-2">
-                                    <img src="../images/call.webp" class="w-5 h-5" alt="call"> 
-                                    <a href="tel:01012323245" class="uppercase">Call us</a>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <img src="../images/message.svg" class="w-6 h-6" alt="Message"> 
-                                    <a href="#" class="uppercase">Whatsapp</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex flex-wrap gap-2 mt-5">
-                            <div class="mb-4">
-                                <label for="fName" class="block text-sm font-medium text-black mb-2">First name*</label>
-                                <input type="text" id="fName" placeholder="Asmaa" name="fName" class="w-[398px] h-12 focus:ring-0 outline-none focus:border-black">
-                                <p class="text-xs text-red-500 mt-1">Please enter first name</p>
-                            </div>
-                            <div class="mb-4">
-                                <label for="lName" class="block text-sm font-medium text-black mb-2">Last name*</label>
-                                <input type="text" id="lName" placeholder="Mostafa" name="lName" class="w-[398px] h-12 focus:ring-0 outline-none focus:border-black">
-                                <p class="text-xs text-red-500 mt-1">Please enter last name</p>
-                            </div>
-                            <div class="mb-4">
-                                <label for="email" class="block text-sm font-medium text-black mb-2">Email*</label>
-                                <input type="text" id="email" placeholder="asmaa@gmail.com (not editable)" name="email" class="lg:w-[800px] md:w-[600px] w-[400px] h-12 focus:ring-0 outline-none focus:border-black" readonly>
-                            </div>
-                            <p class="text-[#9b9b9b] text-sm">These phone numbers and email addresses can be used to reach you via email, SMS and Push Notification.</p>
-                        </div>
-                        <a href="#" class="uppercase flex justify-center items-center w-56 h-11 mt-3 bg-[#2d2d2d] text-white">Update Details</a>
-                        <hr class="my-10 border-2 text-[#f5f5f5]">
-                        <div>
-                            <h1 class="text-2xl font-normal flex-1">Change Password</h1>
-                            <form class="flex flex-wrap gap-4 mt-4">
-                                <div>
-                                    <label class="block text-[#191C1F] font-normal mb-2" for="display-name">Current Password</label>
-                                    <input type="password" id="current_password" class="lg:w-[936px] md:[700px] w-[300px] h-12 border p-2 focus:outline-none focus:ring-0 focus:border-black placeholder:text-[#475156]">
-                                    <p class="text-xs text-red-500 mt-1">Current Password is a required field</p>
-                                </div>
-                        
-                                <div>
-                                    <label class="block text-[#191C1F] font-normal mb-2" for="username">New Password</label>
-                                    <input type="password" placeholder="8+ characters" id="new_password" class="lg:w-[936px] md:[700px] w-[300px] h-12 border p-2 focus:outline-none focus:ring-0 focus:border-black placeholder:text-[#77878F]">
-                                    <p class="text-xs text-red-500 mt-1">New Password is a required field</p>
-                                </div>
-                        
-                                <div>
-                                    <label class="block text-[#191C1F] font-normal mb-2" for="full-name">Confirm Password</label>
-                                    <input type="password" id="confirm_password" class="lg:w-[936px] md:[700px] w-[300px] h-12 border p-2  focus:outline-none focus:ring-0 focus:border-black placeholder:text-[#475156]">
-                                    <p class="text-xs text-red-500 mt-1">Confirm Password is a required field</p>
-                                </div>
-                            </form>
-                            <a href="#" class="uppercase flex justify-center items-center w-56 h-11 mt-3 bg-[#2d2d2d] text-white">Update Password</a>
-                        </div>
-                        <hr class="my-10 border-2 text-[#f5f5f5]">
-                        <div>
-                            <h1 class="text-2xl font-normal flex-1">Delete Account</h1>
-                            <p class="text-sm mt-3">You may delete your Ounass account at any time, but all the information linked to this account will be deleted permanently and are not recoverable later.</p>
-                            <!-- <a href="#" class="uppercase flex justify-center items-center w-56 h-11 mt-3 bg-[#2d2d2d] text-white">Delete Account</a> -->
-                            <li @click="activePage = 'deleteAccount'" 
-                            class="uppercase flex justify-center items-center w-56 h-11 mt-3 bg-[#2d2d2d] text-white cursor-pointer">
-                            <p>delete account</p>
-                            </li>
-                        </div>
                     </div>
-                    <!-- Delete Account -->
-                    <div x-show="activePage === 'deleteAccount'" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 translate-y-full" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-400" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-full"  x-cloak>
-                        <div class="flex md:flex-row flex-col gap-4 justify-between">
-                            <h1 class="text-2xl font-normal flex-1">Delete Account</h1>
-                            <div class="flex items-center gap-6">
-                                <p class="text-[#A67422] font-bold text-sm">Need help?</p>
-                                <div class="flex items-center gap-2">
-                                    <img src="../images/call.webp" class="w-5 h-5" alt="call"> 
-                                    <a href="tel:01012323245" class="uppercase">Call us</a>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <img src="../images/message.svg" class="w-6 h-6" alt="Message"> 
-                                    <a href="#" class="uppercase">Whatsapp</a>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="mt-4">You will not be able to recover an Ounass account once it has been deleted. The following items will also be affected:</p>
-                        <div class="flex items-center gap-4 mt-6">
-                            <img src="../images/orderIcon.png" class="w-8 h-9" alt="Icon">
-                            <div class="flex flex-col gap-2">
-                                <p>You will no longer be able to view your <strong>Order History</strong></p>
-                                <p @click="activePage = 'myOrders'" class="uppercase underline text-[#b87253]">view my orders</p>                            
-                        </div>
-                        </div>
-                        <div class="flex items-center gap-4 mt-6">
-                            <img src="../images/bag-icon.svg" class="w-8 h-9" alt="Icon">
-                            <div class="flex flex-col gap-2">
-                                <p>Any items you have in your <strong>Shopping Bag</strong> will be removed</p>
-                                <a href="./Cart.html" class="uppercase underline text-[#b87253]">VIEW MY SHOPPING BAG</a>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4 mt-6">
-                            <img src="../images/free-truck-icon.png" class="w-9 h-10" alt="Icon">
-                            <div class="flex flex-col gap-2">
-                                <p>Any future <strong>Active Orders</strong> can only be tracked on the Ounass App & website as a guest user.</p>
-                                <p @click="activePage = 'myOrders'" class="uppercase underline text-[#b87253]">view my orders</p>                            
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4 mt-6">
-                            <img src="../images/Heart.svg" class="w-9 h-10" alt="Icon">
-                            <div class="flex flex-col gap-2">
-                                <p>Your <strong>Wishlist</strong> will be emptied</p>
-                                <a href="./Favorite.html" class="uppercase underline text-[#b87253]">VIEW MY WISHLIST</a>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4 mt-6">
-                            <img src="../images/darkStar.svg" class="w-9 h-10" alt="Icon">
-                            <div class="flex flex-col gap-2">
-                                <p>All <strong>Favourited Designers</strong> will be removed from the Favourite Designers list</p>
-                                <p @click="activePage = 'favDesigners'" class="uppercase underline text-[#b87253]">VIEW MY FAVOURITE DESIGNERS</p>                            
-                                </div>
-                        </div>
-                        <div class="flex items-center gap-3 my-5 px-2">
-                            <input id="default-checkbox" type="checkbox" value="" class="w-7 h-7 text-black  border-gray-300 rounded focus:ring-black focus:ring-0">
-                            <label for="default-checkbox" class="ms-2 text-lg">I do agree <a href="./accountDeletion.html" class="font-medium underline">Account deletion policy</a></label>
-                        </div>
-                        <button class="uppercase w-80 h-12 rounded-sm bg-[#2d2d2d] text-white mx-2">delete my account</button>
-                    </div>
-
                 </div>
-            </div>
-        </section>
-    <!-- End Content -->
-
+            </section>
+        <!-- End Content -->
+    </div>
+    
     <!-- Start Footer -->
         <div id="footer"></div>
     <!-- End Footer -->

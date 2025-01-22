@@ -31,6 +31,7 @@
         <div id="navbar"></div>
     <!-- End Navbar -->
 
+    <div class="container mx-auto max-w-7xl">
     <!-- Start Breadcrumbs  -->
         <section class="container mx-auto py-5 lg:rtl:pr-40 px-3">
             <nav class="flex" aria-label="Breadcrumb">
@@ -55,19 +56,20 @@
         <section>
             <img src="../images/shopHeader.webp" class="w-full" alt="Image">
             <div class="md:bg-[#4441440D] md:shadow-[0_5px_13px_0px_rgba(0,0,0,0.25)]">
-            <div class="relative flex items-center justify-around container mx-auto w-full md:h-[154px]">
-                <img src="../images/abaya-check.svg" class="lg:w-[223px] lg::h-[224px] absolute lg:top-[-100px] top-[-50px] lg:right-20 right-44" alt="Image">
+            <div class="relative flex items-center justify-around container mx-auto w-full md:h-[154px] px-4">
+                <img src="../images/abaya-check.svg" class="lg:w-[150px] lg:h-[150px] absolute lg:top-[-70px] top-[-50px] lg:right-32 right-36" alt="Image">
                 <div class="flex flex-col lg:rtl:pr-80 text-center md:text-start mt-10 md:mt-0">
                     <h1 class="text-[#444144] font-bold lg:text-4xl text-2xl">عبايه تشك</h1>
                     <p class="text-[#444144] text-base lg:w-[900px]">علامة تجارية خليجية مميزة كل تصاميمها تشترك في الطيات بكل انواعها تأسست سنة 2015 .. المزيدعلامة تجارية خليجية مميزة كل تصاميمها تشترك في الطيات  بكل انواعها تأسست سنة 2015 .. المزيدعلامة تجارية خليجية مميزة كل تصاميمها تشترك في الطيات بكل انواعها تأسست سنة 2015 .</p>
                 </div>
                 <img src="../images/shopHeart.svg" class="md:flex hidden cursor-pointer" alt="Heart">
-            </div></div>
+            </div>
+        </div>
         </section>
     <!-- End Header -->
 
     <!-- Filter -->
-        <div class="md:flex gap-5 lg:p-9 container mx-auto"> 
+        <div class="md:flex gap-5 md:py-9 container mx-auto"> 
             <!-- filters -->
             <div x-data="{ open: false }" @click.away="open = false" class="relative flex flex-col md:w-3/12 h-full  p-3">
                 <button @click="open = !open" id="toggleButton" class="md:hidden p-2 flex items-center gap-2 mb-4 text-white rounded relative top-[14px]">
@@ -705,6 +707,7 @@
             </form>
         </section>
     <!-- Join -->
+    </div>
 
     <!-- Start Footer -->
         <div id="footer"></div>

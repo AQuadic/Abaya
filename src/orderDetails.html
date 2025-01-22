@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +25,7 @@
     <!-- End Navbar -->
     
     <!-- Start Breadcrumbs  -->
-        <section class="bg-gray-50 h-10 flex items-center justify-center mt-5 p-5 md:rtl:pr-40 rtl:pr-6">
+        <section class="bg-gray-50 h-10 flex items-center justify-center mt-5 p-5 xl:rtl:pr-52 xl:ltr:pl-56 rtl:pr-6">
             <nav class=" container mx-auto" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                 <li class="inline-flex items-center">
@@ -52,8 +52,9 @@
         </section>
     <!-- End Breadcrumbs  -->
     
+    <div class="container mx-auto max-w-7xl">
     <!-- Start Title -->
-        <section class="container mx-auto flex justify-center lg:px-40 px-3  mt-10">
+        <section class="container mx-auto flex justify-center px-3  mt-10">
             <h1 class="md:text-2xl font-bold flex-1">تفاصيل الطلبية</h1>
             <div class="flex items-center md:gap-6 gap-2">
                 <p class="text-[#A67422] font-bold text-sm">تحتاج للمساعدة؟</p>
@@ -70,7 +71,7 @@
     <!-- End Title -->
 
     <!-- Start Content -->
-        <section class="container mx-auto flex lg:flex-row flex-col items-center lg:items-start justify-center px-3 my-5 gap-4">
+        <section class="container mx-auto flex lg:flex-row flex-col items-center lg:items-start justify-center px-3 my-5 gap-14">
             <div class="lg:w-[800px] h-full p-5 sm:p-0">
                 <div x-data="{ open: false }">
                     <h2 id="accordion-collapse-heading-1">
@@ -321,7 +322,7 @@
             </div>
         </section>
     <!-- End Content -->
-
+    </div>
     <!-- Start Footer -->
         <div id="footer"></div>
     <!-- Start Footer -->
