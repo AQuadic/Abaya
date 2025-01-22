@@ -51,9 +51,12 @@
                         </p>
                     </div>
                     <h2 class="text-lg text-black">وقت التوصيل المقدر <span class="font-semibold"> في 08 يناير.</span></h2>
-                    <a href="#">
+                    <div class="flex flex-wrap">
                         <img src="../images/order.webp" class="w-[47px] h-[70px] my-4" alt="Image">
-                    </a>
+                        <img src="../images/order.webp" class="w-[47px] h-[70px] my-4" alt="Image">
+                        <img src="../images/order.webp" class="w-[47px] h-[70px] my-4" alt="Image">
+                        <img src="../images/order.webp" class="w-[47px] h-[70px] my-4" alt="Image">
+                    </div>
                     <hr>
                     <a href="./trackOrder.html" class="flex items-center justify-center text-white mt-5 w-60 font-medium h-12 bg-[#2d2d2d] hover:bg-[#4a4a4a]">
                         عرض تفاصيل الطلب
@@ -143,44 +146,26 @@
                                 <p>راضي</p>
                             </div>
                         </div>
-                        <nav class="mt-3">
-                            <ul class="flex items-center -space-x-px h-10 text-base">
-                                <li>
-                                    <a href="#" class="flex items-center justify-center sm:px-3 px-2 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">0</a>
-                                </li>
-                            <li>
-                                <a href="#" class="flex items-center justify-center sm:px-3 px-2 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">1</a>
-                            </li>
-                            <li>
-                                <a href="#" class="flex items-center justify-center sm:px-3 px-2 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">2</a>
-                            </li>
-                            <li>
-                                <a href="#" class="flex items-center justify-center sm:px-3 px-2 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">3</a>
-                            </li>
-                            <li>
-                                <a href="#" class="flex items-center justify-center sm:px-3 px-2 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">4</a>
-                            </li>
-                            <li>
-                                <a href="#" class="flex items-center justify-center sm:px-3 px-2 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">5</a>
-                            </li>
-                            <li>
-                                <a href="#" class="flex items-center justify-center sm:px-3 px-2 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">6</a>
-                            </li>
-                            <li>
-                                <a href="#" class="flex items-center justify-center sm:px-3 px-2 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">7</a>
-                            </li>
-                            <li>
-                                <a href="#" class="flex items-center justify-center sm:px-3 px-2 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">8</a>
-                            </li>
-                            <li>
-                                <a href="#" class="flex items-center justify-center sm:px-3 px-2 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">9</a>
-                            </li>
-                            <li>
-                                <a href="#" class="flex items-center justify-center sm:px-3 px-2 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">10</a>
-                            </li>
-
-                            </ul>
-                        </nav>
+                        <div x-data="{ selected: null, inputValue: '' }">
+                            <nav class="mt-3">
+                                <ul class="flex items-cente -space-x-px h-10 text-base">
+                                    <template x-for="i in 10" :key="i">
+                                        <li class="w-full">
+                                            <a href="#"x-on:click.prevent="selected = i"x-bind:class="{ 'bg-gray-100 text-gray-700': selected === i, 'bg-white text-gray-500': selected !== i }"class="flex items-center justify-center sm:px-3 px-2 h-10 leading-tight border border-gray-300 hover:bg-gray-100 hover:text-gray-700"><span x-text="i"></span>
+                                            </a>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </nav>
+                        
+                            <div class="mt-3" x-show="selected !== null" x-cloak>
+                                <p class="text-lg py-1">Leave a suggestion</p>
+                                <textarea x-model="inputValue" placeholder="Leave a suggestion..." class="border border-gray-300 px-3 py-2 w-full h-20 resize-none focus:ring-0 focus:outline-none focus:border-black"></textarea>
+                                <button class="mt-2 px-4 py-2 bg-black w-full text-white rounded uppercase">
+                                    Submit survey
+                                </button>
+                            </div>
+                        </div>                        
                     </div>
                 </div>
                 <div class="border h-auto p-3">
