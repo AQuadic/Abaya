@@ -48,24 +48,24 @@
 
     <div class="container mx-auto max-w-7xl">
         <!-- Start Content -->
-            <section class="container mx-auto my-5 gap-4 md:px-20 py-5 border-[12px] border-[#fcf05f;]">
+            <section class="container mx-auto my-5 gap-4 md:px-10 py-5 border-[12px] border-[#fcf05f;]">
                 <h1 class="text-2xl font-bold flex-1 my-10 px-4 md:px-0">تتبع الطلبية</h1>
                 <div class="flex items-center gap-2">
                     <img src="../images/orderIcon.png" class="w-12 h-12 bg-gray-100 rounded-full p-2" alt="Icon">
                     <p class="text-xl text-[#5e5e5e] font-medium">يرجي إدخال رقم الطلبية الذي تم إرساله عبر البريد الإلكتروني/الرسالة النصية لتتبع حالة طلبيتك</p>
                 </div>
-                <form class="my-6 flex flex-wrap items-center justify-center md:justify-start gap-4">
-                    <div class="flex flex-col gap-2">
+                <form class=" my-10 flex flex-wrap items-end justify-center md:justify-start gap-7">
+                    <div class="relative flex flex-col gap-2">
                         <label for="orderNum" class="text-xl ">رقم الطلبية</label>
-                        <input type="text" name="orderNum" id="orderNum" class="sm:w-[390px] w-[300px] h-14 focus:ring-0 focus:outline-none focus:border-black">
-                        <p class="text-xs text-red-400">رقم الطلبية مطلوب</p>
+                        <input type="text" name="orderNum" id="orderNum" class="sm:w-[370px] w-[300px] h-14 focus:ring-0 focus:outline-none focus:border-black">
+                        <p class="absolute top-20 py-2 text-xs text-red-400 mt-2">رقم الطلبية مطلوب</p>
                     </div>
-                    <div class="flex flex-col gap-2">
+                    <div class="relative flex flex-col gap-2">
                         <label for="email" class="text-xl ">البريد الإلكتروني</label>
-                        <input type="email" name="email" id="email" class="sm:w-[390px] w-[300px] h-14 focus:ring-0 focus:outline-none focus:border-black">
-                        <p class="text-xs text-red-400">البريد الإلكتروني مطلوب</p>
+                        <input type="email" name="email" id="email" class="sm:w-[370px] w-[300px] h-14 focus:ring-0 focus:outline-none focus:border-black">
+                        <p class="absolute top-20 py-2 text-xs text-red-400 mt-2">البريد الإلكتروني مطلوب</p>
                     </div>
-                    <a href="./orderDetails.html" class="flex items-center justify-center sm:w-[390px] w-[300px] h-14 mt-2 text-white font-medium bg-[#3d3c3c]">عرض حالة الطلبية</a>
+                    <a href="./orderDetails.html" class="flex items-center justify-center sm:w-[370px] w-[300px] h-14 text-white font-medium bg-[#3d3c3c]">عرض حالة الطلبية</a>
                 </form>
                 <hr>
                 <div class="flex items-center gap-2 mt-6">
