@@ -100,12 +100,8 @@
                             <img src="../images/tag.svg" class="w-[17.31px] h-[17.31px]" alt="Tag">
                             <p class="text-[#71717A] font-medium ">تم توفير 100 درهم بشرائك ذلك المنتج</p>
                         </div>
-                        <div class="md:w-[686px] w-[360px] md:h-[88px] rounded-lg flex gap-4 p-3 border mt-4">
-                            <p class="text-sm  md:font-medium">4 دفعات بلا فوائد بقيمة <span class="text-lg">AED 210.00.</span>بدون رسوم, ومتوافقة مع أحكام الشريعة. <a href="#" class="underline">لمعرفة المزيد</a></p>
-                            <a href="#" >
-                                <img src="../images/tabby.svg" class="w-12 h-12" alt="Tabby">
-                            </a>
-                        </div>
+                        <div id="TabbyPromo" class="mt-4"></div>
+                        <div id="tabby"></div>
                         <!-- Content -->
                         <div class="">
                             <div class="flex gap-5 border-b-4 py-5">
@@ -674,6 +670,17 @@
         },
         });
     </script>
-
+    <script src="https://checkout.tabby.ai/tabby-promo.js"></script>
+    <script>
+    new TabbyPromo({
+    selector: '#TabbyPromo',
+    currency: 'AED',
+    price: '1200.00',
+    lang: 'ar',
+    source: 'product',
+    publicKey: 'PUBLIC_API_KEY',
+    merchantCode: 'string'
+    });
+    </script>
 </body>
 </html>
