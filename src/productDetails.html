@@ -127,7 +127,32 @@
                                     <img src="../images/deliveryI.svg" class="w-10 h-10" alt="Truck">
                                     <p class="text-lg font-medium">التوصيل من الامارات</p>
                                 </div>
-                                <p class="text-lg font-medium"> ساعتين وفي نفس اليوم إلي دبي <span class="text-[#B87153]">اختر المدينة</span></p>
+                                <div class="relative inline-block text-lg font-medium">
+                                    <p>
+                                      ساعتين وفي نفس اليوم إلي دبي 
+                                      <span 
+                                        class="text-[#B87153] cursor-pointer" 
+                                        id="dropdown-toggle"
+                                        onclick="toggleDropdown()"
+                                      >
+                                        اختر المدينة
+                                      </span>
+                                    </p>
+                                    
+                                    <!-- Dropdown Menu -->
+                                    <div 
+                                      id="dropdown-menu" 
+                                      class="absolute hidden mt-2 top-8 left-0 bg-white border border-gray-200 rounded-md shadow-lg z-10"
+                                    >
+                                      <ul class="py-2 w-32">
+                                        <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm font-medium">دبي</li>
+                                        <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm font-medium">أبو ظبي</li>
+                                        <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm font-medium">الشارقة</li>
+                                        <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm font-medium">العين</li>
+                                        <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm font-medium">رأس الخيمة</li>
+                                      </ul>
+                                    </div>
+                                  </div>
                             </div>
 
                             <div x-data="{ showPopup: false }">
@@ -691,6 +716,20 @@
     publicKey: 'PUBLIC_API_KEY',
     merchantCode: 'string'
     });
+// city dropdown 
+function toggleDropdown() {
+    const dropdownMenu = document.getElementById("dropdown-menu");
+    dropdownMenu.classList.toggle("hidden");
+  }
+
+  window.addEventListener("click", function (e) {
+    const dropdownMenu = document.getElementById("dropdown-menu");
+    const toggle = document.getElementById("dropdown-toggle");
+    if (!toggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+      dropdownMenu.classList.add("hidden");
+    }
+  });
+
     </script>
 </body>
 </html>

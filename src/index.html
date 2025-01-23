@@ -1573,16 +1573,16 @@
         </div>
         <div x-data="{ show: false }" class="relative">
           <div
-            class="mt-[14px] flex flex-wrap justify-center sm:gap-[25px] gap-[10px]"
+            class="mt-[14px] grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-5 justify-center sm:gap-[25px] gap-[10px]"
           >
             <div
-              class="relative sm:w-[300px] w-[174px] h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
+              class="relative w-full h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
               style="box-shadow: 0px 4px 4px 0px #00000040"
             >
               <div x-data="{ hover: false }" class="relative">
                 <img
                   :src="hover ? '../images/background-gradient.png' : '../images/abaya.webp'"
-                  class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px] transition duration-300 ease-in-out rounded-md"
+                  class="w-full sm:h-[466px] h-[260.31px] transition duration-300 ease-in-out rounded-md"
                   alt="Abaya"
                   @mouseenter="hover = true"
                   @mouseleave="hover = false"
@@ -1671,7 +1671,7 @@
                 </div>
                 <button
                   @click="show = true; setTimeout(() => show = false, 2000)"
-                  class="sm:w-[250px] w-[155px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 border-t-4 border-black add-to-cart"
+                  class="w-full sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 border-black add-to-cart"
                   data-id="1"
                   data-name="Nello Wallet in Metallic Textured"
                   data-price="15000"
@@ -1693,13 +1693,13 @@
             </div>
 
             <div
-              class="relative sm:w-[300px] w-[174px] h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
+              class="relative w-full h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
               style="box-shadow: 0px 4px 4px 0px #00000040"
             >
               <div x-data="{ hover: false }" class="relative">
                 <img
                   :src="hover ? '../images/abayaSwiper.webp' : '../images/abayaTwo.webp'"
-                  class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px] transition duration-300 ease-in-out rounded-md"
+                  class="w-full sm:h-[466px] h-[260.31px] transition duration-300 ease-in-out rounded-md"
                   alt="Abaya"
                   @mouseenter="hover = true"
                   @mouseleave="hover = false"
@@ -1770,7 +1770,7 @@
                 </div>
                 <button
                   @click="show = true; setTimeout(() => show = false, 2000)"
-                  class="sm:w-[250px] w-[155px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
+                  class="w-full sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
                   data-id="2"
                   data-name="Nello Wallet in Metallic Textured"
                   data-price="1500"
@@ -1792,12 +1792,12 @@
             </div>
 
             <div
-              class="relative sm:w-[300px] w-[174px] h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
+              class="relative w-full h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
               style="box-shadow: 0px 4px 4px 0px #00000040"
             >
               <img
                 src="../images/abayaTwo.webp"
-                class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px]"
+                class="w-full sm:h-[466px] h-[260.31px]"
                 alt="Abaya"
               />
               <div
@@ -1865,7 +1865,7 @@
                 </div>
                 <button
                   @click="show = true; setTimeout(() => show = false, 2000)"
-                  class="sm:w-[250px] w-[155px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
+                  class="w-full sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
                   data-id="3"
                   data-name="Nello Wallet in Metallic Textured"
                   data-size="XL"
@@ -1887,12 +1887,12 @@
             </div>
 
             <div
-              class="relative sm:w-[300px] w-[174px] h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
+              class="relative w-full h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
               style="box-shadow: 0px 4px 4px 0px #00000040"
             >
               <img
                 src="../images/abayaTwo.webp"
-                class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px]"
+                class="w-full sm:h-[466px] h-[260.31px]"
                 alt="Abaya"
               />
               <div
@@ -1961,7 +1961,7 @@
                 </div>
                 <button
                   @click="show = true; setTimeout(() => show = false, 2000)"
-                  class="sm:w-[250px] w-[155px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
+                  class="w-full sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
                   data-id="4"
                   data-name="Nello Wallet in Metallic Textured"
                   data-price="1500"
@@ -1983,12 +1983,12 @@
             </div>
 
             <div
-              class="relative sm:w-[300px] w-[174px] h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
+              class="relative w-full h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
               style="box-shadow: 0px 4px 4px 0px #00000040"
             >
               <img
                 src="../images/abayaTwo.webp"
-                class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px]"
+                class="w-full sm:h-[466px] h-[260.31px]"
                 alt="Abaya"
               />
               <div
@@ -2056,7 +2056,7 @@
                 </div>
                 <button
                   @click="show = true; setTimeout(() => show = false, 2000)"
-                  class="sm:w-[250px] w-[155px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
+                  class="w-full sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
                   data-id="5"
                   data-name="Nello Wallet in Metallic Textured"
                   data-price="1500"
@@ -2078,12 +2078,12 @@
             </div>
 
             <div
-              class="relative sm:w-[300px] w-[174px] h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
+              class="relative w-full h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
               style="box-shadow: 0px 4px 4px 0px #00000040"
             >
               <img
                 src="../images/abayaTwo.webp"
-                class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px]"
+                class="w-full sm:h-[466px] h-[260.31px]"
                 alt="Abaya"
               />
               <div
@@ -2151,7 +2151,7 @@
                 </div>
                 <button
                   @click="show = true; setTimeout(() => show = false, 2000)"
-                  class="sm:w-[250px] w-[155px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
+                  class="w-full sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
                   data-id="6"
                   data-name="Nello Wallet in Metallic Textured"
                   data-price="1500"
@@ -2173,12 +2173,12 @@
             </div>
 
             <div
-              class="relative sm:w-[300px] w-[174px] h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
+              class="relative w-full h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
               style="box-shadow: 0px 4px 4px 0px #00000040"
             >
               <img
                 src="../images/abayaTwo.webp"
-                class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px]"
+                class="w-full sm:h-[466px] h-[260.31px]"
                 alt="Abaya"
               />
               <div
@@ -2246,7 +2246,7 @@
                 </div>
                 <button
                   @click="show = true; setTimeout(() => show = false, 2000)"
-                  class="sm:w-[250px] w-[155px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
+                  class="w-full sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
                   data-id="7"
                   data-name="Nello Wallet in Metallic Textured"
                   data-price="1500"
@@ -2268,12 +2268,12 @@
             </div>
 
             <div
-              class="relative sm:w-[300px] w-[174px] h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
+              class="relative w-full h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
               style="box-shadow: 0px 4px 4px 0px #00000040"
             >
               <img
                 src="../images/abayaTwo.webp"
-                class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px]"
+                class="w-full sm:h-[466px] h-[260.31px]"
                 alt="Abaya"
               />
               <div
@@ -2341,7 +2341,7 @@
                 </div>
                 <button
                   @click="show = true; setTimeout(() => show = false, 2000)"
-                  class="sm:w-[250px] w-[155px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
+                  class="w-full sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
                   data-id="8"
                   data-name="Nello Wallet in Metallic Textured"
                   data-price="1500"
@@ -2392,13 +2392,13 @@
             class="mt-[14px] flex flex-wrap justify-center sm:gap-[25px] gap-[10px]"
           >
             <div
-              class="relative sm:w-[300px] w-[174px] h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
+              class="relative w-full h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
               style="box-shadow: 0px 4px 4px 0px #00000040"
             >
               <div x-data="{ hover: false }" class="relative">
                 <img
                   :src="hover ? '../images/background-gradient.png' : '../images/abaya.webp'"
-                  class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px] transition duration-300 ease-in-out rounded-md"
+                  class="w-full sm:h-[466px] h-[260.31px] transition duration-300 ease-in-out rounded-md"
                   alt="Abaya"
                   @mouseenter="hover = true"
                   @mouseleave="hover = false"
@@ -2487,7 +2487,7 @@
                 </div>
                 <button
                   @click="show = true; setTimeout(() => show = false, 2000)"
-                  class="sm:w-[250px] w-[155px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 border-t-4 border-black add-to-cart"
+                  class="w-full sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 border-t-4 border-black add-to-cart"
                   data-id="1"
                   data-name="Nello Wallet in Metallic Textured"
                   data-price="15000"
@@ -2508,13 +2508,13 @@
               </div>
             </div>
             <div
-              class="relative sm:w-[300px] w-[174px] h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
+              class="relative w-full h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
               style="box-shadow: 0px 4px 4px 0px #00000040"
             >
               <div x-data="{ hover: false }" class="relative">
                 <img
                   :src="hover ? '../images/abayaSwiper.webp' : '../images/abayaTwo.webp'"
-                  class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px] transition duration-300 ease-in-out rounded-md"
+                  class="w-full sm:h-[466px] h-[260.31px] transition duration-300 ease-in-out rounded-md"
                   alt="Abaya"
                   @mouseenter="hover = true"
                   @mouseleave="hover = false"
@@ -2585,7 +2585,7 @@
                 </div>
                 <button
                   @click="show = true; setTimeout(() => show = false, 2000)"
-                  class="sm:w-[250px] w-[155px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
+                  class="w-full sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
                   data-id="2"
                   data-name="Nello Wallet in Metallic Textured"
                   data-price="1500"
@@ -2606,13 +2606,13 @@
               </div>
             </div>
             <div
-              class="relative sm:w-[300px] w-[174px] h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
+              class="relative w-full h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
               style="box-shadow: 0px 4px 4px 0px #00000040"
             >
               <div x-data="{ hover: false }" class="relative">
                 <img
                   :src="hover ? '../images/abayaSwiper.webp' : '../images/abayaTwo.webp'"
-                  class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px] transition duration-300 ease-in-out rounded-md"
+                  class="w-full sm:h-[466px] h-[260.31px] transition duration-300 ease-in-out rounded-md"
                   alt="Abaya"
                   @mouseenter="hover = true"
                   @mouseleave="hover = false"
@@ -2683,7 +2683,7 @@
                 </div>
                 <button
                   @click="show = true; setTimeout(() => show = false, 2000)"
-                  class="sm:w-[250px] w-[155px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
+                  class="w-full sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
                   data-id="2"
                   data-name="Nello Wallet in Metallic Textured"
                   data-price="1500"
@@ -2704,13 +2704,13 @@
               </div>
             </div>
             <div
-              class="relative sm:w-[300px] w-[174px] h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
+              class="relative w-full h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
               style="box-shadow: 0px 4px 4px 0px #00000040"
             >
               <div x-data="{ hover: false }" class="relative">
                 <img
                   :src="hover ? '../images/abayaSwiper.webp' : '../images/abayaTwo.webp'"
-                  class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px] transition duration-300 ease-in-out rounded-md"
+                  class="w-full sm:h-[466px] h-[260.31px] transition duration-300 ease-in-out rounded-md"
                   alt="Abaya"
                   @mouseenter="hover = true"
                   @mouseleave="hover = false"
@@ -2781,7 +2781,7 @@
                 </div>
                 <button
                   @click="show = true; setTimeout(() => show = false, 2000)"
-                  class="sm:w-[250px] w-[155px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
+                  class="w-full sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
                   data-id="2"
                   data-name="Nello Wallet in Metallic Textured"
                   data-price="1500"
@@ -2802,13 +2802,13 @@
               </div>
             </div>
             <div
-              class="relative sm:w-[300px] w-[174px] h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
+              class="relative w-full h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
               style="box-shadow: 0px 4px 4px 0px #00000040"
             >
               <div x-data="{ hover: false }" class="relative">
                 <img
                   :src="hover ? '../images/abayaSwiper.webp' : '../images/abayaTwo.webp'"
-                  class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px] transition duration-300 ease-in-out rounded-md"
+                  class="w-full sm:h-[466px] h-[260.31px] transition duration-300 ease-in-out rounded-md"
                   alt="Abaya"
                   @mouseenter="hover = true"
                   @mouseleave="hover = false"
@@ -2879,7 +2879,7 @@
                 </div>
                 <button
                   @click="show = true; setTimeout(() => show = false, 2000)"
-                  class="sm:w-[250px] w-[155px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
+                  class="w-full sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
                   data-id="2"
                   data-name="Nello Wallet in Metallic Textured"
                   data-price="1500"
@@ -2900,13 +2900,13 @@
               </div>
             </div>
             <div
-              class="relative sm:w-[300px] w-[174px] h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
+              class="relative w-full h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2"
               style="box-shadow: 0px 4px 4px 0px #00000040"
             >
               <div x-data="{ hover: false }" class="relative">
                 <img
                   :src="hover ? '../images/abayaSwiper.webp' : '../images/abayaTwo.webp'"
-                  class="sm:w-[346px] w-[174px] sm:h-[466px] h-[260.31px] transition duration-300 ease-in-out rounded-md"
+                  class="w-full sm:h-[466px] h-[260.31px] transition duration-300 ease-in-out rounded-md"
                   alt="Abaya"
                   @mouseenter="hover = true"
                   @mouseleave="hover = false"
@@ -2977,7 +2977,7 @@
                 </div>
                 <button
                   @click="show = true; setTimeout(() => show = false, 2000)"
-                  class="sm:w-[250px] w-[155px] sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
+                  class="w-full sm:h-10 h-[22.34px] bg-[#444144] sm:rounded-[10px] rounded-[3px] flex items-center justify-center gap-3 mt-2 add-to-cart"
                   data-id="2"
                   data-name="Nello Wallet in Metallic Textured"
                   data-price="1500"
