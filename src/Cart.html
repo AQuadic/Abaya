@@ -63,22 +63,22 @@
         <!-- End Title -->
         
         <!-- Start Content -->
-            <section class="container mx-auto flex lg:flex-row flex-col justify-center lg:items-start items-center gap-6 mt-[40px] mb-[72px]">
+            <section class="container  mx-auto flex lg:flex-row flex-col justify-center lg:items-start items-center gap-6 mt-[40px] mb-[72px]">
                 <div class="lg:w-[872px] p-2">
                     <div x-data="{ counters: { counter1: 1, counter2: 1 } }" class="bg-white  rounded-[4px] overflow-hidden">
                         <div class="overflow-x-auto">
-                            <table class="w-full table-auto">
+                            <table class="w-full table-auto ">
                                 <thead>
-                                    <tr class="border-b-2 border-black">
-                                        <th class="ltr:text-left rtl:text-right p-3 text-black text-lg font-medium uppercase">المنتجات</th>
-                                        <th class="ltr:text-left rtl:text-right p-3 text-black text-lg font-medium uppercase">الكمية</th>
-                                        <th class="ltr:text-left rtl:text-right p-3 text-black text-lg font-medium uppercase">السعر</th>
+                                    <tr class="border-b-2 border-black w-full ">
+                                        <th class="ltr:text-left rtl:text-right p-3 text-black text-lg font-medium uppercase w-full">المنتجات</th>
+                                        <th class="ltr:text-left rtl:text-right p-3 text-black text-lg font-medium uppercase max-md:collapse">الكمية</th>
+                                        <th class="ltr:text-left rtl:text-right p-3 text-black text-lg font-medium uppercase max-md:collapse">السعر</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody class=" max-md:flex max-md:flex-col">
                                     <tr class="border-b">
                                         <td class="p-3 flex sm:flex-row flex-col gap-2">
-                                            <img src="../images/cartImage.webp" class="w-[100px] h-[150px] object-cover" alt="Wishlist">
+                                            <img src="../images/cartImage.webp" class="max-md:w-full w-[100px] h-[150px] object-cover" alt="Wishlist">
                                             <div class="flex flex-col justify-between gap-1">
                                                 <div>
                                                     <h3 class="text-xl font-medium">عبايات عبايات</h3>
@@ -115,7 +115,7 @@
                                     </tr>
                                     <tr class="border-b">
                                         <td class="p-3 flex sm:flex-row flex-col gap-2">
-                                            <img src="../images/cartImage.webp" class="w-[100px] h-[150px] object-cover" alt="Wishlist">
+                                            <img src="../images/cartImage.webp" class="w-full md:w-[100px] md:h-[150px] object-cover" alt="Wishlist">
                                             <div class="flex flex-col justify-between gap-1">
                                                 <div>
                                                     <h3 class="text-xl font-medium">عبايات عبايات</h3>
