@@ -168,11 +168,11 @@
                                     <p class="text-white font-medium sm:text-lg text-[10.05px] sm:leading-[25.2px]">اضافة الى السلة</p>
                                 </button>
                                 <!-- POP UP -->
-                                <section class="fixed z-50 top-8 w-[343px] right-8 max-sm:left-8 mx-auto container"  x-show="showPopup"  @click.away="showPopup = false" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform translate-y-4" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-4">
-                                    <div class=" border-b-[3px] border-[#01E17B] h-[82px] bg-[#242C32] flex items-center text-left justify-center gap-5 rounded-lg" style="box-shadow: 0px 8px 10px 0px #00000033">
+                                <section class="fixed z-50 top-8 md:w-[343px] w-[250px] right-8 max-sm:left-8 mx-auto container"  x-show="showPopup"  @click.away="showPopup = false" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform translate-y-4" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform translate-y-4">
+                                    <div class=" border-b-[3px] border-[#01E17B] h-[82px] bg-[#242C32] flex items-center text-left justify-center md:gap-5 gap-2 rounded-lg" style="box-shadow: 0px 8px 10px 0px #00000033">
                                         <div>
-                                            <h1 class="text-white font-bold text-[17px]">Added to cart</h1>
-                                            <p class="text-[#C8C5C5] text-[13px]">Your changes have been saved successfully</p>
+                                            <h1 class="text-white md:font-bold md:text-[17px] text-sm">Added to cart</h1>
+                                            <p class="text-[#C8C5C5] md:text-[13px] text-[10px]">Your changes have been saved successfully</p>
                                         </div>
                                         <img src="../images/successIcon.svg" alt="Icon">
                                     </div>
