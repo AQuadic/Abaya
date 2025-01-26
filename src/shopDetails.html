@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,7 +69,7 @@
     <!-- End Header -->
 
     <!-- Filter -->
-        <div class="md:flex gap-5 md:py-9 container mx-auto"> 
+        <div class="md:flex gap-5  md:py-9 container mx-auto"> 
             <!-- filters -->
             <div x-data="{ open: false }" @click.away="open = false" class="relative flex flex-col md:w-3/12 h-full  p-3">
                 <button @click="open = !open" id="toggleButton" class="md:hidden p-2 flex items-center gap-2 mb-4 text-white rounded relative top-[14px]">
@@ -374,7 +374,7 @@
                     </button>
                 </div>
             </div>
-            <div x-data="{ show: false }" class="relative">
+            <div x-data="{ show: false }" class="relative hidden">
                 <div class="mt-[14px] flex flex-wrap justify-center sm:gap-[25px] gap-[10px]">
                     <div class="relative sm:w-[300px] w-[174px] h-auto rounded-[10px] md:hover:scale-105 duration-300 pb-2" style="box-shadow: 0px 4px 4px 0px #00000040">
                     <div x-data="{ hover: false }" class="relative">
@@ -1130,6 +1130,17 @@
                   class="fixed z-50 top-10 right-10 bg-green-500 text-white px-6 py-2 rounded shadow-lg"
                 >
                   Added to cart successfully
+                </div>
+              </div>
+              <!-- Empty State -->
+              <div class="flex-1 mt-5">
+                <div class="ltr:flex flex-col gap-2 items-center hidden">
+                  <img src="../images/enEmpty.svg" alt="Empty State">
+                  <img src="../images/enMatch.svg" alt="Empty State">
+                </div>
+                <div class="rtl:flex flex-col gap-2 items-center hidden">
+                  <img src="../images/arEmpty.svg" alt="Empty State">
+                  <img src="../images/arMatch.svg" alt="Empty State">
                 </div>
               </div>
         </div>
