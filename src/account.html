@@ -115,7 +115,7 @@
                         <!-- My Account Page -->
                         <div x-show="activePage === 'myAccount'" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 translate-y-full" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-400" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-full"  x-cloak >
                             <div class="flex md:flex-row flex-col gap-4 justify-between">
-                                <h1 class="text-2xl font-bold">My Account</h1>
+                                <h1 class="text-2xl font-normal">My Account</h1>
                                 <div class="flex items-center gap-6">
                                     <p class="text-[#A67422] font-bold text-sm">Need help?</p>
                                     <div class="flex items-center gap-2">
@@ -169,7 +169,7 @@
                                 <a href="#" class="uppercase flex justify-center items-center w-44 h-12 bg-[#2d2d2d] text-white">Shop Now in</a>    
                             </div>
                             <div>
-                                <h1 class="text-2xl font-bold uppercase">open orders (1)</h1>
+                                <h1 class="text-2xl font-normal uppercase">open orders (1)</h1>
                                 <hr class="my-4 border-black">
                                 <div class="flex md:flex-row flex-col md:gap-0 gap-5 justify-between">
                                     <div>
@@ -188,7 +188,7 @@
                 
                         <!-- Fav Designers -->
                         <div  x-show="activePage === 'favDesigners'"  x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 translate-y-full" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-400" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-full"  x-cloak>
-                            <h1 class="text-3xl font-medium">My favourite Designers</h1>
+                            <h1 class="text-2xl font-normal">My favourite Designers</h1>
                             <div x-data="{ tab: 'Women' }" class="overflow-hidden mt-10">
                                 <div class="flex border-b border-black">
                                     <button @click="tab = 'Women'" :class="tab === 'Women' ? 'bg-black text-white font-medium text-base' : 'bg-transparent text-[#666666] border border-black'" class="w-[165px] h-[56px] text-center font-semibold">
@@ -240,17 +240,17 @@
                             </div>
                             <div class="flex flex-wrap gap-2 mt-5">
                                 <div class="mb-4">
-                                    <label for="fName" class="block text-sm font-medium text-black mb-2">First name*</label>
+                                    <label for="fName" class="block text-sm font-normal text-black mb-2">First name*</label>
                                     <input type="text" id="fName" placeholder="Asmaa" name="fName" class="xl:w-[398px] w-[295px] h-12 focus:ring-0 outline-none focus:border-black">
                                     <p class="text-xs text-red-500 mt-1">Please enter first name</p>
                                 </div>
                                 <div class="mb-4">
-                                    <label for="lName" class="block text-sm font-medium text-black mb-2">Last name*</label>
+                                    <label for="lName" class="block text-sm font-normal text-black mb-2">Last name*</label>
                                     <input type="text" id="lName" placeholder="Mostafa" name="lName" class="xl:w-[398px] w-[295px] h-12 focus:ring-0 outline-none focus:border-black">
                                     <p class="text-xs text-red-500 mt-1">Please enter last name</p>
                                 </div>
                                 <div class="mb-4">
-                                    <label for="email" class="block text-sm font-medium text-black mb-2">Email*</label>
+                                    <label for="email" class="block text-sm font-normal text-black mb-2">Email*</label>
                                     <input type="text" id="email" placeholder="asmaa@gmail.com (not editable)" name="email" class="xl:w-[800px] md:w-[600px] w-[300px] h-12 focus:ring-0 outline-none focus:border-black" readonly>
                                 </div>
                                 <p class="text-[#9b9b9b] text-sm">These phone numbers and email addresses can be used to reach you via email, SMS and Push Notification.</p>
@@ -262,19 +262,19 @@
                                 <form class="flex flex-wrap gap-4 mt-4">
                                     <div>
                                         <label class="block text-[#191C1F] font-normal mb-2" for="display-name">Current Password</label>
-                                        <input type="password" id="current_password" class="xl:w-[936px] md:[700px] w-[300px] h-12 border p-2 focus:outline-none focus:ring-0 focus:border-black placeholder:text-[#475156]">
+                                        <input type="password" placeholder="Enter your current password" id="current_password" class="xl:w-[936px] md:[700px] w-[300px] h-12 border p-2 focus:outline-none focus:ring-0 focus:border-black placeholder:text-[#475156]">
                                         <p class="text-xs text-red-500 mt-1">Current Password is a required field</p>
                                     </div>
                             
                                     <div>
                                         <label class="block text-[#191C1F] font-normal mb-2" for="username">New Password</label>
-                                        <input type="password" placeholder="8+ characters" id="new_password" class="xl:w-[936px] md:[700px] w-[300px] h-12 border p-2 focus:outline-none focus:ring-0 focus:border-black placeholder:text-[#77878F]">
+                                        <input type="password" placeholder="Enter your new password" id="new_password" class="xl:w-[936px] md:[700px] w-[300px] h-12 border p-2 focus:outline-none focus:ring-0 focus:border-black placeholder:text-[#77878F]">
                                         <p class="text-xs text-red-500 mt-1">New Password is a required field</p>
                                     </div>
                             
                                     <div>
                                         <label class="block text-[#191C1F] font-normal mb-2" for="full-name">Confirm Password</label>
-                                        <input type="password" id="confirm_password" class="xl:w-[936px] md:[700px] w-[300px] h-12 border p-2  focus:outline-none focus:ring-0 focus:border-black placeholder:text-[#475156]">
+                                        <input type="password" placeholder="Enter your new password again" id="confirm_password" class="xl:w-[936px] md:[700px] w-[300px] h-12 border p-2  focus:outline-none focus:ring-0 focus:border-black placeholder:text-[#475156]">
                                         <p class="text-xs text-red-500 mt-1">Confirm Password is a required field</p>
                                     </div>
                                 </form>
