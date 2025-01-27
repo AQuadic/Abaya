@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Input with Country Selector</title>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body>
+    <div
+        x-data="phoneInput"
+        x-init="fetchCountries()"
+        class="flex gap-2 p-4 ">
+
+        <!-- Country Select Dropdown -->
+        <div class="relative">
+            <button
+                @click.prevent="isOpen = !isOpen"
+                type="button"
+                class="flex items-center gap-2 px-3 py-2 bg-white border rounded-lg shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <span x-text="selectedCountry.flag" class="text-sm"></span>
+                <span x-text="selectedCountry.cca2" class="text-sm"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" :class="{'rotate-180': isOpen}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+
+            <!-- Hidden input for country code -->
+            <input
+                type="hidden"
+                x-model="selectedCountry.cca2">
+
+            <!-- Dropdown Panel -->
+            <div
+                x-show="isOpen"
+                @click.away="isOpen = false"
+                x-transition
+                class="absolute ltr:left-0 rtl:right-0 z-50 w-64 mt-2 bg-white border rounded-lg shadow-lg">
+
+                <!-- Search Input -->
+                <div class="p-2 border-b">
+                    <input
+                        type="text"
+                        x-model="search"
+                        placeholder="Search countries"
+                        class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+
+                <!-- Countries List -->
+                <div class="max-h-60 overflow-y-auto">
+                    <template x-for="country in filteredCountries" :key="country.cca2">
+                        <button
+                            type="button"
+                            @click="selectCountry(country)"
+                            class="flex items-center w-full gap-2 px-4 py-2 text-sm text-left hover:bg-gray-100"
+                            :class="{'bg-indigo-50': selectedCountry.cca2 === country.cca2}">
+                            <span x-text="country.flag"></span>
+                            <span x-text="country.name.common"></span>
+                            <span x-text="country.cca2" class="ml-auto text-gray-500"></span>
+                        </button>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phone Number Input -->
+        <input
+            type="tel"
+            x-model="phoneNumber"
+            @input="formatPhoneNumber"
+            placeholder="Enter phone number"
+            class="px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+    </div>
+
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('phoneInput', () => ({
+                isOpen: false,
+                search: '',
+                phoneNumber: '',
+                countries: [],
+                selectedCountry: {
+                    name: { common: 'United Arab Emirates' },
+                    flag: '🇦🇪',
+                    cca2: 'AE'
+                },
+
+                async fetchCountries() {
+                    try {
+                        const response = await fetch('https://restcountries.com/v3.1/all?fields=name,flag,cca2');
+                        if (!response.ok) {
+                            throw new Error('Failed to fetch countries');
+                        }
+                        this.countries = await response.json();
+                        console.log('Countries fetched successfully:', this.countries);
+                    } catch (error) {
+                        console.error('Error fetching countries:', error);
+                        // Fallback data
+                        this.countries = [
+                            { name: { common: 'Egypt' }, flag: '🇪🇬', cca2: 'EG' },
+                            { name: { common: 'United States' }, flag: '🇺🇸', cca2: 'US' },
+                            { name: { common: 'India' }, flag: '🇮🇳', cca2: 'IN' },
+                        ];
+                    }
+                },
+
+                get filteredCountries() {
+                    return this.countries.filter(country =>
+                        country.name.common.toLowerCase().includes(this.search.toLowerCase()) ||
+                        country.cca2.toLowerCase().includes(this.search.toLowerCase())
+                    );
+                },
+
+                selectCountry(country) {
+                    this.selectedCountry = country;
+                    this.isOpen = false;
+                    this.search = '';
+                    console.log('Selected country:', this.selectedCountry);
+                },
+
+                formatPhoneNumber() {
+                    // Remove all non-numeric characters
+                    this.phoneNumber = this.phoneNumber.replace(/\D/g, '');
+
+                    // Limit to 15 digits (standard E.164 format)
+                    if (this.phoneNumber.length > 15) {
+                        this.phoneNumber = this.phoneNumber.slice(0, 15);
+                    }
+                }
+            }));
+        });
+    </script>
+</body>
+</html>
