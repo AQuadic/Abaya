@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- Start Footer -->
-    <footer class="bg-[#1D1F1F] 2xl:h-full">
+    <footer class="bg-[#1D1F1F] 2xl:h-full sm:block hidden">
         <section class="container mx-auto max-w-7xl pt-6 px-2 xl:px-0">
             <div class=" flex lg:flex-row flex-col gap-6 pb-6">
                 <div class="flex items-center gap-4">
@@ -171,6 +171,176 @@
         </div>
         <a href="#" class="container mx-auto flex justify-center py-5">
             <img src="../images/footerLogo.svg" alt="Logo">
+        </a>
+    </footer>
+
+
+    <footer class="bg-[#282828] 2xl:h-full sm:hidden block">
+        <section class="container mx-auto max-w-7xl pt-6 px-2 xl:px-0">
+            <div class=" flex lg:flex-row flex-col gap-6 pb-6">
+                <div class="flex items-center justify-center gap-4">
+                    <div class="bg-[#D6F8F00D] rounded-full p-4">
+                        <img src="../images/email.svg" alt="Email">
+                    </div>
+                    <div>
+                        <h3 class="text-white font-normal flex  flex-1 text-lg leading-[30px]">اشترك في نشرة صيحات الموضة الخليجية</h3>
+                        <p class="text-[#D6D6D6] font-normal text-xs mt-1">انضم الآن واحصل على خصم xx٪ على مشترياتك التالية!</p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center items-center">
+                    <div>
+                        <input type="email" name="email" id="email" class="w-[260px] h-[43px] bg-[#FFFFFF08] border border-[#333333] focus:outline-none focus:ring-0 focus:border-[#B87153] rounded-sm">
+                    <button class="w-[90px] h-[43px] bg-[#B87153] rounded-sm text-white font-medium">
+                        إشتراك
+                    </button>
+                    </div>
+                    <h3 class="text-white font-normal text-sm leading-[20.58px] text-center mt-2">يمكنك إلغاء الاشتراك في أي لحظة</h3>
+                </div>
+            </div>
+            <div class="flex flex-col items-center justify-center mt-2">
+                <h4 class="text-white font-medium text-lg leading-[25px]">تابعنا علي</h4>
+                <div class="flex gap-2 mt-4">
+                    <img src="../images/Google.svg" alt="Google">
+                    <img src="../images/Tiktok.svg" alt="Tiktok">
+                    <img src="../images/twitter.svg" alt="Twitter">
+                    <img src="../images/facebook.svg" alt="Facebook">
+                    <img src="../images/footer-insta.svg" alt="Instagram">
+                    <img src="../images/snap.svg" alt="Snapchat">
+                </div>
+            </div>
+            <div x-data="{ activeAccordion: null }">
+                <!-- Accordion Item 1 -->
+                <div class="overflow-hidden border-b-[1px] border-[#343435]">
+                    <button 
+                        @click="activeAccordion === 1 ? activeAccordion = null : activeAccordion = 1" 
+                        class="w-full flex justify-between items-center px-4 py-3 text-left text-white font-medium text-lg">
+                        أبرز المتاجر
+                        <svg x-bind:class="{ 'rotate-180': activeAccordion === 1 }" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="activeAccordion === 1" x-collapse class="px-4 py-3 ">
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><a href="#" class="block text-white">أبرز المتاجر</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Accordion Item 2 -->
+                <div class="overflow-hidden border-b-[1px] border-[#343435]">
+                    <button 
+                        @click="activeAccordion === 2 ? activeAccordion = null : activeAccordion = 2" 
+                        class="w-full flex justify-between items-center px-4 py-3 text-left text-white font-medium text-lg">
+                        أبرز الفئات
+                        <svg x-bind:class="{ 'rotate-180': activeAccordion === 2 }" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="activeAccordion === 2" x-collapse class="px-4 py-3 ">
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><a href="#" class="block text-white">أبرز الفئات</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Accordion Item 3 -->
+                <div class="overflow-hidden border-b-[1px] border-[#343435]">
+                    <button 
+                        @click="activeAccordion === 3 ? activeAccordion = null : activeAccordion = 3" 
+                        class="w-full flex justify-between items-center px-4 py-3 text-left text-white font-medium text-lg">
+                        خدمة العملاء
+                        <svg x-bind:class="{ 'rotate-180': activeAccordion === 3 }" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="activeAccordion === 3" x-collapse class="px-4 py-3 ">
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><a href="#" class="block text-white">خدمة العملاء</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Accordion Item 4 -->
+                <div class="overflow-hidden border-b-[1px] border-[#343435]">
+                    <button 
+                        @click="activeAccordion === 4 ? activeAccordion = null : activeAccordion = 4" 
+                        class="w-full flex justify-between items-center px-4 py-3 text-left text-white font-medium text-lg">
+                        نبذة عن عبائة
+                        <svg x-bind:class="{ 'rotate-180': activeAccordion === 4 }" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="activeAccordion === 4" x-collapse class="px-4 py-3 ">
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><a href="#" class="block text-white">نبذة عن عبائة</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Accordion Item 5 -->
+                <div class="overflow-hidden border-b-[1px] border-[#343435]">
+                    <button 
+                        @click="activeAccordion === 5 ? activeAccordion = null : activeAccordion = 5" 
+                        class="w-full flex justify-between items-center px-4 py-3 text-left text-white font-medium text-lg">
+                        الشؤون القانونية
+                        <svg x-bind:class="{ 'rotate-180': activeAccordion === 5 }" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="activeAccordion === 5" x-collapse class="px-4 py-3 ">
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><a href="#" class="block text-white">الشؤون القانونية</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Accordion Item 6 -->
+                <div class="overflow-hidden border-b-[1px] border-[#343435]">
+                    <button 
+                        @click="activeAccordion === 6 ? activeAccordion = null : activeAccordion = 6" 
+                        class="w-full flex justify-between items-center px-4 py-3 text-left text-white font-medium text-lg">
+                        التوصيل والإرجاع
+                        <svg x-bind:class="{ 'rotate-180': activeAccordion === 6 }" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="activeAccordion === 6" x-collapse class="px-4 py-3 ">
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><a href="#" class="block text-white">التوصيل والإرجاع</a></li>
+                        </ul>
+                    </div>
+                </div>
+    
+            </div>
+            <div class="mt-6 flex flex-col justify-center items-center">
+                <h2 class="text-2xl font-medium text-center leading-[25px] text-white">تواصل مع خدمة العملاء</h2>
+                <div class="flex items-center gap-4 mt-4">
+                    <div class="w-[110px] h-20 flex flex-col items-center justify-center gap-[7px] bg-[#2D2D2D] rounded-[7px]">
+                        <img src="../images/footerPhone.svg" alt="Phone">
+                        <p class="text-xs font-medium text-white">اتصل بنا</p>
+                    </div>
+                    <div class="w-[110px] h-20 flex flex-col items-center justify-center gap-[7px] bg-[#2D2D2D] rounded-[7px]">
+                        <img src="../images/footerWhatsapp.svg" alt="Whatsapp">
+                        <p class="text-xs font-medium text-white">واتساب</p>
+                    </div>
+                    <div class="w-[110px] h-20 flex flex-col items-center justify-center gap-[7px] bg-[#2D2D2D] rounded-[7px]">
+                        <img src="../images/footerEmail.svg" alt="Phone">
+                        <p class="text-xs font-medium text-white">البريد الإلكتروني</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container mx-auto flex lg:flex-row flex-col items-center justify-between gap-2 my-6">
+                <div class="flex lg:flex-row flex-col gap-2 mt-4">
+                    <div class="flex items-center gap-2">
+                    <img src="../images/Mastercard.svg" alt="Mastercard">
+                    <img src="../images/Visa.svg" alt="Visa">
+                    <img src="../images/ApplePay.svg" alt="ApplePay">
+                    <img src="../images/GooglePay.svg" alt="GooglePay">
+                    <img src="../images/PayPal.svg" alt="PayPal">
+                    <img src="../images/Stripe.svg" alt="Stripe">
+                    </div>
+                </div>
+                <p class="text-white font-normal text-sm leading-[20.58px] mt-6">الحقوق محفوظة لمنصة عبايات © 2024</p>
+            </div>
+        </section>
+
+        <a href="#" class="container mx-auto  bg-[#1D1F1F] flex justify-center py-3">
+            <img src="../images/footerLogo.svg" class="w-[224.15px] h-[30px]" alt="Logo">
         </a>
     </footer>
 <!-- Start Footer -->
