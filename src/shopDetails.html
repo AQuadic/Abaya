@@ -1222,8 +1222,9 @@
             <!-- filters -->
             <div x-data="{ open: false }" @click.away="open = false" class="relative flex flex-col md:w-3/12 h-full  p-3 z-0">
                 <button @click="open = !open" id="toggleButton" class="md:hidden p-2 flex items-center gap-2 mb-4 text-white rounded relative top-[14px]">
-                    <img src="../images/Menu.svg" class="w-6 h-6" alt="Toggle Sidebar">
-                    <p class="text-black">Categories</p>
+                    <img src="../images/Menu.svg" class="w-6 h-6 rtl:flex hidden" alt="Toggle Sidebar">
+                    <img src="../images/en_menu.svg" class="w-6 h-6 ltr:flex hidden" alt="Toggle Sidebar">
+                    <p class="text-black">التصنيفات</p>
                 </button>
                 <div :class="{'translate-x-0': open, '-translate-x-full': !open}" 
                     class="fixed top-0 left-0 w-3/4 h-full bg-white z-50 overflow-y-auto transform transition-transform duration-300 md:static md:w-full md:translate-x-0 border p-5">
