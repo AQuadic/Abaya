@@ -65,7 +65,7 @@
     <!-- Start Content -->
         <section class="container mx-auto flex lg:flex-row flex-col items-center lg:items-start px-3 my-5 gap-14">
             <div class="w-full h-full p-5 sm:p-0">    
-                <div class="border w-full h-auto my-4">
+                <div x-data="{ counters: { counter1: 1, counter2: 1 } }" class="border w-full h-auto my-4">
                     <table class="w-full table-auto">
                         <thead>
                             <h3 class="text-2xl font-medium px-4 mt-4">Items</h3>
@@ -89,7 +89,15 @@
                                     </div>
                                 </td>
                                 <td class="p-3">
-                                    <p>1</p>
+                                    <div class="flex items-center border-b border-[#E4E7E9] rounded-[3px] w-[148px] p-2 justify-between">
+                                        <button @click="counters.counter1 > 1 && counters.counter1--" class="text-lg focus:outline-none">
+                                            <p class="text-xl font-semibold text-gray-500">–</p>
+                                        </button>
+                                        <span x-text="String(counters.counter1).padStart(2, '0')" class="text-[#475156] font-medium"></span>
+                                        <button @click="counters.counter1++" class="text-lg focus:outline-none">
+                                            <p class="text-2xl font-semibold text-[#B87153]">+</p>
+                                        </button>
+                                    </div>
                                 </td>
                                 <td class="relative p-3 text-[#191C1F] font-medium">
                                     <p>$70</p>
@@ -145,7 +153,15 @@
                                     </div>
                                 </td>
                                 <td class="p-3">
-                                    <p>1</p>
+                                    <div class="flex items-center border-b border-[#E4E7E9] rounded-[3px] w-[148px] p-2 justify-between">
+                                        <button @click="counters.counter1 > 1 && counters.counter1--" class="text-lg focus:outline-none">
+                                            <p class="text-xl font-semibold text-gray-500">–</p>
+                                        </button>
+                                        <span x-text="String(counters.counter1).padStart(2, '0')" class="text-[#475156] font-medium"></span>
+                                        <button @click="counters.counter1++" class="text-lg focus:outline-none">
+                                            <p class="text-2xl font-semibold text-[#B87153]">+</p>
+                                        </button>
+                                    </div>
                                 </td>
                                 <td class="relative p-3 text-[#191C1F] font-medium">
                                     <p>$70</p>
@@ -193,7 +209,13 @@
 
                 <div class="mx-auto border overflow-hidden">
                     <div class="flex flex-col gap-4 p-2">
-                        <textarea name="reason" id="reason" class="h-40 focus:ring-0 focus:border-black p-2" placeholder="why do you want to return the item?"></textarea>
+                        <select name="reason" id="reason" class="h-14 focus:ring-0 focus:border-black p-2">
+                            <option value="" disabled selected>Select a reason</option>
+                            <option value="wrong_item">1</option>
+                            <option value="damaged_item">2</option>
+                            <option value="changed_mind">3</option>
+                            <option value="other">4</option>
+                        </select>
                         <input type="text" name="phone" class="focus:ring-0 focus:border-black p-2" id="phone" placeholder="01212121212">
                     </div>
                 </div>
